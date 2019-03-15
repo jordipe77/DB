@@ -11,7 +11,7 @@
           <div class="form-row">
               <div class="form-group col-md-12">
                   <label for="inputEmail4">Nombre y apellidos</label>
-                  <input type="text" class="form-control" id="inputEmail4" placeholder="Ej: Pedro Martínez">
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="Ej: Pedro Martï¿½nez">
                 </div>
           </div>
                 <div class="form-row">
@@ -25,17 +25,17 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseï¿½a">
               </div>
               <div class="form-group col-md-6">
                   <label for="inputPassword4">Confirmar Password</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="Conf. Contraseña">
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Conf. Contraseï¿½a">
                 </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCity">Ciudad</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="Ej: Mataró">
+                <input type="text" class="form-control" id="inputCity" placeholder="Ej: Matarï¿½">
               </div>
               <div class="form-group col-md-6">
                   <label for="inputCity">Provincia</label>
