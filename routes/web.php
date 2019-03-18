@@ -9,6 +9,10 @@ Route::get('/registro',function ()
 {
 	return view ('registro');
 });
+Route::get('/introDonacion',function ()
+{
+	return view ('introDonacion	');
+});
 // Route::get('/', function () {
 //     return view('index');
 // });
