@@ -19,7 +19,6 @@ Route::get('/dashboard',function ()
 });
 
 
-
 Route::resource('donacion', 'donacionController');
 // Route::get('/', function () {
 //     return view('index');
