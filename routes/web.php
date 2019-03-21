@@ -9,10 +9,12 @@ Route::get('/registro',function ()
 {
 	return view ('registro');
 });
-Route::get('/introDonacion',function ()
+Route::get('/hacerDonacion',function ()
 {
-	return view ('introDonacion	');
+	return view ('hacerDonacion	');
 });
+
+Route::resource('donacion', 'donacionController');
 // Route::get('/', function () {
 //     return view('index');
 // });
