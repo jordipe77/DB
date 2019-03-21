@@ -35,5 +35,5 @@
         </div>
     </div>
 
-
+    <script src="{{ asset('/DatumBase/public/js/login.js') }}"></script>
 @endsection
