@@ -5,17 +5,37 @@ Dashboard
 @endsection
 
 @section('principal')
-<div class="row">
-<div class="col">
-<div class="card" style="width: 18rem;">
+<div class="card h-100 mt-4">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+     <div class="row">
+        <div class="col-3" style="text-align:center">
+                <figure class="item">
+                        <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                        <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Donativos</button></figcaption>
+                    </figure>
+        </div>
+        <div class="col-3" style="text-align:center">
+                    <figure class="item">
+                            <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                            <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Recaudado</button></figcaption>
+                        </figure>
+            </div>
+            <div class="col-3" style="text-align:center">
+                    <figure class="item">
+                            <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                            <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Centros</button></figcaption>
+                        </figure>
+            </div>
+                <div class="col-3" style="text-align:center">
+                            <figure class="item">
+                                    <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                                    <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Rentabilidad</button></figcaption>
+                                </figure>
+                    </div>
     </div>
   </div>
 </div>
-</div>
           <script src="{{ asset('js/dashboard.js') }}"></script>
+          <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 @endsection
 

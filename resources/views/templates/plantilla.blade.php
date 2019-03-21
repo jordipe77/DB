@@ -15,7 +15,6 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 <!--<link rel="stylesheet" type="text/css" href="/DatumBase/public/css/login.css"> -->
-<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 
 </head>
 <body>
