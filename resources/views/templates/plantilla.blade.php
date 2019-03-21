@@ -13,11 +13,17 @@
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
+<<<<<<< HEAD
 <link href="/DatumBase/public/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 <link rel="stylesheet" type="text/css" href="{{asset('DatumBase/public/css/bootstrapmin.css')}}">
 <!--<link rel="stylesheet" type="text/css" href="/DatumBase/public/css/login.css"> -->
 <link rel="stylesheet" type="text/css" href="{{asset('DatumBase/public/css/dashboard.css')}}">
+=======
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+<!--<link rel="stylesheet" type="text/css" href="/DatumBase/public/css/login.css"> -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
+>>>>>>> master
 
 </head>
 <body>
