@@ -5,23 +5,6 @@ Dashboard
 @endsection
 
 @section('principal')
-<<<<<<< HEAD
-    <div class="donativos" style="width:20%; border:1px solid red;" >
-dasdas
-    </div>
-    <div class="donadores" style="width:20%; border:1px solid red;" >
-dasdas
-    </div>
-    <div class="centros" style="width:20%; border:1px solid red;" >
-asddas
-    </div>
-    <div class="RecaudadoAno" style="width:20%; border:1px solid red;" >
-dsadasdas
-    </div>
-
-
-          <script src="{{ asset('/DatumBase/public/js/dashboard.js') }}"></script>
-=======
 <div class="row">
 <div class="col">
 <div class="card" style="width: 18rem;">
@@ -34,6 +17,5 @@ dsadasdas
 </div>
 </div>
           <script src="{{ asset('js/dashboard.js') }}"></script>
->>>>>>> master
 @endsection
 
