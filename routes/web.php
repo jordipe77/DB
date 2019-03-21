@@ -14,6 +14,7 @@ Route::get('/hacerDonacion',function ()
 	return view ('hacerDonacion	');
 });
 
+
 Route::resource('donacion', 'donacionController');
 // Route::get('/', function () {
 //     return view('index');
