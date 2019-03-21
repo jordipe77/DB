@@ -13,11 +13,6 @@ Route::get('/hacerDonacion',function ()
 {
 	return view ('hacerDonacion	');
 });
-Route::get('/dashboard',function ()
-{
-	return view ('dashboard');
-});
-
 
 Route::resource('donacion', 'donacionController');
 // Route::get('/', function () {

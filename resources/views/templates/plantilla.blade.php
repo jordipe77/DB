@@ -15,9 +15,21 @@
 
 <link href="/DatumBase/public/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<link rel="stylesheet" type="text/css" href="{{asset('DatumBase/public/css/bootstrapmin.css')}}">
-<!--<link rel="stylesheet" type="text/css" href="/DatumBase/public/css/login.css"> -->
-<link rel="stylesheet" type="text/css" href="{{asset('DatumBase/public/css/dashboard.css')}}">
+<link rel="stylesheet" href="/DatumBase/public/css/bootstrap.css">
+<link rel="stylesheet" href="/DatumBase/public/css/login.css">
+<link rel="stylesheet" href="/DatumBase/public/js/login.css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/DatumBase/public/js/jquery-1.11.1.min.js"></script>
+<script src="/DatumBase/public/js/popper.min.js"></script>
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
 
 </head>
 <body>
@@ -31,17 +43,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active ">
-              <a class="nav-link" href="">Donativos</a>
+              <a class="nav-link" href="">Opcio1</a>
             </li>
             <li class="nav-item active ">
-                <a class="nav-link" href="">Donadores</a>
+                <a class="nav-link" href="">Opcio2</a>
               </li>
               <li class="nav-item active ">
-                <a class="nav-link" href="">Estadísticas</a>
+                <a class="nav-link" href="">Opcio3</a>
               </li>
-              <li class="nav-item active ">
-                 <a class="nav-link" href="">Opciones</a>
-                  </li>
 
           </ul>
 
@@ -50,9 +59,12 @@
 
 
 
-<div class="container">@yield('principal')
 
-</div>
+
+<div class="container">@yield('principal')</div>
+
+
+
 
 </body>
 </html>
