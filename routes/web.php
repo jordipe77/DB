@@ -2,13 +2,13 @@
 
 
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/registro',function ()
-{
-	return view ('registro');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Route::get('/registro',function ()
+// {
+// 	return view ('registro');
+// });
 Route::get('/hacerDonacion',function ()
 {
 	return view ('hacerDonacion	');
@@ -34,6 +34,7 @@ Route::resource('donacion', 'donacionController');
 
 
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
+Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
 Route::post('/login', 'Auth\Logincontroller@login');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
@@ -41,3 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/dashboard','HomeController@index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
