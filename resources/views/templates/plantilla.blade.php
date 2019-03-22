@@ -15,7 +15,7 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrapmin.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
@@ -51,12 +51,12 @@
                 <ul class="navbar-nav ml-auto  ">
 
                 @if(Auth::check())
-                <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item ">
+                <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     {{Auth::user()->nombre}}
                 </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('logout') }}">LOGOUT</a>
+                    <div class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
                     </div>
                 </li>
                 @else

@@ -42,7 +42,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', 'hostingmysql328.nominalia.com'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'daw0203'),
             'username' => env('DB_USERNAME', 'daw0203'),
