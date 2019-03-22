@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+
+use App\Usuario;
 
 class LoginController extends Controller
 {
@@ -36,4 +41,37 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+    public function showLogin(){
+        return view ('auth.login');
+    }
+
+    public function login(Request $request){
+
+        $correo = $request->input('correo');
+        $contrasenya = $request->input('contrasenya');
+
+        $user = Usuario::where('correo', $correo)->first();
+
+        if($user != null && Hash::check($contrasenya, $user->contrasenya))
+        {
+            Auth::login($user);
+            return redirect('/home');
+        }
+        else
+        {
+            return redirect('login')->withInput();
+        }
+
+
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/login');
+    }
+
 }
