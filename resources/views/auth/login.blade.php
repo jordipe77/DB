@@ -4,6 +4,8 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
 
+
+
 @section('principal')
 
 <div class="container mt-5">
@@ -13,25 +15,29 @@
                 <h3>INICIAR SESIÓN</h3>
             </div>
             <div class="card-body">
-                <form>
+                    <form action="{{action('Auth\Logincontroller@login')}}" method="post">
+
+                    @csrf
+
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Nombre de usuario / Email">
+                        <input type="text" class="form-control" name="correo" id="correo" value="{{old('correo')}}" autofocus placeholder="Email">
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="{{old('contrasenya')}}">
                     </div>
                     <div class="row align-items-center remember">
                         <input type="checkbox">Recordar usuario
                     </div>
                     <div class="form-group mt-3">
                         <input type="submit" value="Aceptar" class="btn float-right aceptar">
+                        <a class="btn btn-secondary" href="{{url('/dashboard')}}" role="button">CANCELAR</a>
                     </div>
                 </form>
             </div>

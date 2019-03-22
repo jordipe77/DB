@@ -50,11 +50,11 @@ class LoginController extends Controller
     public function login(Request $request){
 
         $correo = $request->input('correo');
-        $contrasenya = $request->input('contrasenya');
+        $contrasenya = $request->input('password');
 
         $user = Usuario::where('correo', $correo)->first();
 
-        if($user != null && Hash::check($contrasenya, $user->contrasenya))
+        if($user != null && Hash::check($password, $user->password))
         {
             Auth::login($user);
             return redirect('/home');
