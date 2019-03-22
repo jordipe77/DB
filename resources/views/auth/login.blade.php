@@ -2,38 +2,50 @@
 
 @section('titulo','LOGIN')
 
+<link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+
 @section('principal')
 
+<div class="container mt-5">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>INICIAR SESIÓN</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nombre de usuario / Email">
 
-    <div class="container">
-        <div class="row vertical-offset-100">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Iniciar sesion</h3>
-                     </div>
-                      <div class="panel-body">
-                        <form accept-charset="UTF-8" role="form">
-                        <fieldset>
-                              <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="text">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me"> Remember Me
-                                </label>
-                            </div>
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
-                        </fieldset>
-                          </form>
                     </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Contraseña">
+                    </div>
+                    <div class="row align-items-center remember">
+                        <input type="checkbox">Recordar usuario
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="submit" value="Aceptar" class="btn float-right aceptar">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    No tienes cuenta?<a href="#">Registrate</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="#">Has olvidado la constraseña?</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="{{ asset('/DatumBase/public/js/login.js') }}"></script>
 @endsection
+
