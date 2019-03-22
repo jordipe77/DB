@@ -22,7 +22,7 @@ Dashboard
             </div>
             <div class="col-3" style="text-align:center">
                     <figure class="item">
-                            <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                            <imgs src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
                             <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Centros</button></figcaption>
                         </figure>
             </div>

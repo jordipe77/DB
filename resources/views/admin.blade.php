@@ -8,10 +8,11 @@ ADMIN MODE
 
 @section('principal')
 
-
 <div class="container full-background" id="tot">
-    <form action="/ProyectoABP/Controller.php" method="post">
-    <div class="card-group">
+    <form action="/BD/AdminController.php" method="post">
+        <h2>OPCIONES DE ADMINISTRADOR</h2>
+
+    <div class="card-group mt-5">
         <div class="card mr-2 carta">
            <button type="button" class="btn bot" id="boton1" name="boton1"><strong>DAR DE BAJA</strong></button>
         </div>
