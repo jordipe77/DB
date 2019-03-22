@@ -4,11 +4,13 @@
 Dashboard
 @endsection
 
+<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
+
 @section('principal')
     <div class="donativos" style="width:20%; border:1px solid red;" >
 dasdas
     </div>
-    <div class="donadores" style="width:20%; border:1px solid red;" >
+    <div class="donantes" style="width:20%; border:1px solid red;" >
 dasdas
     </div>
     <div class="centros" style="width:20%; border:1px solid red;" >

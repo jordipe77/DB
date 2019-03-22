@@ -2,6 +2,8 @@
 
 @section('titulo','LOGIN')
 
+<link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+
 @section('principal')
 
 <div class="container mt-5">

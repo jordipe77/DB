@@ -1,0 +1,25 @@
+.bot{
+    height: 200px;
+    color:white;
+}
+.bot:hover{
+
+}
+
+#boton1{
+    background-color:#F60
+}
+
+#boton2{
+    background-color:#636;
+}
+
+#boton3{
+    background-color:rgb(153,204,51);
+}
+
+#tot{
+    margin-top: 200px;
+    float: none;
+    margin-bottom: 10px;
+}
