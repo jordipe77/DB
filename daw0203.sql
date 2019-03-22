@@ -282,7 +282,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre_usuario`, `correo`, `password`, `roles_id`, `nombre`) VALUES
 (3, 'daniel', 'daniel@gmail.com', '123456', 2, 'daniel'),
-(4, 'Jordi', 'jordipe77@gmail.com', '$2y$10$VAJVLmPNZUWPtgdIANGEwelUZEOgkHUquV8WVhqQLoTGZSjEGAaNa', 1, NULL);
+(4, 'Jordi', 'jordipe77@gmail.com', '$2y$10$VAJVLmPNZUWPtgdIANGEwelUZEOgkHUquV8WVhqQLoTGZSjEGAaNa', 1, NULL),
+(3, 'marti', 'marti@gmail.com', '123456', 2, 'marti');
 
 --
 -- Filtros para las tablas descargadas (dump)
@@ -330,3 +331,6 @@ ALTER TABLE `subtipos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_usuarios_roles1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+  ALTER TABLE `usuarios` ADD `remember_token` VARCHAR(255) NULL;
