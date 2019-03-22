@@ -13,6 +13,10 @@ Route::get('/hacerDonacion',function ()
 {
 	return view ('hacerDonacion	');
 });
+Route::get('/introDonacion',function ()
+{
+	return view ('introDonacion');
+});
 Route::get('/dashboard',function ()
 {
 	return view ('dashboard');
@@ -35,5 +39,5 @@ Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get('/home','HomeController@index');
+    Route::get('/dashboard','HomeController@index');
 });

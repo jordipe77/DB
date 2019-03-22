@@ -51,12 +51,12 @@
                 <ul class="navbar-nav ml-auto  ">
 
                 @if(Auth::check())
-                <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item ">
+                <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     {{Auth::user()->nombre}}
                 </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('logout') }}">LOGOUT</a>
+                    <div class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
                     </div>
                 </li>
                 @else

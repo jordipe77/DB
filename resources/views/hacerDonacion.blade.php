@@ -95,42 +95,72 @@
             </div>
 
             <div class="form-group row">
+                    <label for="centro_receptor" class="col-sm-2 col-form-label">Centro Receptor</label>
+
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro1" id="centro1" value="option1">
+                            <input class="form-check-input" type="radio" name="centro" id="centro1" value="option1">
                             <label class="form-check-label" for="centro1">Refugi Cal Pilé</label>
                     </div>
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro1" id="centro2" value="option2">
+                            <input class="form-check-input" type="radio" name="centro" id="centro2" value="option2">
                             <label class="form-check-label" for="centro2">Refugi Can Moret</label>
                     </div>
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro1" id="centro3" value="option3">
+                            <input class="form-check-input" type="radio" name="centro" id="centro3" value="option3">
                             <label class="form-check-label" for="centro3">CCAAC Barcelonès</label>
                     </div>
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro4" id="centro4" value="option4">
+                            <input class="form-check-input" type="radio" name="centro" id="centro4" value="option4">
                             <label class="form-check-label" for="centro4">Espai Veterinari</label>
                     </div>
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro5" id="centro5" value="option5">
+                            <input class="form-check-input" type="radio" name="centro" id="centro5" value="option5">
                             <label class="form-check-label" for="centro5">Encants</label>
                     </div>
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro6" id="centro6" value="option6">
+                            <input class="form-check-input" type="radio" name="centro" id="centro6" value="option6">
                             <label class="form-check-label" for="centro6">Oficines</label>
                     </div>
+            </div>
 
+            <div class="form-group row">
+                    <label for="centro_destino" class="col-sm-2 col-form-label">Centro Destino</label>
+
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="centro" id="centro1" value="option1">
+                            <label class="form-check-label" for="centro1">Refugi Cal Pilé</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="centro" id="centro2" value="option2">
+                            <label class="form-check-label" for="centro2">Refugi Can Moret</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="centro" id="centro3" value="option3">
+                            <label class="form-check-label" for="centro3">CCAAC Barcelonès</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="centro" id="centro4" value="option4">
+                            <label class="form-check-label" for="centro4">Espai Veterinari</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="centro" id="centro5" value="option5">
+                            <label class="form-check-label" for="centro5">Encants</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="centro" id="centro6" value="option6">
+                            <label class="form-check-label" for="centro6">Oficines</label>
+                    </div>
             </div>
 
             <div class="form-group row">
                     <label for="descripcion" class="col-sm-2 col-form-label">Peso</label>
                         <div class="col-sm-4">
-                                <input type="number" name="peso" class="form-control form-group">
+                                <input type="number" name="peso" class="form-control form-group" min="0">
                         </div>
 
                     <label for="descripcion" class="col-sm-2 col-form-label">Coste</label>
                         <div class="col-sm-4">
-                                <input type="number" name="coste" class="form-control form-group">
+                                <input type="number" name="coste" class="form-control form-group" min="0">
                         </div>
             </div>
 
