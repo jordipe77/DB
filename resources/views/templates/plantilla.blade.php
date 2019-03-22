@@ -15,7 +15,8 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrapmin.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
@@ -28,7 +29,11 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav">
+                   @yield('menu')
+            </ul>
+
+          <ul class="navbar-nav ">
             <li class="nav-item active ">
               <a class="nav-link" href="">Donativos</a>
             </li>
@@ -42,7 +47,28 @@
                  <a class="nav-link" href="">Opciones</a>
                   </li>
 
-          </ul>
+                </ul>
+
+                <ul class="navbar-nav ml-auto  ">
+
+                @if(Auth::check())
+                <li class="nav-item ">
+                <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{Auth::user()->nombre}}
+                </a>
+                    <div class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+                    </div>
+                </li>
+                @else
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
+                </li>
+                @endif
+
+            </ul>
+
+
 
         </div>
       </nav>

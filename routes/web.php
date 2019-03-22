@@ -13,6 +13,10 @@ Route::get('/hacerDonacion',function ()
 {
 	return view ('hacerDonacion	');
 });
+Route::get('/introDonacion',function ()
+{
+	return view ('introDonacion');
+});
 Route::get('/dashboard',function ()
 {
 	return view ('dashboard');
@@ -27,3 +31,13 @@ Route::resource('donacion', 'donacionController');
 // Route::get('/', function () {
 //     return view('index');
 // });
+
+
+Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
+Route::post('/login', 'Auth\Logincontroller@login');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/dashboard','HomeController@index');
+});

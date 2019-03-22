@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 15-03-2019 a las 12:34:26
+-- Tiempo de generación: 22-03-2019 a las 09:44:33
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -18,10 +18,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Base de datos: `daw0203`
 --
-CREATE DATABASE `daw0203` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-DROP DATABASE IF EXISTS `daw0203`
-CREATE DATABASE IF NOT EXISTS `daw0203`
-USE `daw0203`;
 
 -- --------------------------------------------------------
 
@@ -179,12 +175,15 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `roles`
 --
 
+INSERT INTO `roles` (`id`, `rol`) VALUES
+(1, 'usuario'),
+(2, 'admin');
 
 -- --------------------------------------------------------
 
@@ -275,12 +274,16 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nombre` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_usuarios_roles1_idx` (`roles_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `usuarios`
 --
 
+INSERT INTO `usuarios` (`id`, `nombre_usuario`, `correo`, `password`, `roles_id`, `nombre`) VALUES
+(3, 'daniel', 'daniel@gmail.com', '123456', 2, 'daniel'),
+(4, 'Jordi', 'jordipe77@gmail.com', '$2y$10$VAJVLmPNZUWPtgdIANGEwelUZEOgkHUquV8WVhqQLoTGZSjEGAaNa', 1, NULL),
+(3, 'marti', 'marti@gmail.com', '123456', 2, 'marti');
 
 --
 -- Filtros para las tablas descargadas (dump)
@@ -328,3 +331,6 @@ ALTER TABLE `subtipos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_usuarios_roles1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+  ALTER TABLE `usuarios` ADD `remember_token` VARCHAR(255) NULL;
