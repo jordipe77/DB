@@ -1,9 +1,73 @@
-body{
-    background: url(http://mymaplist.com/img/parallax/back.png);
-	background-color: #444;
-    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('../imagenes/fondo_login.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+font-family: "Arial","Helvetica",sans-serif;
 }
 
-.vertical-offset-100{
-    padding-top:100px;
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.card-header h3{
+color: rgb(153,204,51);
+}
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.aceptar{
+color: black;
+background-color: rgb(153,204,51);
+width: 100px;
+}
+
+.aceptar:hover{
+color: black;
+background-color: rgba(153, 204, 51, 0.685);;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+h3{
+    text-align: center;
+}
+
+a{
+    color: rgb(153,204,51);
 }
