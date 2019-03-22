@@ -56,22 +56,20 @@
                             <option>COMPLEMENTOS- Juguetes</option>
                             <option>COMPLEMENTOS- Rascadores para gatos</option>
                             <option>COMPLEMENTOS- Collares</option>
-                        <option>COMPLEMENTOS- Transportines</option>
-                        <option>COMPLEMENTOS- Morriones</option>
-                        <option>COMPLEMENTOS- Correas</option>
-                        <option>COMPLEMENTOS- Arneses</option>
-                        <option>COMPLEMENTOS- Abrigos</option>
-                        <option>COMPLEMENTOS- Mantas</option>
-                        <option>COMPLEMENTOS- Casitas</option>
-                        <option>COMPLEMENTOS- Comedores-Bols</option>
-                        <option>COMPLEMENTOS- Placas Identificativa</option>
+                            <option>COMPLEMENTOS- Transportines</option>
+                            <option>COMPLEMENTOS- Morriones</option>
+                            <option>COMPLEMENTOS- Correas</option>
+                            <option>COMPLEMENTOS- Arneses</option>
+                            <option>COMPLEMENTOS- Abrigos</option>
+                            <option>COMPLEMENTOS- Mantas</option>
+                            <option>COMPLEMENTOS- Casitas</option>
+                            <option>COMPLEMENTOS- Comedores-Bols</option>
+                            <option>COMPLEMENTOS- Placas Identificativa</option>
 
                         @endif
 
                     </select>
             </div>
-
-
 
 
 
