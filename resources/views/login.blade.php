@@ -10,7 +10,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>INICIA SESSIÓN</h3>
+				<h3>INICIAR SESIÓN</h3>
 			</div>
 			<div class="card-body">
 				<form>
