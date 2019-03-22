@@ -4,23 +4,38 @@
 Dashboard
 @endsection
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
-
 @section('principal')
-    <div class="donativos" style="width:20%; border:1px solid red;" >
-dasdas
+<div class="card h-100 mt-4">
+    <div class="card-body">
+     <div class="row">
+        <div class="col-3" style="text-align:center">
+                <figure class="item">
+                        <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                        <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Donativos</button></figcaption>
+                    </figure>
+        </div>
+        <div class="col-3" style="text-align:center">
+                    <figure class="item">
+                            <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                            <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Recaudado</button></figcaption>
+                        </figure>
+            </div>
+            <div class="col-3" style="text-align:center">
+                    <figure class="item">
+                            <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                            <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Centros</button></figcaption>
+                        </figure>
+            </div>
+                <div class="col-3" style="text-align:center">
+                            <figure class="item">
+                                    <img src=" {{ url('imgs/donation.png') }}" style="width:130px;height:80px">
+                                    <figcaption class="caption mt-2">   <button  type="button" class="btn btn-primary mt-2">Rentabilidad</button></figcaption>
+                                </figure>
+                    </div>
     </div>
-    <div class="donantes" style="width:20%; border:1px solid red;" >
-dasdas
-    </div>
-    <div class="centros" style="width:20%; border:1px solid red;" >
-asddas
-    </div>
-    <div class="RecaudadoAno" style="width:20%; border:1px solid red;" >
-dsadasdas
-    </div>
-
-
-          <script src="{{ asset('/DatumBase/public/js/dashboard.js') }}"></script>
+  </div>
+</div>
+          <script src="{{ asset('js/dashboard.js') }}"></script>
+          <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 @endsection
 
