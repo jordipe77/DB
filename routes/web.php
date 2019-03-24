@@ -13,9 +13,9 @@ Route::get('/hacerDonacion',function ()
 {
 	return view ('hacerDonacion	');
 });
-Route::get('/introDonacion',function ()
+Route::get('/donacionUsuario',function ()
 {
-	return view ('introDonacion');
+	return view ('donacionUsuario');
 });
 Route::get('/dashboard',function ()
 {
