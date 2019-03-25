@@ -1,9 +1,9 @@
-@extends('templates.plantilla')
+@extends('templates.plantillasin')
 
 @section('titulo','LOGIN')
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
-
+<link rel="stylesheet" type="text/css" href="{{asset('css/todosin.css')}}">
 
 
 @section('principal')

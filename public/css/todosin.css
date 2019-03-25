@@ -1,0 +1,20 @@
+.navbar-brand {
+    background: url('../imgs/logo-prueba.png') center / contain no-repeat;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    width: 500px; /* no height needed ... image will resize automagically */
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
