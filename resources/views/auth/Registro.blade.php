@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-3 w-100"> </div>
       <div class="col-6 w-100">
-            <form action="{{action('Auth\RegisterController@create')}}" method="post">
+            <form action="{{action('Auth\RegisterController@register')}}" method="post">
               @csrf
           <div class="form-row">
               <div class="form-group col-md-12">

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 use App\Usuario;
 
@@ -63,27 +64,25 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    // protected function create(array $data)
-    // {
-    //     return User::create([
-    //         'name' => $data['name'],
-    //         'email' => $data['email'],
-    //         'password' => Hash::make($data['password']),
-    //     ]);
-    // }
-
     protected function create(array $data)
     {
-        return Usuario::create([
-            'nombre' => $data['nombre'],
-            'correo' => $data['correo'],
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'nombre_usuario'=>$data['nombre_usuario']
         ]);
     }
 
 
     public function showRegistro(){
+
         return view ('auth.Registro');
+    }
+
+
+    public function register(Request $request){
+
+        return $request->all();
+
     }
 }

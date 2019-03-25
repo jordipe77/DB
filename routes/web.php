@@ -33,8 +33,12 @@ Route::resource('donacion', 'donacionController');
 // });
 
 
+
+
+
+//LOGIN
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
-Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
+
 Route::post('/login', 'Auth\Logincontroller@login');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
@@ -45,4 +49,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//REGISTRO
+
+Route::get('/registro', 'Auth\RegisterController@showregistro');
+Route::get('/registro', 'Auth\RegisterController@register');
