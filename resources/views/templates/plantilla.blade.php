@@ -12,44 +12,39 @@
 <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/todo.js')}}"></script>
+
 
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/todo.css')}}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
+<div class="sidebar">
+        <div style="max-height:100%;margin-top:25%">
+        <h2>Menú</h2>   
+    <ul>
+        <li style="background-color:#C36 !important;"><a href="">Acciones Frequentes</a></li>
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Donativos</a></li>
+        <li><a href="">Donantes</a></li>
+        <li><a href="">Estadísticas</a></li>
+    </ul>
+        </div>
+    </div>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">DONACIONS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
+<nav class="navbar navbar-expand-lg">
+        <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
+        <a class="navbar-brand text-hide" href="http://disputebills.com">
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                    @yield('menu')
-            </ul>
-
-          <ul class="navbar-nav ">
-            <li class="nav-item active ">
-              <a class="nav-link" href="">Donativos</a>
-            </li>
-            <li class="nav-item active ">
-                <a class="nav-link" href="">Donadores</a>
-              </li>
-              <li class="nav-item active ">
-                <a class="nav-link" href="">Estadísticas</a>
-              </li>
-              <li class="nav-item active ">
-                 <a class="nav-link" href="">Opciones</a>
-                  </li>
-
-                </ul>
-
+            </ul> 
                 <ul class="navbar-nav ml-auto  ">
-
+ 
                 @if(Auth::check())
                 <li class="nav-item ">
                 <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -64,19 +59,12 @@
                     <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
                 </li>
                 @endif
-
             </ul>
-
-
-
         </div>
       </nav>
-
-
-
+ 
 <div class="container">@yield('principal')
-
+       
 </div>
-
 </body>
 </html>
