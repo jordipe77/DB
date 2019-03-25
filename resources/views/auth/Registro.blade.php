@@ -6,27 +6,22 @@
     <div class="row">
       <div class="col-3 w-100"> </div>
       <div class="col-6 w-100">
-<<<<<<< HEAD
             <form action="{{action('Auth\RegisterController@registro')}}" method="post">
-              
-=======
-            <form action="{{action('Auth\RegisterController@register')}}" method="post">
->>>>>>> master
               @csrf
           <div class="form-row">
               <div class="form-group col-md-12">
                   <label for="inputEmail4">Nombre</label>
-                  <input type="text" class="form-control" name= id="nombre" placeholder="">
+              <input type="text" class="form-control" name="nombre" id="nombre" value="{{old('nombre')}}" placeholder="" required>
                 </div>
           </div>
                 <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Nombre de Usuario</label>
-                    <input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario" placeholder="">
+                    <input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario" value="{{old('nombre_usuario')}}" placeholder="">
                   </div>
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" name="correo" id="correo"  placeholder="" required>
+                <input type="email" class="form-control" name="correo" id="correo" value="{{old('correo')}}" placeholder="" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>

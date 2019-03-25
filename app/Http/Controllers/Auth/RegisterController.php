@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
+
 
 use App\Usuario;
 
@@ -74,27 +75,32 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function registro(Request $request){
 
-        $this->validator($request->all())->validate();
-
-        event(new Registered($user = $this->create($request->all())));
-
-        $this->guard()->login($user);
-
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
-    }
- 
     public function showRegistro(){
 
         return view ('auth.Registro');
     }
 
 
-    public function register(Request $request){
+    public function registro(Request $request){
 
-        return $request->all();
+        //$this->validation($request);
+        //Todas las putas validaciones
+        $usuario = new Usuario();
 
+        $usuario->nombre = $request->input('nombre');
+        $usuario->password = Hash::make($request->input('password'));
+        $usuario->nombre_usuario = $request->input('nombre_usuario');
+        $usuario->correo = $request->input('correo');
+        $usuario->roles_id = 1;
+
+        $usuario->save();
+
+        Auth::login($usuario);
+
+
+        return redirect('/dashboard');
     }
+
+
 }
