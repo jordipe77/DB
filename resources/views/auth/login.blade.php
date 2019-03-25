@@ -15,7 +15,7 @@
                 <h3>INICIAR SESIÓN</h3>
             </div>
             <div class="card-body">
-                    <form action="{{action('Auth\Logincontroller@login')}}" method="post">
+                    <form action="{{action('Auth\LoginController@login')}}" method="post">
 
                     @csrf
 

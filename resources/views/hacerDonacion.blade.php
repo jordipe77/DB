@@ -1,7 +1,7 @@
 @extends('templates.plantilla')
 
 @section('titulo')
-
+DONACION
 @endsection
 
 @section('principal')
@@ -18,7 +18,7 @@
 
             <div class="form-group row">
                     <label for="tipo">TIPO</label>
-                    <select class="form-control" name="tipo" id="tipo">
+                    <select class="form-control" name="tipo" id="tipo" required>
                       <option>COMIDA</option>
                       <option>VETERINARIA</option>
                       <option>COMPLEMENTOS</option>
@@ -28,12 +28,11 @@
                     </select>
             </div>
 
-           {{ $tipo = $store['tipo'] }};
-
+        {{-- Hacer con AJAX I API --}}
 
             <div class="form-group row">
                     <label for="tipo">SUBTIPO</label>
-                    <select class="form-control" name="tipo" id="tipo">
+                    <select class="form-control" name="tipo" id="tipo" required>
                         @if($tipo == 'COMIDA')
                             <option>COMIDA- Pienso perro Gama Alta</option>
                             <option>COMIDA- Pienso perro Gamma Media</option>
@@ -71,19 +70,10 @@
                     </select>
             </div>
 
-
-
             <div class="form-group row">
                     <label for="cantidad" class="col-sm-2 col-form-label">Unidades</label>
                         <div class="col-sm-10">
-                            <input type="number" name="unidades" class="form-control form-group" min="1">
-                        </div>
-            </div>
-
-            <div class="form-group row">
-                    <label for="descripcion" class="col-sm-2 col-form-label">Descripción</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción del donativo seleccionado"></textarea>
+                            <input type="number" name="unidades" class="form-control form-group" min="1" required>
                         </div>
             </div>
 
@@ -98,7 +88,7 @@
                     <label for="centro_receptor" class="col-sm-2 col-form-label">Centro Receptor</label>
 
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro" id="centro1" value="option1">
+                            <input class="form-check-input" type="radio" name="centro" id="centro1" value="option1" autofocus>
                             <label class="form-check-label" for="centro1">Refugi Cal Pilé</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -124,10 +114,10 @@
             </div>
 
             <div class="form-group row">
-                    <label for="centro_destino" class="col-sm-2 col-form-label">Centro Destino</label>
+                    <label for="centro_destino" class="col-sm-2 col-form-label">Centro Destinatario</label>
 
                     <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="centro" id="centro1" value="option1">
+                            <input class="form-check-input" type="radio" name="centro" id="centro1" value="option1" autofocus>
                             <label class="form-check-label" for="centro1">Refugi Cal Pilé</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -165,9 +155,16 @@
             </div>
 
             <div class="form-group row">
+                    <label for="descripcion" class="col-sm-2 col-form-label">Factura</label>
+                        <div class="col-sm-4">
+                                <input type="number" name="peso" class="form-control form-group" min="0" >
+                        </div>
+            </div>
+
+            <div class="form-group row">
                 <div class="col-sm-10 offset-2">
                         <button type="submit" class="btn btn-primary btn-sm" name="submit">CONFIRMAR</button>
-                    <a href="index.php">
+                    <a href="{{url('/donacionUsuario')}}">
                         <button type="button" class="btn btn-secondary btn-sm">CANCELAR</button>
                     </a>
                 </div>
