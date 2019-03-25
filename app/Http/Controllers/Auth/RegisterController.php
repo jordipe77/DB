@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 use App\Usuario;
 
@@ -88,5 +89,12 @@ class RegisterController extends Controller
     public function showRegistro(){
 
         return view ('auth.Registro');
+    }
+
+
+    public function register(Request $request){
+
+        return $request->all();
+
     }
 }

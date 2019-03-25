@@ -13,9 +13,9 @@ Route::get('/hacerDonacion',function ()
 {
 	return view ('hacerDonacion	');
 });
-Route::get('/introDonacion',function ()
+Route::get('/donacionUsuario',function ()
 {
-	return view ('introDonacion');
+	return view ('donacionUsuario');
 });
 Route::get('/dashboard',function ()
 {
@@ -33,9 +33,16 @@ Route::resource('donacion', 'donacionController');
 // });
 
 
+
+
+
+//LOGIN
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
+<<<<<<< HEAD
 Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
 Route::post('/registro', 'Auth\RegisterController@registro');
+=======
+>>>>>>> master
 
 Route::post('/login', 'Auth\Logincontroller@login');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
@@ -47,8 +54,19 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
+<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Registro por defecto laravel
 // Route::get('register','Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('register', 'Auth\RegisterController@register');
+=======
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//REGISTRO
+
+Route::get('/registro', 'Auth\RegisterController@showregistro');
+Route::get('/registro', 'Auth\RegisterController@register');
+>>>>>>> master
