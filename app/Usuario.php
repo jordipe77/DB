@@ -13,6 +13,14 @@ class Usuario extends Authenticatable
 
     protected $table = "usuarios";
 
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
     public function rol()
     {
         return $this->belongsTo('App\Rol','roles_id');

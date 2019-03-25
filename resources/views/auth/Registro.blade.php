@@ -6,12 +6,13 @@
     <div class="row">
       <div class="col-3 w-100"> </div>
       <div class="col-6 w-100">
-            <form action="{{action('Auth\RegisterController@create')}}" method="post">
+            <form action="{{action('Auth\RegisterController@registro')}}" method="post">
+              
               @csrf
           <div class="form-row">
               <div class="form-group col-md-12">
                   <label for="inputEmail4">Nombre</label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="">
+                  <input type="text" class="form-control" name= id="nombre" placeholder="">
                 </div>
           </div>
                 <div class="form-row">
@@ -29,7 +30,7 @@
               </div>
               <div class="form-group col-md-6">
                   <label for="inputPassword4">Confirmar Password</label>
-                  <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="">
+                  <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="">
                 </div>
             </div>
 

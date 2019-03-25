@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -63,27 +64,29 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    // protected function create(array $data)
-    // {
-    //     return User::create([
-    //         'name' => $data['name'],
-    //         'email' => $data['email'],
-    //         'password' => Hash::make($data['password']),
-    //     ]);
-    // }
-
     protected function create(array $data)
     {
-        return Usuario::create([
-            'nombre' => $data['nombre'],
-            'correo' => $data['correo'],
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'nombre_usuario'=>$data['nombre_usuario']
         ]);
     }
 
+    public function registro(Request $request){
 
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+ 
     public function showRegistro(){
+
         return view ('auth.Registro');
     }
 }
