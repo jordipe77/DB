@@ -28,8 +28,7 @@ DONACION
                     </select>
             </div>
 
-           {{ $tipo = $store['tipo'] }}; <!-- PREGUNTAR -->
-
+        {{-- Hacer con AJAX I API --}}
 
             <div class="form-group row">
                     <label for="tipo">SUBTIPO</label>

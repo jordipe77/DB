@@ -19,7 +19,7 @@ DATOS USUARIO
             <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
                 <p>Completa uno de los siguentes campos para acceder a los datos del donante.</p>
-        
+
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-at"></i></span>
@@ -47,8 +47,8 @@ DATOS USUARIO
         </form>
     </div>
 </div>
-        
-   
+
+
 
 
 <div class="container-fluid">
@@ -150,6 +150,28 @@ DATOS USUARIO
 
                 <div class="form-group mt-3">
                     <input type="submit" value="Registrar" class="btn aceptar">
+                </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="card mb-3 mt-4 " style="text-align: center">
+        <h4>Donante anónimo</h4>
+        <div class="card-body">
+            <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+                <p></p>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="anonimo">
+                    <label class="form-check-label" for="anonimo">Acceder como donante Anónimo</label>
+                  </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Acceder" class="btn aceptar">
                 </div>
         </form>
     </div>

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\tipo;
+use App\Models\Tipo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class tipoController extends Controller
+class TipoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,17 +15,9 @@ class tipoController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $tipos = Tipo::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return new TipoResource($tipos);
     }
 
     /**
@@ -42,21 +34,10 @@ class tipoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tipo  $tipo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(tipo $tipo)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\tipo  $tipo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(tipo $tipo)
+    public function show($id)
     {
         //
     }
@@ -65,10 +46,10 @@ class tipoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tipo  $tipo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tipo $tipo)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +57,10 @@ class tipoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\tipo  $tipo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tipo $tipo)
+    public function destroy($id)
     {
         //
     }
