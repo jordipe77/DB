@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subtipo extends Model
 {
     protected $table = 'subtipos';
-    protected $primarykey='id';
+    protected $primarykey=['id','tipos_id'];
     public $incrementing = true;
     protected $keyType = 'int';
 
