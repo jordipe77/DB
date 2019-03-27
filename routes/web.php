@@ -10,7 +10,7 @@ Route::get('/registro',function ()
 
 Route::get('/hacerDonacion',function ()
 {
-	return view ('hacerDonacion	');
+	return view ('hacerDonacion');
 });
 Route::get('/donacionUsuario',function ()
 {
@@ -26,7 +26,7 @@ Route::get('/admin',function ()
 });
 
 
-Route::resource('donacion', 'donacionController');
+Route::resource('/hacerDonacion', 'donativoController');
 // Route::get('/', function () {
 //     return view('index');
 // });

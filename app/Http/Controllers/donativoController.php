@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\donativo;
+use App\Models\Tipo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class donativoController extends Controller
      */
     public function index()
     {
-        //
+        $data['tipo_list'] = Tipo::all();
+        return view('hacerDonacion',$data);
     }
 
     /**

@@ -13,35 +13,36 @@ DONACION
             NUEVA DONACIÓN
         </div>
     <div class="card-body">
-            <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group row">
+
                     <label for="tipo">TIPO</label>
                     <select class="form-control" name="tipo" id="tipo" required>
-                      <option data-tipo="comida">COMIDA</option>
-                      <option data-tipo="veterinaria">VETERINARIA</option>
-                      <option>COMPLEMENTOS</option>
-                      <option>MATERIAL</option>
-                      <option>ECONÓMICO</option>
-                      <option>OTROS</option>
+                        @foreach($tipo_list as $tipo)
+                        {{-- @if(strlen($tipo->nombre)>0) --}}
+                        <option value="{{$tipo->id}}">{{$tipo->nombre}}<option>
+                            {{-- @endif --}}
+                        @endforeach
+
                     </select>
             </div>
 
 
             <div class="form-group row">
                     <label for="tipo">SUBTIPO</label>
-                    <select class="form-control" name="tipo" id="tipo" required>
+                    <select class="form-control" name="subtipo" id="subtipo" required>
 
-                            <option>Pienso perro Gama Alta</option>
-                            <option>Pienso perro Gamma Media</option>
-                            <option>Pienso perro Gama Baja</option>
-                            <option>Pienso perros Especial</option>
-                            <option>Pienso gato</option>
-                            <option>Pienso otros animales</option>
-                            <option>Golosinas</option>
-                            <option>Leche materna</option>
-                            <option>Latas</option>
+                            <option value="1">Pienso perro Gama Alta</option>
+                            <option value="1">Pienso perro Gamma Media</option>
+                            <option value="1">Pienso perro Gama Baja</option>
+                            <option value="1">Pienso perros Especial</option>
+                            <option value="1">Pienso gato</option>
+                            <option value="1">Pienso otros animales</option>
+                            <option value="1">Golosinas</option>
+                            <option value="1">Leche materna</option>
+                            <option value="1">Latas</option>
 
                             <option>Medicamentos</option>
                             <option>Instrumental</option>

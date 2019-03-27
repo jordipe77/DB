@@ -17,4 +17,5 @@ class Tipo extends Model
     {
         return $this->hasMany('App\Models\Subtipo','id');
     }
+
 }
