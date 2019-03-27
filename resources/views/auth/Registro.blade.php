@@ -28,11 +28,11 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" name="password" id="password" class="form-control" confirmed placeholder="">
+                <input type="password" name="password" id="password" class="form-control" confirmed placeholder="" required>
               </div>
               <div class="form-group col-md-6">
                   <label for="inputPassword4">Confirmar Password</label>
-                  <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="">
+                  <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="" required>
                 </div>
             </div>
 

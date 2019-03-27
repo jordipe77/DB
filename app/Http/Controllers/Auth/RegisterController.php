@@ -100,18 +100,19 @@ class RegisterController extends Controller
             $usuario->save();
 
             Auth::login($usuario);
-    
+
             return redirect('/dashboard');
         }
         else{
 
+
             return redirect('/registro')->withInput();
         }
-      
-    }
-    
 
-    
+    }
+
+
+
 
 
 

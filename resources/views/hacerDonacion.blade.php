@@ -16,27 +16,27 @@ DONACION
             <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
-            <div class="form-group row">
+            <div class="form-group row" id="menuTipos">
                     <label for="tipo">TIPO</label>
                     <select class="form-control" name="tipo" id="tipo" required>
-                      <option data-tipo="comida">COMIDA</option>
-                      <option data-tipo="veterinaria">VETERINARIA</option>
-                      <option>COMPLEMENTOS</option>
-                      <option>MATERIAL</option>
-                      <option>ECONÓMICO</option>
-                      <option>OTROS</option>
+                      <option value="1">COMIDA</option>
+                      <option value="2">VETERINARIA</option>
+                      <option value="3">COMPLEMENTOS</option>
+                      <option value="4">MATERIAL</option>
+                      <option value="6">ECONÓMICO</option>
+                      <option value="5">OTROS</option>
                     </select>
             </div>
 
 
-            <div class="form-group row">
+            <div class="form-group row" id="menuSubTipos">
                     <label for="tipo">SUBTIPO</label>
-                    <select class="form-control" name="tipo" id="tipo" required>
+                    <select class="form-control" name="subTipo" id="subTipo" required>
 
-                            <option>Pienso perro Gama Alta</option>
-                            <option>Pienso perro Gamma Media</option>
-                            <option>Pienso perro Gama Baja</option>
-                            <option>Pienso perros Especial</option>
+                            <option >Pienso perro Gama Alta</option>
+                            <option >Pienso perro Gamma Media</option>
+                            <option >Pienso perro Gama Baja</option>
+                            <option >Pienso perros Especial</option>
                             <option>Pienso gato</option>
                             <option>Pienso otros animales</option>
                             <option>Golosinas</option>

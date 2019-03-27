@@ -31,6 +31,10 @@
         <li><a href="{{ url('/hacerDonacion')}}">Introducir Donación</a></li>
         <li><a href="">Donantes</a></li>
         <li><a href="">Estadísticas</a></li>
+
+
+        <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
+
     </ul>
         </div>
     </div>
