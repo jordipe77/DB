@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 25-03-2019 a las 13:45:11
+-- Tiempo de generación: 22-03-2019 a las 09:44:33
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -218,55 +218,12 @@ CREATE TABLE IF NOT EXISTS `subtipos` (
   `tipo_unidad` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_subtipos_tipos_idx` (`tipos_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `subtipos`
 --
 
-INSERT INTO `subtipos` (`id`, `nombre`, `tipos_id`, `gama_alta`, `gama_media`, `gama_baja`, `tipo_unidad`) VALUES
-(1, 'Pienso Perro ', 1, 0, 0, 0, NULL),
-(2, 'Pienso Gato', 1, 0, 0, 0, NULL),
-(3, 'Pienso otros animales', 1, 0, 0, 0, NULL),
-(4, 'Golosinas', 1, 0, 0, 0, NULL),
-(5, 'Leche materna', 1, 0, 0, 0, NULL),
-(6, 'Latas', 1, 0, 0, 0, NULL),
-(7, 'Pienso Perro Especial', 1, 0, 0, 0, NULL),
-(10, 'Medicamentos', 2, 0, 0, 0, NULL),
-(11, 'Instrumental', 2, 0, 0, 0, NULL),
-(12, 'Aparatología', 2, 0, 0, 0, NULL),
-(13, 'Fungibles', 2, 0, 0, 0, NULL),
-(20, 'Camas(ropa/plastico)', 3, 0, 0, 0, NULL),
-(21, 'Juguetes', 3, 0, 0, 0, NULL),
-(22, 'Rascadores para gatos', 3, 0, 0, 0, NULL),
-(23, 'Collares', 3, 0, 0, 0, NULL),
-(24, 'Transportines', 3, 0, 0, 0, NULL),
-(25, 'Morriones', 3, 0, 0, 0, NULL),
-(26, 'Correas', 3, 0, 0, 0, NULL),
-(27, 'Arneses', 3, 0, 0, 0, NULL),
-(28, 'Abrigos', 3, 0, 0, 0, NULL),
-(29, 'Mantas', 3, 0, 0, 0, NULL),
-(30, 'Casitas', 3, 0, 0, 0, NULL),
-(31, 'Comedores-Bols', 3, 0, 0, 0, NULL),
-(32, 'Placas Identificativas', 3, 0, 0, 0, NULL),
-(40, 'Electrodomésticos', 4, 0, 0, 0, NULL),
-(41, 'Material informático', 4, 0, 0, 0, NULL),
-(42, 'Limpieza', 4, 0, 0, 0, NULL),
-(43, 'Material de oficina', 4, 0, 0, 0, NULL),
-(44, 'Móviles', 4, 0, 0, 0, NULL),
-(45, 'Mobiliario', 4, 0, 0, 0, NULL),
-(50, 'Aparatos electrónico / Electrodomésticos', 5, 0, 0, 0, NULL),
-(51, 'Ropa de casa', 5, 0, 0, 0, NULL),
-(52, 'Muebles', 5, 0, 0, 0, NULL),
-(53, 'Complementos para animales', 5, 0, 0, 0, NULL),
-(54, 'Bolsos / Maletas', 5, 0, 0, 0, NULL),
-(55, 'Complementos del hogar', 5, 0, 0, 0, NULL),
-(56, 'Antigüedades', 5, 0, 0, 0, NULL),
-(60, 'Apadrinamiento', 6, 0, 0, 0, NULL),
-(61, 'Socios', 6, 0, 0, 0, NULL),
-(62, 'Crowd-founding', 6, 0, 0, 0, NULL),
-(63, 'Cash', 6, 0, 0, 0, NULL),
-(64, 'Teeming', 6, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -278,19 +235,12 @@ CREATE TABLE IF NOT EXISTS `tipos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `tipos`
 --
 
-INSERT INTO `tipos` (`id`, `nombre`) VALUES
-(1, 'comida'),
-(2, 'veterinaria'),
-(3, 'complementos'),
-(4, 'material'),
-(5, 'otros'),
-(6, 'economico');
 
 -- --------------------------------------------------------
 
@@ -322,19 +272,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(100) DEFAULT NULL,
   `roles_id` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
-  `remember_token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_usuarios_roles1_idx` (`roles_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre_usuario`, `correo`, `password`, `roles_id`, `nombre`, `remember_token`) VALUES
-(3, 'daniel', 'daniel@gmail.com', '123456', 2, 'daniel', NULL),
-(4, 'Jordi', 'jordipe77@gmail.com', '$2y$10$VAJVLmPNZUWPtgdIANGEwelUZEOgkHUquV8WVhqQLoTGZSjEGAaNa', 1, NULL, 'unr7KiakZJifpgsPFlIxTGhWLjiBP42yOzHem3T8eHMu2B04Ftsf5SpXoPum'),
-(6, 'Robert', 'robert@gmail.com', 'robert', 1, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `nombre_usuario`, `correo`, `password`, `roles_id`, `nombre`) VALUES
+(3, 'daniel', 'daniel@gmail.com', '123456', 2, 'daniel'),
+(4, 'Jordi', 'jordipe77@gmail.com', '$2y$10$VAJVLmPNZUWPtgdIANGEwelUZEOgkHUquV8WVhqQLoTGZSjEGAaNa', 1, NULL),
+(3, 'marti', 'marti@gmail.com', '123456', 2, 'marti');
 
 --
 -- Filtros para las tablas descargadas (dump)
@@ -382,3 +331,6 @@ ALTER TABLE `subtipos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_usuarios_roles1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+  ALTER TABLE `usuarios` ADD `remember_token` VARCHAR(255) NULL;

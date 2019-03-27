@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Subtipo extends Model
+class subtipo extends Model
 {
     protected $table = 'subtipos';
-    protected $primarykey=['id','tipos_id'];
+    protected $primarykey='id';
     public $incrementing = true;
     protected $keyType = 'int';
 
@@ -15,7 +15,7 @@ class Subtipo extends Model
 
     public function tipo()
     {
-        return $this->belongsTo('App\Models\Tipo','id');
+        return $this->belongsTo('App\Models\tipo','id');
     }
 }
 
