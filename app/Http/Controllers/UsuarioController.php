@@ -16,7 +16,7 @@ class UsuarioController extends Controller
 
         $usuario = new Usuario();
 
-        $datos['usuarios'] = $usuarios;
+        $datos['usuarios'] = $usuario;
 
         return view('index', $datos);
     }

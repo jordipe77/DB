@@ -24,11 +24,11 @@
 </head>
 <div class="sidebar">
         <div style="max-height:100%;margin-top:25%">
-        <h2>Menú</h2>   
+        <h2>Menú</h2>
     <ul>
         <li style="background-color:#C36 !important;"><a href="">Acciones Frequentes</a></li>
         <li><a href="">Inicio</a></li>
-        <li><a href="">Donativos</a></li>
+        <li><a href="{{ url('/hacerDonacion')}}">Introducir Donación</a></li>
         <li><a href="">Donantes</a></li>
         <li><a href="">Estadísticas</a></li>
     </ul>
@@ -37,21 +37,21 @@
 <body>
 <nav class="navbar navbar-expand-lg">
         <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
-        <a class="navbar-brand text-hide" href="http://disputebills.com">
+        <a class="navbar-brand text-hide" >
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                    @yield('menu')
-            </ul> 
+            </ul>
                 <ul class="navbar-nav ml-auto  ">
- 
+
                 @if(Auth::check())
-                <li class="nav-item ">
-                <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item  dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     {{Auth::user()->nombre}}
                 </a>
-                    <div class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('logout') }}">LOGOUT</a>
                     </div>
                 </li>
                 @else
@@ -62,9 +62,9 @@
             </ul>
         </div>
       </nav>
- 
+
 <div class="container">@yield('principal')
-       
+
 </div>
 </body>
 </html>
