@@ -17,7 +17,7 @@ class TipoController extends Controller
     {
         $tipos = Tipo::all();
 
-        return new TipoResource($tipos);
+        return new  TipoResource($tipos);
     }
 
     /**
@@ -39,7 +39,9 @@ class TipoController extends Controller
      */
     public function show($id)
     {
-        //
+        $tipos = Tipo::find($id);
+
+        return new TipoResource($tipos);
     }
 
     /**
