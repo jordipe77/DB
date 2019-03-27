@@ -16,7 +16,7 @@ Route::get('/donacionUsuario',function ()
 {
 	return view ('donacionUsuario');
 });
-Route::get('/dashboard',function ()
+Route::get('/menuPrincipal',function ()
 {
 	return view ('dashboard');
 });
