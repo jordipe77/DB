@@ -9,7 +9,7 @@ Dashboard
 @section('principal')
 <div class="wrapper mt-2" style="height:200px">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between MB-2" style="background:#FFFFFF">
-        <h6 class="m-0 font-weight-bold text-primary">Información</h6>
+        <h6 class="m-0 font-weight-bold text-primary">INFORMACIÓN GENERAL</h6>
       </div>
     <div class="row">
         <!-- Earnings (Monthly) Card Example -->
