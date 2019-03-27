@@ -2,7 +2,7 @@
 @section('titulo','Registro')
 @section('principal')
 <div class="container">
-
+<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
         @include('partial.errores')
 
   <h2 class="text-center text mt-4">Registro Usuarios</h2>
