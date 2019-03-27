@@ -8,7 +8,10 @@
 
 @section('principal')
 
+
+
 <div class="container mt-5">
+        @include('partial.errores')
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
@@ -43,11 +46,9 @@
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                    No tienes cuenta?<a href="#">Registrate</a>
+                    No tienes cuenta?<a href="{{url('/registro')}}">Registrate</a>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="#">Has olvidado la constraseña?</a>
-                </div>
+
             </div>
         </div>
     </div>
