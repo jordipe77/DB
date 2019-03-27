@@ -19,8 +19,8 @@ DONACION
             <div class="form-group row">
                     <label for="tipo">TIPO</label>
                     <select class="form-control" name="tipo" id="tipo" required>
-                      <option>COMIDA</option>
-                      <option>VETERINARIA</option>
+                      <option data-tipo="comida">COMIDA</option>
+                      <option data-tipo="veterinaria">VETERINARIA</option>
                       <option>COMPLEMENTOS</option>
                       <option>MATERIAL</option>
                       <option>ECONÓMICO</option>
@@ -28,44 +28,61 @@ DONACION
                     </select>
             </div>
 
-        {{-- Hacer con AJAX I API --}}
 
             <div class="form-group row">
                     <label for="tipo">SUBTIPO</label>
                     <select class="form-control" name="tipo" id="tipo" required>
-                        @if($tipo == 'COMIDA')
-                            <option>COMIDA- Pienso perro Gama Alta</option>
-                            <option>COMIDA- Pienso perro Gamma Media</option>
-                            <option>COMIDA- Pienso perro Gama Baja</option>
-                            <option>COMIDA- Pienso perros Especial</option>
-                            <option>COMIDA- Pienso gato</option>
-                            <option>COMIDA- Pienso otros animales</option>
-                            <option>COMIDA- Golosinas</option>
-                            <option>COMIDA- Leche materna</option>
-                            <option>COMIDA- Latas</option>
 
-                        @elseif($tipo == 'VETERINARIA')
-                            <option>VETERINARIA- Medicamentos</option>
-                            <option>VETERINARIA- Instrumental</option>
-                            <option>VETERINARIA- Aparatología</option>
-                            <option>VETERINARIA- Fungibles   </option>
+                            <option>Pienso perro Gama Alta</option>
+                            <option>Pienso perro Gamma Media</option>
+                            <option>Pienso perro Gama Baja</option>
+                            <option>Pienso perros Especial</option>
+                            <option>Pienso gato</option>
+                            <option>Pienso otros animales</option>
+                            <option>Golosinas</option>
+                            <option>Leche materna</option>
+                            <option>Latas</option>
 
-                        @elseif($tipo == 'COMPLEMENTOS')
-                            <option>COMPLEMENTOS- Camas(ropa/plastico)</option>
-                            <option>COMPLEMENTOS- Juguetes</option>
+                            <option>Medicamentos</option>
+                            <option>Instrumental</option>
+                            <option>Aparatología</option>
+                            <option>Fungibles   </option>
+
+                            <option>Camas(ropa/plastico)</option>
+                            <option>Juguetes</option>
                             <option>COMPLEMENTOS- Rascadores para gatos</option>
-                            <option>COMPLEMENTOS- Collares</option>
-                            <option>COMPLEMENTOS- Transportines</option>
-                            <option>COMPLEMENTOS- Morriones</option>
-                            <option>COMPLEMENTOS- Correas</option>
-                            <option>COMPLEMENTOS- Arneses</option>
-                            <option>COMPLEMENTOS- Abrigos</option>
-                            <option>COMPLEMENTOS- Mantas</option>
-                            <option>COMPLEMENTOS- Casitas</option>
-                            <option>COMPLEMENTOS- Comedores-Bols</option>
-                            <option>COMPLEMENTOS- Placas Identificativa</option>
+                            <option>Collares</option>
+                            <option>Transportines</option>
+                            <option>Morriones</option>
+                            <option>Correas</option>
+                            <option>Arneses</option>
+                            <option>Abrigos</option>
+                            <option>Mantas</option>
+                            <option>Casitas</option>
+                            <option>Comedores-Bols</option>
+                            <option>Placas Identificativa</option>
 
-                        @endif
+                            <option>Electrodomesticos</option>
+                            <option>Material informático</option>
+                            <option>Limpieza</option>
+                            <option>Material oficina</option>
+                            <option>Móviles</option>
+                            <option>Mobiliario</option>
+
+                            <option>Aparatos electrónicos / electrodomésticos</option>
+                            <option>Ropa de casa</option>
+                            <option>Muebles</option>
+                            <option>Ropa de vestir</option>
+                            <option>Complementos para animales</option>
+                            <option>Bolsos / Maletas</option>
+                            <option>Complementos del hogar</option>
+                            <option>Antiguedades</option>
+
+                            <option>Padrinos</option>
+                            <option>Socios</option>
+                            <option>Crowd-founding</option>
+                            <option>Cash</option>
+                            <option>Teeming</option>
 
                     </select>
             </div>
@@ -173,6 +190,7 @@ DONACION
     </div>
 </div>
 
+<script src="{{asset('js/donaciones.js')}}"></script>
 
 
 @endsection
