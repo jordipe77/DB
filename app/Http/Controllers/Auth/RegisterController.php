@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Clases\Utilitat;
+
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -56,7 +58,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'password' => ['required', 'string', 'confirmed'],
         ]);
     }
 
@@ -84,8 +86,6 @@ class RegisterController extends Controller
 
     public function registro(Request $request){
 
-        //$this->validation($request);
-        //Todas las putas validaciones
         $usuario = new Usuario();
 
         $usuario->nombre = $request->input('nombre');
@@ -94,13 +94,25 @@ class RegisterController extends Controller
         $usuario->correo = $request->input('correo');
         $usuario->roles_id = 1;
 
-        $usuario->save();
 
-        Auth::login($usuario);
+        if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
 
+            $usuario->save();
 
-        return redirect('/dashboard');
+            Auth::login($usuario);
+    
+            return redirect('/dashboard');
+        }
+        else{
+
+            return redirect('/registro')->withInput();
+        }
+      
     }
+    
+
+    
+
 
 
 }

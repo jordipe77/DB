@@ -48,7 +48,7 @@
 
                 </ul>
 
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0  ">
+                <ul class="navbar-nav ml-auto mt-2 mt-sm-0  ">
 
                 @if(Auth::check())
                 <li class="nav-item  dropdown">

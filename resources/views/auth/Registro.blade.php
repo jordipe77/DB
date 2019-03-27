@@ -2,6 +2,9 @@
 @section('titulo','Registro')
 @section('principal')
 <div class="container">
+
+        @include('partial.errores')
+
   <h2 class="text-center text mt-4">Registro Usuarios</h2>
     <div class="row">
       <div class="col-3 w-100"> </div>
@@ -25,11 +28,11 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" name="password" id="password" class="form-control"  placeholder="">
+                <input type="password" name="password" id="password" class="form-control" confirmed placeholder="">
               </div>
               <div class="form-group col-md-6">
                   <label for="inputPassword4">Confirmar Password</label>
-                  <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="">
+                  <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="">
                 </div>
             </div>
 
