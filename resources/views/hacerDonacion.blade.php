@@ -15,8 +15,6 @@ DONACION
     <div class="card-body">
             <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
-
-            {{Form::open(array('url'=>'', 'files'=>true))}}
             <div class="form-group row">
 
                     <label for="tipo">TIPO</label>
@@ -35,15 +33,15 @@ DONACION
                     <label for="tipo">SUBTIPO</label>
                     <select class="form-control" name="subtipo" id="subtipo" required>
 
-                            <option value="1">Pienso perro Gama Alta</option>
-                            <option value="1">Pienso perro Gamma Media</option>
-                            <option value="1">Pienso perro Gama Baja</option>
-                            <option value="1">Pienso perros Especial</option>
-                            <option value="1">Pienso gato</option>
-                            <option value="1">Pienso otros animales</option>
-                            <option value="1">Golosinas</option>
-                            <option value="1">Leche materna</option>
-                            <option value="1">Latas</option>
+                            <option>Pienso perro Gama Alta</option>
+                            <option>Pienso perro Gamma Media</option>
+                            <option>Pienso perro Gama Baja</option>
+                            <option>Pienso perros Especial</option>
+                            <option>Pienso gato</option>
+                            <option>Pienso otros animales</option>
+                            <option>Golosinas</option>
+                            <option>Leche materna</option>
+                            <option>Latas</option>
 
                             <option>Medicamentos</option>
                             <option>Instrumental</option>
@@ -52,7 +50,7 @@ DONACION
 
                             <option>Camas(ropa/plastico)</option>
                             <option>Juguetes</option>
-                            <option>COMPLEMENTOS- Rascadores para gatos</option>
+                            <option>Rascadores para gatos</option>
                             <option>Collares</option>
                             <option>Transportines</option>
                             <option>Morriones</option>
@@ -88,7 +86,6 @@ DONACION
 
                     </select>
             </div>
-{{Form::close()}}
             <div class="form-group row">
                     <label for="cantidad" class="col-sm-2 col-form-label">Unidades</label>
                         <div class="col-sm-10">
