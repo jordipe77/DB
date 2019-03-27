@@ -13,8 +13,8 @@ class Tipo extends Model
 
     public $timestamps = false;
 
-    public function subtipo()
+    public function subtipos()
     {
-        return $this->hasMany('App\Models\subtipo','id');
+        return $this->hasMany('App\Models\Subtipo','id');
     }
 }
