@@ -13,25 +13,25 @@ DONACION
             NUEVA DONACIÓN
         </div>
     <div class="card-body">
-            <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
-
             <div class="form-group row">
+
                     <label for="tipo">TIPO</label>
                     <select class="form-control" name="tipo" id="tipo" required>
-                      <option data-tipo="comida">COMIDA</option>
-                      <option data-tipo="veterinaria">VETERINARIA</option>
-                      <option>COMPLEMENTOS</option>
-                      <option>MATERIAL</option>
-                      <option>ECONÓMICO</option>
-                      <option>OTROS</option>
+                        @foreach($tipo_list as $tipo)
+                        {{-- @if(strlen($tipo->nombre)>0) --}}
+                        <option value="{{$tipo->id}}">{{$tipo->nombre}}<option>
+                            {{-- @endif --}}
+                        @endforeach
+
                     </select>
             </div>
 
 
             <div class="form-group row">
                     <label for="tipo">SUBTIPO</label>
-                    <select class="form-control" name="tipo" id="tipo" required>
+                    <select class="form-control" name="subtipo" id="subtipo" required>
 
                             <option>Pienso perro Gama Alta</option>
                             <option>Pienso perro Gamma Media</option>
@@ -50,7 +50,7 @@ DONACION
 
                             <option>Camas(ropa/plastico)</option>
                             <option>Juguetes</option>
-                            <option>COMPLEMENTOS- Rascadores para gatos</option>
+                            <option>Rascadores para gatos</option>
                             <option>Collares</option>
                             <option>Transportines</option>
                             <option>Morriones</option>
@@ -86,7 +86,6 @@ DONACION
 
                     </select>
             </div>
-
             <div class="form-group row">
                     <label for="cantidad" class="col-sm-2 col-form-label">Unidades</label>
                         <div class="col-sm-10">
@@ -190,7 +189,7 @@ DONACION
     </div>
 </div>
 
-<script src="{{asset('js/donaciones.js')}}"></script>
+<script src="{{asset('js/hacerDonaciones.js')}}"></script>
 
 
 @endsection
