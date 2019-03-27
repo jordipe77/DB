@@ -16,6 +16,7 @@ DONACION
             <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
+            {{Form::open(array('url'=>'', 'files'=>true))}}
             <div class="form-group row">
 
                     <label for="tipo">TIPO</label>
@@ -87,7 +88,7 @@ DONACION
 
                     </select>
             </div>
-
+{{Form::close()}}
             <div class="form-group row">
                     <label for="cantidad" class="col-sm-2 col-form-label">Unidades</label>
                         <div class="col-sm-10">
@@ -191,7 +192,7 @@ DONACION
     </div>
 </div>
 
-<script src="{{asset('js/donaciones.js')}}"></script>
+<script src="{{asset('js/hacerDonaciones.js')}}"></script>
 
 
 @endsection
