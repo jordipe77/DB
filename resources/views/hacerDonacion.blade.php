@@ -196,8 +196,8 @@ DONACION
 
             <div class="form-group row">
                 <div class="col-sm-10 offset-2">
-                        <button type="submit" class="btn btn-primary btn-sm" name="submit">CONFIRMAR</button>
-                    <a href="{{url('/donacionUsuario')}}">
+                        <button type="submit" id="sumbmit" class="btn btn-primary btn-sm" name="submit">CONFIRMAR</button>
+                    <a href="{{url('/dashboard')}}">
                         <button type="button" class="btn btn-secondary btn-sm">CANCELAR</button>
                     </a>
                 </div>
@@ -206,7 +206,6 @@ DONACION
     </div>
 </div>
 
-<script src="{{asset('js/hacerDonaciones.js')}}"></script>
 
 
 @endsection

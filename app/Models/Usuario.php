@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class usuario extends Model
+class Usuario extends Model
 {
     protected $table = 'usuarios';
     protected $primaryKey = 'id';
@@ -12,4 +12,15 @@ class usuario extends Model
     protected $keyType = 'int';
 
     public $timestamps = false;
+
+    public function rol()
+    {
+        return $this->belongsTo('App\Models\Rol','id');
+    }
+
+    public function donativos()
+    {
+        return $this->hasMany('App\Models\Donativo','id');
+    }
+
 }
