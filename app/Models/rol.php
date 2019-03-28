@@ -4,7 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class rol extends Model
+class Rol extends Model
 {
-    //
+    protected $table = 'roles';
+    protected $primarykey='id';
+    public $incrementing = true;
+    protected $keyType = 'int';
+
+    public $timestamps = false;
+
+    public function usuario()
+    {
+        return $this->hasMany('App\Models\Usuario','id');
+    }
 }

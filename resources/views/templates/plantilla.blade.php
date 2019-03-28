@@ -7,7 +7,7 @@
     <title>@yield('titulo')</title>
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 
 <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
@@ -39,28 +39,24 @@
         <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         <a class="navbar-brand text-hide" >
         </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                   @yield('menu')
-            </ul>
-                <ul class="navbar-nav ml-auto  ">
 
-                @if(Auth::check())
-                <li class="nav-item  dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{Auth::user()->nombre}}
-                </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('logout') }}">LOGOUT</a>
-                    </div>
-                </li>
-                @else
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
-                </li>
-                @endif
-            </ul>
-        </div>
+               <ul class="navbar-nav ml-auto">
+
+               @if(Auth::check())
+               <li class="nav-item ">
+                   {{Auth::user()->nombre}}
+
+                   <div class="nav-item">
+                   <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+                   </div>
+               </li>
+               @else
+               <li class="nav-item ">
+                   <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
+               </li>
+               @endif
+
+           </ul>
       </nav>
 
 <div class="container">@yield('principal')

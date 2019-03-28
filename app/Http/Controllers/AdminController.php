@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\donativo;
-use App\Models\Tipo;
+use App\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class donativoController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +15,8 @@ class donativoController extends Controller
      */
     public function index()
     {
-        $data['tipo_list'] = Tipo::all();
-
-        return view('hacerDonacion',$data);
+        //
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -47,10 +42,10 @@ class donativoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\donativo  $donativo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(donativo $donativo)
+    public function show(Admin $admin)
     {
         //
     }
@@ -58,10 +53,10 @@ class donativoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\donativo  $donativo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(donativo $donativo)
+    public function edit(Admin $admin)
     {
         //
     }
@@ -70,10 +65,10 @@ class donativoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\donativo  $donativo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, donativo $donativo)
+    public function update(Request $request, Admin $admin)
     {
         //
     }
@@ -81,13 +76,11 @@ class donativoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\donativo  $donativo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(donativo $donativo)
+    public function destroy(Admin $admin)
     {
         //
     }
-
-
 }

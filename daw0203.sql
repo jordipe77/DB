@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 25-03-2019 a las 13:45:11
+-- Tiempo de generación: 28-03-2019 a las 13:03:55
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -29,12 +29,16 @@ CREATE TABLE IF NOT EXISTS `animales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcar la base de datos para la tabla `animales`
 --
 
+INSERT INTO `animales` (`id`, `nombre`) VALUES
+(1, 'gos'),
+(2, 'gat'),
+(3, 'fura');
 
 -- --------------------------------------------------------
 
@@ -65,12 +69,19 @@ CREATE TABLE IF NOT EXISTS `centros` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcar la base de datos para la tabla `centros`
 --
 
+INSERT INTO `centros` (`id`, `nombre`) VALUES
+(1, 'Refugi Cal Pilé'),
+(2, 'Refugi Can Moret'),
+(3, 'CCAAC Barcelonès'),
+(4, 'Espai Veterinari'),
+(5, 'Encants'),
+(6, 'Oficines');
 
 -- --------------------------------------------------------
 
@@ -195,12 +206,15 @@ CREATE TABLE IF NOT EXISTS `sexos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sexo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `sexos`
 --
 
+INSERT INTO `sexos` (`id`, `sexo`) VALUES
+(1, 'mujer'),
+(2, 'hombre');
 
 -- --------------------------------------------------------
 
@@ -302,12 +316,16 @@ CREATE TABLE IF NOT EXISTS `tipos_donantes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipo` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcar la base de datos para la tabla `tipos_donantes`
 --
 
+INSERT INTO `tipos_donantes` (`id`, `tipo`) VALUES
+(1, 'nuevo'),
+(2, 'anonimo'),
+(3, 'registrado');
 
 -- --------------------------------------------------------
 

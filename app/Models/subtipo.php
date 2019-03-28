@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subtipo extends Model
 {
     protected $table = 'subtipos';
-    protected $primarykey=['id','tipos_id'];
+    protected $primarykey='id';
     public $incrementing = true;
     protected $keyType = 'int';
 
@@ -16,6 +16,11 @@ class Subtipo extends Model
     public function tipo()
     {
         return $this->belongsTo('App\Models\Tipo','id');
+    }
+
+    public function donativos()
+    {
+        return $this->hasMany('App\Models\Donativo','id');
     }
 }
 
