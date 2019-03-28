@@ -4,17 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class TipoDonantes extends Model
 {
-    protected $table = 'roles';
+    protected $table = 'tipos_donantes';
     protected $primarykey='id';
     public $incrementing = true;
     protected $keyType = 'int';
 
     public $timestamps = false;
 
-    public function usuario()
+    public function donante()
     {
-        return $this->hasMany('App\Models\Usuario','id');
+    return $this->hasMany('App\Models\Donante','id');
     }
 }
