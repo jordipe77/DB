@@ -1,5 +1,3 @@
-$('#tipo').on('change',function (e){
-
-    console.log('fff');
-
-});
+$('#submit').click(function(){
+    $('#modal1').modal();
+  });
