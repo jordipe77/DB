@@ -9,7 +9,9 @@
 }
 
 #boton1{
-    background-color:#F60
+    background-color:#F60;
+
+
 }
 
 #boton2{
@@ -17,8 +19,20 @@
 }
 
 #boton3{
-    background-color:rgb(153,204,51);
+    background-color:rgb(79, 51, 204);
 }
+
+#boton4{
+    background-color:rgb(226, 32, 32);
+}
+
+div a:link
+{
+text-decoration:none;
+}
+
+
+
 
 #tot{
     margin-top: 200px;

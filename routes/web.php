@@ -1,38 +1,34 @@
 <?php
 
-Route::get('/login', function () {
-     return view('login');
- });
-Route::get('/registro',function ()
- {
- 	return view ('registro');
+Route::get('/', function () {
+     return view('dashboard');
  });
 
-Route::get('/hacerDonacion',function ()
-{
-	return view ('hacerDonacion');
-});
-Route::get('/donacionUsuario',function ()
-{
-	return view ('donacionUsuario');
-});
+
+// Route::get('/hacerDonacion',function ()
+// {
+// 	return view ('hacerDonacion');
+// });
+// Route::get('/donacionUsuario',function ()
+// {
+// 	return view ('donacionUsuario');
+// });
 Route::get('/dashboard',function ()
 {
 	return view ('dashboard');
 });
-Route::get('/admin',function ()
-{
-	return view ('admin');
-});
+// Route::get('/admin',function ()
+// {
+// 	return view ('admin');
+// });
 
 
-Route::resource('/hacerDonacion', 'donativoController');
 // Route::get('/', function () {
 //     return view('index');
 // });
 
 
-
+ Route::resource('/donacionUsuario','UsuarioController' ); // comentar cuando funcione intro donante
 
 
 //LOGIN
@@ -43,14 +39,23 @@ Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::get('/dashboard','HomeController@index');
+
+    Route::resource('/hacerDonacion', 'donativoController');
+    // Route::resource('/donacionUsuario','UsuarioController' ); // descomentar cuando funcione el intro Donante
+    Route::get('/admin',function ()
+{
+	return view ('admin');
+});
+
+
 });
 
 Auth::routes();
 
+
 // Route::get('/home', 'HomeController@index')->name('home');
 
-
+// Route::get('/dashboard','HomeController@index');
 //REGISTRO
 Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
 Route::post('/registro', 'Auth\RegisterController@registro');
