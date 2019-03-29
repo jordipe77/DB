@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donante;
+use App\Models\TipoDonantes;
+use App\Models\Sexo;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -39,6 +41,14 @@ class donanteController extends Controller
      */
     public function store(Request $request)
     {
+
+        // $sexos = new sexo();
+
+        // $sexos->id = 1;
+        // $sexos->sexo = "Mujer";
+
+        // $sexos->save();
+
         $donante = new Donante();
 
         // $donante->nombre = $request->input('nombre');
@@ -69,8 +79,8 @@ class donanteController extends Controller
         $donante->poblacion = $request->input('poblacion');
         $donante->es_habitual=1;
         $donante->sexos_id =1;
-        $donante->tipos_donantes_id=1;
-        // $donante->tiene_animales=null;
+        $donante->tipos_donantes_id=4;
+        $donante->tiene_animales=null;
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
         $donante->spam=null;
         $donante->es_colaborador=1;
