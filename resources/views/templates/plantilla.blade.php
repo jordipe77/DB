@@ -26,11 +26,15 @@
         <div style="max-height:100%;margin-top:25%">
         <h2>Menú</h2>
     <ul>
-        <li style="background-color:#C36 !important;"><a href="">Acciones Frequentes</a></li>
-        <li><a href="">Inicio</a></li>
+
+        <li><a href="{{url('/dashboard')}}">Inicio</a></li>
         <li><a href="{{ url('/hacerDonacion')}}">Introducir Donación</a></li>
-        <li><a href="">Donantes</a></li>
+        <li><a href="{{ url('/donacionUsuario')}}">Introducir Donante</a></li>
         <li><a href="">Estadísticas</a></li>
+
+        @if(Auth::check() && Auth::user()->roles_id == 2)
+        <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
+        @endif
     </ul>
         </div>
     </div>
@@ -44,8 +48,9 @@
 
                @if(Auth::check())
                <li class="nav-item ">
+                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:white" aria-expanded="false">
                    {{Auth::user()->nombre}}
-
+                </a>
                    <div class="nav-item">
                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
                    </div>

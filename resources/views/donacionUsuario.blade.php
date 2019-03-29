@@ -19,13 +19,13 @@ DATOS USUARIO
             <a href="{{url('/donacionUsuario')}}">
                 <button type="button" class="btn btn-success" data-dismiss="modal" id="si">SI</button>
             </a>
-            {{-- <form action="{{action('UsuarioController@index')}}" method="post" enctype="multipart/form-data"> --}}
-                <a href="{{url('/dashboard')}}">
+            {{-- <form action="{{action('UsuarioController@index')}}" method="post" enctype="multipart/form-data">
+                 <a href="{{url('/dashboard')}}">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" id="no">NO</button>
                 </a>
-            {{-- </form> --}}
+            </form> --}}
 
-            </div>
+             </div>
       </div>
     </div>
   </div>
@@ -200,6 +200,8 @@ DATOS USUARIO
         </form>
     </div>
 </div>
+
+
 
 @endsection
 

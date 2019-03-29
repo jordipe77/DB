@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\donante;
+use App\Models\Donante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class donanteController extends Controller
 {
@@ -36,7 +37,18 @@ class donanteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $donante = new Donante();
+
+        $donante->nombre = $request->input('nombre');
+        $donante->dni = $request->input('dni');
+        $donante->correo = $request->input('correo');
+        $donante->telefono = $request->input('telefono');
+        $donante->pais = $request->input('pais');
+        $donante->poblacion = $request->input('poblacion');
+        $donante->telefono = $request->input('telefono');
+
+
+
     }
 
     /**
