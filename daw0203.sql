@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 28-03-2019 a las 13:03:55
+-- Tiempo de generación: 28-03-2019 a las 13:12:54
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -343,16 +343,16 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `remember_token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_usuarios_roles1_idx` (`roles_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Volcar la base de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre_usuario`, `correo`, `password`, `roles_id`, `nombre`, `remember_token`) VALUES
-(3, 'daniel', 'daniel@gmail.com', '123456', 2, 'daniel', NULL),
 (4, 'Jordi', 'jordipe77@gmail.com', '$2y$10$VAJVLmPNZUWPtgdIANGEwelUZEOgkHUquV8WVhqQLoTGZSjEGAaNa', 1, NULL, 'unr7KiakZJifpgsPFlIxTGhWLjiBP42yOzHem3T8eHMu2B04Ftsf5SpXoPum'),
-(6, 'Robert', 'robert@gmail.com', 'robert', 1, NULL, NULL);
+(6, 'Robert', 'robert@gmail.com', 'robert', 1, NULL, NULL),
+(7, 'admin', 'admin@admin', '$2y$10$Q//30MMMCHMF8A0Kbd./guB0LZoIfIAfV/5QxFa8IWa0RpIIDcWYa', 2, 'admin', 'Ed2KnhTu4kgIanHGgXE29V5tDpH6S9KI1yIGvRutbzV7CuscyS9tnKyzpxSO');
 
 --
 -- Filtros para las tablas descargadas (dump)

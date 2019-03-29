@@ -15,18 +15,6 @@ DONACION
     <div class="card-body">
             <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
-<<<<<<< HEAD
-
-            <div class="form-group row" id="menuTipos">
-                    <label for="tipo">TIPO</label>
-                    <select class="form-control" name="tipo" id="tipo" required>
-                      <option value="1">COMIDA</option>
-                      <option value="2">VETERINARIA</option>
-                      <option value="3">COMPLEMENTOS</option>
-                      <option value="4">MATERIAL</option>
-                      <option value="6">ECONÓMICO</option>
-                      <option value="5">OTROS</option>
-=======
             <div class="form-group row">
 
                     <label for="tipo">TIPO</label>
@@ -37,18 +25,13 @@ DONACION
                             {{-- @endif --}}
                         @endforeach
 
->>>>>>> master
                     </select>
             </div>
 
 
             <div class="form-group row" id="menuSubTipos">
                     <label for="tipo">SUBTIPO</label>
-<<<<<<< HEAD
-                    <select class="form-control" name="subTipo" id="subTipo" required>
-=======
                     <select class="form-control" name="subtipo" id="subtipo" required>
->>>>>>> master
 
                             <option >Pienso perro Gama Alta</option>
                             <option >Pienso perro Gamma Media</option>
