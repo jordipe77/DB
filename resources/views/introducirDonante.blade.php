@@ -6,6 +6,10 @@ DATOS USUARIO
 
 @section('principal')
 
+
+
+
+
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -201,7 +205,4 @@ DATOS USUARIO
     </div>
 </div>
 
-
-
 @endsection
-
