@@ -42,7 +42,7 @@ DATOS USUARIO
         <div class="card mb-3 mt-4 " style="text-align: center">
             <h4>Donante anónimo</h4>
             <div class="card-body">
-                <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{action('donanteController@store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                     <p></p>
 
