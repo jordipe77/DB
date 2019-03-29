@@ -9,7 +9,7 @@ DATOS USUARIO
 
 
 
-
+{{--
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -29,12 +29,12 @@ DATOS USUARIO
                 </a>
             </form> --}}
 
-             </div>
+             {{-- </div>
       </div>
-    </div>
-  </div>
+    </div> --}}
+  {{-- </div> --}}
 
-  <script src="{{asset('js/introUsuario.js')}}"></script>
+  {{-- <script src="{{asset('js/introUsuario.js')}}"></script> --}}
 
 
 <div class="container-fluid">
@@ -105,7 +105,7 @@ DATOS USUARIO
     <div class="card mb-3 mt-4 " style="text-align: center">
         <h4>Nuevo donante</h4>
         <div class="card-body">
-            <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{action('donanteController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
                 <p></p>
 
@@ -134,7 +134,7 @@ DATOS USUARIO
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                         </div>
-                        <input type="text" name="dni" id="dni" class="form-control" placeholder="DNI" value="{{old('dni')}}">
+                        <input type="text" name="cif" id="cif" class="form-control" placeholder="CIF" value="{{old('dni')}}">
                     </div>
                 </div>
                 <div class="col">
@@ -183,10 +183,10 @@ DATOS USUARIO
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-paw"></i></span>
                         </div>
-                        <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
+                        {{-- <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
                             <option>No</option>
                             <option>Si</option>
-                        </select>
+                        </select> --}}
                     </div>
                 </div>
             </div>

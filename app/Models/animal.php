@@ -15,11 +15,11 @@ class Animal extends Model
 
     public function donantes()
     {
-        return $this->belongsToMany('App\Models\Donante','donantes_animales','id','id');
+        return $this->belongsToMany('App\Models\Donante','donantes_animales','donantes_id','animales_id');
     }
 
     public function donativo()
     {
-        return $this->belongsToMany('App\Models\Donativo','animales_donativos','id','id');
+        return $this->belongsToMany('App\Models\Donativo','animales_donativos','animales_id','donativos_id');
     }
 }

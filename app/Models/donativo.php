@@ -15,24 +15,24 @@ class Donativo extends Model
 
     public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario','id');
+        return $this->belongsTo('App\Models\Usuario','usuarios_id');
     }
 
     public function animales()
     {
-        return $this->belongsToMany('App\Models\Usuario','animales_donativos','id','id');
+        return $this->belongsToMany('App\Models\Usuario','animales_donativos','animales_id','donativos_id');
     }
 
     public function centros()
     {
-        return $this->belongsTo('App\Models\Centro','id');
+        return $this->belongsTo('App\Models\Centro','centros_receptor_id','centros_desti_id');
     }
     public function donantes()
     {
-        return $this->belongsTo('App\Models\Donante','id');
+        return $this->belongsTo('App\Models\Donante','donantes_id');
     }
     public function subtipos()
     {
-        return $this->belongsTo('App\Models\Subtipo','id');
+        return $this->belongsTo('App\Models\Subtipo','subtipos_id');
     }
 }

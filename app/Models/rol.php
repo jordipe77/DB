@@ -15,6 +15,6 @@ class Rol extends Model
 
     public function usuario()
     {
-        return $this->hasMany('App\Models\Usuario','id');
+        return $this->hasMany('App\Models\Usuario','roles_id');
     }
 }

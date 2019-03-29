@@ -15,6 +15,6 @@ class Centro extends Model
 
     public function donativo()
     {
-        return $this->hasMany('App\Models\Donativo','id');
+        return $this->hasMany('App\Models\Donativo','centros_receptor_id','centros_desti_id');
     }
 }
