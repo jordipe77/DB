@@ -15,7 +15,7 @@ class Tipo extends Model
 
     public function subtipos()
     {
-        return $this->hasMany('App\Models\Subtipo','id');
+        return $this->hasMany('App\Models\Subtipo','tipos_id');
     }
 
 }

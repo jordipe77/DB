@@ -23,11 +23,6 @@ Route::get('/dashboard',function ()
 // });
 
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-
-
  Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
 
@@ -36,6 +31,7 @@ Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
 Route::post('/registro', 'Auth\RegisterController@registro');
 Route::post('/login', 'Auth\Logincontroller@login');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
+
 
 Route::group(['middleware' => ['auth']], function () {
 

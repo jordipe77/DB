@@ -20,14 +20,12 @@ ADMIN MODE
 
         </div>
     </a>
+    <a href="{{url('/editUsuario')}}">
         <div class="card mr-2 carta">
             <button type="button" class="btn bot" id="boton2" name="boton2"><strong>MODIFICAR USUARIO</strong></button>
         </div>
-        <a href="{{url('/hacerDonacion')}}">
-        <div class="card mr-2 carta">
-            <button type="button" class="btn bot" id="boton3" name="boton3"><strong>INTRODUCIR DONACION</strong></button>
-        </div>
-        </a>
+    </a>
+
         <div class="card mr-2 carta">
             <button type="button" class="btn bot" id="boton4" name="boton4"><strong>BAJA USUARIO</strong></button>
          </div>

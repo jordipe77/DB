@@ -15,6 +15,6 @@ class TipoDonantes extends Model
 
     public function donante()
     {
-    return $this->hasMany('App\Models\Donante','id');
+    return $this->hasMany('App\Models\Donante','tipos_donantes_id');
     }
 }
