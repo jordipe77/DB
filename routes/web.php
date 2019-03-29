@@ -28,7 +28,7 @@ Route::get('/dashboard',function ()
 // });
 
 
- Route::resource('/donacionUsuario','UsuarioController' ); // comentar cuando funcione intro donante
+ Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
 
 //LOGIN
@@ -59,4 +59,8 @@ Auth::routes();
 //REGISTRO
 Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
 Route::post('/registro', 'Auth\RegisterController@registro');
+
+Route::get('/introducirDonante', function () {
+    return view('introducirDonante');
+});
 
