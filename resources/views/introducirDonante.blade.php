@@ -81,7 +81,7 @@ DATOS USUARIO
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                     </div>
-                    <input type="text" name="dni" id="dni" class="form-control" placeholder="DNI" value="{{old('dni')}}">
+                    <input type="text" name="cif" id="cif" class="form-control" placeholder="DNI" value="{{old('dni')}}">
                 </div>
 
                 <div class="input-group form-group">

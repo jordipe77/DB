@@ -11,14 +11,33 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $usuario = new Usuario();
+        // $usuario = new Usuario();
 
-        $datos['usuarios'] = $usuario;
+        if($request->has('search'))
+        {
+            $search = $request->input('search');
+            $usuarios = Usuario:: where('nombre_usuario', 'like', '%'.$search.'%')
+                            ->orderby('nombre_usuario')
+                            ->paginate(10);
+        }
+        else
+        {
+            $search= '';
+            $usuarios = Usuario::orderby('nombre_usuario')->paginate(10);
+        }
 
-        return view('index', $datos);
+        
+        $datos['usuarios'] = $usuarios;
+        $datos['search'] = $search;
+
+        return view('buscarUsuario', $datos);
+
+
+
+        
     }
 
     /**
