@@ -5,23 +5,10 @@ Route::get('/', function () {
  });
 
 
-// Route::get('/hacerDonacion',function ()
-// {
-// 	return view ('hacerDonacion');
-// });
-// Route::get('/donacionUsuario',function ()
-// {
-// 	return view ('donacionUsuario');
-// });
 Route::get('/dashboard',function ()
 {
 	return view ('dashboard');
 });
-// Route::get('/admin',function ()
-// {
-// 	return view ('admin');
-// });
-
 
  Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
@@ -60,3 +47,9 @@ Route::get('/introducirDonante', function () {
     return view('introducirDonante');
 });
 
+Route::get('/buscarUsuario', function () {
+    return view('buscarUsuario');
+});
+
+
+Route::resource('/buscarUsuario','UsuarioController' );
