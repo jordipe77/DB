@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Usuario;
+use App\Models\Rol;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -47,7 +48,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -78,9 +79,14 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Usuario $usuario)
     {
-        //
+        $rols = Rol::all();
+
+        $datos['rols'] = $rols;
+        $datos['usuario'] = $usuario;
+
+        return view('auth.editUsuario', $datos);
     }
 
     /**
@@ -90,9 +96,17 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Usuario $usuario)
     {
-        //
+        
+        $usuario->nombre = $request->input('nombre');
+        $usuario->nombre_usuario = $request->input('nombre_usuario');
+        $usuario->correo = $request->input('correo');
+        $usuario->nombre = $request->input('password');
+        
+        $usuario->save();
+
+        return redirect()->action('UsuarioController@index');
     }
 
     /**
