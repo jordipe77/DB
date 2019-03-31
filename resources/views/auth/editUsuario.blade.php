@@ -9,8 +9,11 @@
     <div class="row">
       <div class="col-3 w-100"> </div>
       <div class="col-6 w-100">
-            <form action="{{action('Auth\RegisterController@update')}}" method="post">
+            <form action="{{action('Auth\RegisterController@update', [$usuario->id] )}}" method="post">
+              @method('put')
               @csrf
+
+              
           <div class="form-row">
               <div class="form-group col-md-12">
                   <label for="inputEmail4">Nombre</label>

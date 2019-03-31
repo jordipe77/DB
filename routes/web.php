@@ -23,9 +23,9 @@ Route::get('/logout','Auth\LoginController@logout')->name('logout');
 Route::group(['middleware' => ['auth']], function () {
 
 
-    Route::resource('/hacerDonacion', 'donativoController');
+Route::resource('/hacerDonacion', 'donativoController');
     // Route::resource('/donacionUsuario','UsuarioController' ); // descomentar cuando funcione el intro Donante
-    Route::get('/admin',function ()
+Route::get('/admin',function ()
 {
 	return view ('admin');
 });
@@ -53,3 +53,4 @@ Route::get('/buscarUsuario', function () {
 
 
 Route::resource('/buscarUsuario','UsuarioController' );
+
