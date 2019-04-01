@@ -51,41 +51,82 @@ class donanteController extends Controller
 
         $donante = new Donante();
 
-        // $donante->nombre = $request->input('nombre');
-        // $donante->cif = $request->input('cif');
-        // $donante->correo = $request->input('correo');
-        // $donante->direccion = $request->input('direccion');
-        // $donante->telefono = $request->input('telefono');
-        // $donante->pais = $request->input('pais');
-        // $donante->poblacion = $request->input('poblacion');
-        // $donante->es_habitual = $request->input('es_habitual');
-        // $donante->sexos_id = $request->input('sexos_id');
-        // $donante->tipos_donantes_id = $request->input('tipos_donantes_id');
-        // $donante->tiene_animales= $request->input('tiene_animales');
-        // $donante->vinculo_entidad= $request->input('vinculo_entidad');
-        // $donante->spam= $request->input('spam');
-        // $donante->es_colaborador= $request->input('es_colaborador');
-        // $donante->tipo_colaboracion= $request->input('tipo_colaboracion');
-        // $donante->fecha_alta= $request->input('fecha_alta');
-
-
-
         $donante->nombre = $request->input('nombre');
         $donante->cif = $request->input('cif');
         $donante->correo = $request->input('correo');
-        $donante->direccion="calle";
+        $donante->direccion=$request->input('direccion');;
         $donante->telefono = $request->input('telefono');
         $donante->pais = $request->input('pais');
         $donante->poblacion = $request->input('poblacion');
-        $donante->es_habitual=1;
-        $donante->sexos_id =1;
-        $donante->tipos_donantes_id=4;
-        $donante->tiene_animales=null;
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
-        $donante->spam=null;
-        $donante->es_colaborador=1;
-        $donante->tipo_colaboracion=1;
-        $donante->fecha_alta='2019-03-29';
+        $donante->fecha_alta=date("Y-m-d");
+
+
+        //--------------------------------------
+        if($request->input('sexos_id') == "mujer"){
+             $donante->sexos_id =1;
+        }
+        if($request->input('sexos_id') == "hombre"){
+            $donante->sexos_id =2;
+        }
+        //--------------------------------------
+
+        if($request->input('tiene_animales')=="si"){
+            $donante->tiene_animales=true;
+        }
+        else{
+            $donante->tiene_animales=false;
+        }
+        //--------------------------------------
+        if($request->input('spam')=="si"){
+            $donante->spam = true;
+        }
+        else{
+            $donante->spam = false;
+        }
+        //--------------------------------------
+
+        if($request->input('tipo_colaboracion')=="coordinada"){
+
+            $donante->tipo_colaboracion= "Donacion coordinada";
+        }
+        else{
+            $donante->tipo_colaboracion= "Donacion directa";
+        }
+
+        //--------------------------------------
+
+        if($request->input('es_habitual')=="si"){
+
+            $donante->es_habitual= true;
+        }
+        else{
+            $donante->es_habitual=false;
+        }
+
+        //--------------------------------------
+
+        if($request->input('es_colaborador')=="si"){
+            $donante->es_colaborador=true;
+        }
+        else{
+            $donante->es_colaborador=false;
+        }
+
+        //--------------------------------------
+
+
+        if($request->input('tipo_donante')=="particular"){
+            $donante->tipos_donantes_id=1;
+        }
+        else if($request->input('tipo_donante')=="empresa"){
+            $donante->tipos_donantes_id=2;
+        }
+        else{
+            $donante->tipos_donantes_id=3;
+        }
+
+        //--------------------------------------
 
         $donante->save();
 

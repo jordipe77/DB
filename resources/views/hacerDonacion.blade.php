@@ -21,7 +21,7 @@ DONACION
                     <select class="form-control" name="tipo" id="tipo" required>
                         @foreach($tipo_list as $tipo)
                         {{-- @if(strlen($tipo->nombre)>0) --}}
-                        <option value="{{$tipo->id}}">{{$tipo->nombre}}<option>
+                        <option value="{{$tipo->id}}">{{$tipo->nombre}}</option>
                             {{-- @endif --}}
                         @endforeach
 

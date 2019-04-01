@@ -161,10 +161,36 @@ DATOS USUARIO
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-city"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="poblacion" id="poblacion" value="{{old('poblacion')}}" autofocus placeholder="Población">
+                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{old('direccion')}}" autofocus placeholder="direccion">
                     </div>
                 </div>
             </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-city"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="poblacion" id="poblacion" value="{{old('poblacion')}}" autofocus placeholder="Población">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
+                        <select class="form-control" name="es_habitual" id="es_habitual" value="{{old('es_habitual')}}" >
+                            <option value= "si">Habitual</option>
+                            <option value= "no">No habitual</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
 
             <div class="row">
                 <div class="col">
@@ -173,8 +199,8 @@ DATOS USUARIO
                             <span class="input-group-text"><i class="fas fa-child"></i></span>
                         </div>
                         <select class="form-control" name="sexos_id" id="sexos_id" value="{{old('sexos_id')}}">
-                            <option>Mujer</option>
-                            <option>Hombre</option>
+                            <option value= "mujer">Mujer</option>
+                            <option value= "hombre">Hombre</option>
                         </select>
                     </div>
                 </div>
@@ -182,11 +208,69 @@ DATOS USUARIO
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
                         </div>
-                        {{-- <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
-                            <option>No</option>
-                            <option>Si</option>
-                        </select> --}}
+                        <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
+                            <option value ="si">Tiene animales</option>
+                            <option value= "no">No tiene animales</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
+                        <select class="form-control" name="spam" id="spam" value="">
+                            <option value= "si">Permite recibir informacion de nuestra asociacion</option>
+                            <option value= "no">NO permite recibir informacion de nuestra asociacion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                        </div>
+                        <select class="form-control" name="tipo_colaboracion" id="tipo_colaboracion" value="{{old('tipo_colaboracion')}}">
+                            <option value ="coordinada">Donacion coordinada</option>
+                            <option value= "directa">Donacion directa</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
+                        <select class="form-control" name="es_colaborador" id="es_colaborador" value="">
+                            <option value= "si">Es colaborador</option>
+                            <option value= "no">NO es colaborador</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                        </div>
+                        <select class="form-control" name="tipo_donante" id="tipo_donante" value="">
+                            <option value ="particular">Particular</option>
+                            <option value= "empresa">Empresa</option>
+                        </select>
                     </div>
                 </div>
             </div>
