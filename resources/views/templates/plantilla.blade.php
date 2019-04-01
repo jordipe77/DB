@@ -49,8 +49,10 @@
                @if(Auth::check())
                <li class="nav-item ">
                    <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:white" aria-expanded="false">
-                   {{Auth::user()->nombre}}
+                   {{Auth::user()->nombre_usuario}}
                 </a>
+               </li>
+               <li>
                    <div class="nav-item">
                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
                    </div>
