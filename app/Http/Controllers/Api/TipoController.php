@@ -6,6 +6,8 @@ use App\Models\Tipo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Http\Resources\TipoResource;
+
 class TipoController extends Controller
 {
     /**
@@ -17,7 +19,7 @@ class TipoController extends Controller
     {
         $tipos = Tipo::all();
 
-        return new  TipoResource($tipos);
+        return TipoResource::collection($tipos);
     }
 
     /**
@@ -39,7 +41,7 @@ class TipoController extends Controller
      */
     public function show($id)
     {
-        $tipos = Tipo::find($id);
+        $tipos = Tipo::with('subtipos')->find($id);
 
         return new TipoResource($tipos);
     }
