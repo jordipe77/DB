@@ -42,13 +42,6 @@ class donanteController extends Controller
     public function store(Request $request)
     {
 
-        // $sexos = new sexo();
-
-        // $sexos->id = 1;
-        // $sexos->sexo = "Mujer";
-
-        // $sexos->save();
-
         $donante = new Donante();
 
         $donante->nombre = $request->input('nombre');

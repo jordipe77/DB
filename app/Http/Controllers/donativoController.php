@@ -41,7 +41,80 @@ class donativoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $donativo = new Donativo();
+
+        $donativo->subtipos_id = 1;
+
+        $donativo->usuarios_id=4;
+
+        $donativo->unidades= $request->input("unidades");
+
+
+//         if($request->input("tipo_donante")==1){
+
+//              $donativo->donantes_id =1;
+//         }
+//         if($request->input("tipo_donante")==2){
+
+//             $donativo->donantes_id =2;
+//        }
+//        if($request->input("tipo_donante")==3){
+
+//         $donativo->donantes_id =3;
+//    }
+
+$donativo->donantes_id = 21;
+
+        //-------------------------------------
+        if($request->input("centro_receptor")=="option1"){
+            $donativo->centros_receptor_id=1;
+        }
+        if($request->input("centro_receptor")=="option2"){
+            $donativo->centros_receptor_id=2;
+        }
+        if($request->input("centro_receptor")=="option3"){
+            $donativo->centros_receptor_id=3;
+        }
+        if($request->input("centro_receptor")=="option4"){
+            $donativo->centros_receptor_id=4;
+        }
+        if($request->input("centro_receptor")=="option5"){
+            $donativo->centros_receptor_id=5;
+        }
+        if($request->input("centro_receptor")=="option6"){
+            $donativo->centros_receptor_id=6;
+        }
+
+        //-------------------------------------
+
+        if($request->input("centro_destino")=="option1"){
+            $donativo->centros_desti_id=1;
+        }
+        if($request->input("centro_destino")=="option2"){
+            $donativo->centros_desti_id=2;
+        }
+        if($request->input("centro_destino")=="option3"){
+            $donativo->centros_desti_id=3;
+        }
+        if($request->input("centro_destino")=="option4"){
+            $donativo->centros_desti_id=4;
+        }
+        if($request->input("centro_destino")=="option5"){
+            $donativo->centros_desti_id=5;
+        }
+        if($request->input("centro_destino")=="option6"){
+            $donativo->centros_desti_id=6;
+        }
+
+        //-------------------------------------
+
+        $donativo->peso=$request->input("peso");
+        $donativo->coste=$request->input("coste");
+        $donativo->hay_factura=true;
+
+        $donativo->save();
+
+        return redirect('/dashboard');
     }
 
     /**
