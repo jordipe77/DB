@@ -1,0 +1,5 @@
+function filtrarComida(){
+
+}
+
+// $("#menuSubTipos").hide();

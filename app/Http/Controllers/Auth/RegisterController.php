@@ -99,20 +99,52 @@ class RegisterController extends Controller
 
             $usuario->save();
 
-            Auth::login($usuario);
-    
+            // Auth::login($usuario);
+
             return redirect('/dashboard');
         }
         else{
 
+
             return redirect('/registro')->withInput();
         }
-      
+
     }
-    
 
-    
+    // public function showEdit(){
+    //     return view('auth.editUsuario');
+    // }
+
+    public function update(Request $request, Usuario $usuario){
+
+        $usuario->nombre = $request->input('nombre');
+        $usuario->password = Hash::make($request->input('password'));
+        $usuario->nombre_usuario = $request->input('nombre_usuario');
+        $usuario->correo = $request->input('correo');
+        $usuario->roles_id = 1;
+
+
+        if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
+
+            $usuario->save();
+
+            // Auth::login($usuario);
+
+            return redirect('/editUsuario');
+        }
+        else{
+
+
+            return redirect('/registro')->withInput();
+        }
+
+    }
+
+    }
 
 
 
-}
+
+
+
+

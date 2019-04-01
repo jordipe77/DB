@@ -15,12 +15,12 @@ class Subtipo extends Model
 
     public function tipo()
     {
-        return $this->belongsTo('App\Models\Tipo','id');
+        return $this->belongsTo('App\Models\Tipo','tipos_id');
     }
 
     public function donativos()
     {
-        return $this->hasMany('App\Models\Donativo','id');
+        return $this->hasMany('App\Models\Donativo','subtipos_id');
     }
 }
 

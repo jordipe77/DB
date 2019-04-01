@@ -15,22 +15,22 @@ class Donante extends Model
 
     public function sexo()
     {
-        return $this->belongsTo('App\Models\Sexo','id');
+        return $this->belongsTo('App\Models\Sexo','sexos_id');
     }
 
-    public function tipo_donante()
+    public function TipoDonantes()
     {
-        return $this->belongsTo('App\Models\TipoDonantes','id');
+        return $this->belongsTo('App\Models\TipoDonantes','tipos_donantes_id');
     }
 
     public function animales()
     {
-        return $this->belongsToMany('App\Models\Animal','donantes_animales','id','id');
+        return $this->belongsToMany('App\Models\Animal','donantes_animales','donantes_id','animales_id');
     }
 
     public function donativo()
     {
-        return $this->hasMany('App\Models\Donativo','id');
+        return $this->hasMany('App\Models\Donativo','donantes_id');
     }
 
 }

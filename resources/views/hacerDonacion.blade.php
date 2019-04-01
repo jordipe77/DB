@@ -29,14 +29,14 @@ DONACION
             </div>
 
 
-            <div class="form-group row">
+            <div class="form-group row" id="menuSubTipos">
                     <label for="tipo">SUBTIPO</label>
                     <select class="form-control" name="subtipo" id="subtipo" required>
 
-                            <option>Pienso perro Gama Alta</option>
-                            <option>Pienso perro Gamma Media</option>
-                            <option>Pienso perro Gama Baja</option>
-                            <option>Pienso perros Especial</option>
+                            <option >Pienso perro Gama Alta</option>
+                            <option >Pienso perro Gamma Media</option>
+                            <option >Pienso perro Gama Baja</option>
+                            <option >Pienso perros Especial</option>
                             <option>Pienso gato</option>
                             <option>Pienso otros animales</option>
                             <option>Golosinas</option>

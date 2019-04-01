@@ -26,4 +26,9 @@ class Usuario extends Authenticatable
     {
         return $this->belongsTo('App\Rol','roles_id');
     }
+
+    public function donativos()
+    {
+        return $this->hasMany('App\Models\Donativo','usuarios_id');
+    }
 }

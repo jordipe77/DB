@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Lanzar Chrome contra localhost",
-            "url": "http://localhost:8080/DB/public/donacionUsuario",
+            "url": "http://localhost:8080/DB/public/buscarUsuario",
             "webRoot": "${workspaceFolder}"
         }
     ]

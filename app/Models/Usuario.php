@@ -15,12 +15,12 @@ class Usuario extends Model
 
     public function rol()
     {
-        return $this->belongsTo('App\Models\Rol','id');
+        return $this->belongsTo('App\Models\Rol','roles_id');
     }
 
     public function donativos()
     {
-        return $this->hasMany('App\Models\Donativo','id');
+        return $this->hasMany('App\Models\Donativo','usuarios_id');
     }
 
 }
