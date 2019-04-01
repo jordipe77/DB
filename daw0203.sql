@@ -3,7 +3,6 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 01-04-2019 a las 11:19:25
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -18,12 +17,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Base de datos: `daw0203`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `animales`
---
+CREATE DATABASE IF NOT EXISTS daw0203;
+use daw0203;
 
 CREATE TABLE IF NOT EXISTS `animales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -323,9 +318,9 @@ CREATE TABLE IF NOT EXISTS `tipos_donantes` (
 --
 
 INSERT INTO `tipos_donantes` (`id`, `tipo`) VALUES
-(1, 'nuevo'),
-(2, 'anonimo'),
-(3, 'registrado');
+(1, 'Particular'),
+(2, 'Empresa'),
+(3, 'Anonimo');
 
 -- --------------------------------------------------------
 

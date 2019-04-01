@@ -31,6 +31,7 @@
         <li><a href="{{ url('/hacerDonacion')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/introducirDonante')}}">Donantes</a></li>
         <li><a href="">Estadísticas</a></li>
+
         @if(Auth::check() && Auth::user()->roles_id == 2)
         <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
         @endif
@@ -51,8 +52,11 @@
 
                @if(Auth::check())
                <li class="nav-item ">
-                   {{Auth::user()->nombre}}
-
+                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:white" aria-expanded="false">
+                   {{Auth::user()->nombre_usuario}}
+                </a>
+               </li>
+               <li>
                    <div class="nav-item">
                    <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
                    </div>

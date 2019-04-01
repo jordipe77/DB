@@ -32,6 +32,7 @@
               </div>
               <div class="form-group col-md-6">
                   <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="Confirmar Password" required>
+
                 </div>
             </div>
 

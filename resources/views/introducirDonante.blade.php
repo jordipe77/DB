@@ -6,10 +6,6 @@ DATOS USUARIO
 
 @section('principal')
 
-
-
-
-{{--
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -36,11 +32,9 @@ DATOS USUARIO
 
   {{-- <script src="{{asset('js/introUsuario.js')}}"></script> --}}
 
-
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
             <h2>Datos del Usuario</h2>
-</div>
 
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
@@ -67,7 +61,7 @@ DATOS USUARIO
         <h4>Donante Registrado</h4>
         <div class="card-body">
             <form action="" method="post" enctype="multipart/form-data">
-            @csrf
+
                 <p>Completa uno de los siguentes campos para acceder a los datos del donante.</p>
 
                 <div class="input-group form-group">
@@ -105,7 +99,9 @@ DATOS USUARIO
     <div class="card mb-3 mt-4 " style="text-align: center">
         <h4>Nuevo donante</h4>
         <div class="card-body">
+
         <form action="{{action('donanteController@store')}}" method="post" enctype="multipart/form-data">
+
             @csrf
                 <p></p>
 
@@ -161,10 +157,36 @@ DATOS USUARIO
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-city"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="poblacion" id="poblacion" value="{{old('poblacion')}}" autofocus placeholder="Población">
+                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{old('direccion')}}" autofocus placeholder="direccion">
                     </div>
                 </div>
             </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-city"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="poblacion" id="poblacion" value="{{old('poblacion')}}" autofocus placeholder="Población">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
+                        <select class="form-control" name="es_habitual" id="es_habitual" value="{{old('es_habitual')}}" >
+                            <option value= "si">Habitual</option>
+                            <option value= "no">No habitual</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
 
             <div class="row">
                 <div class="col">
@@ -173,8 +195,8 @@ DATOS USUARIO
                             <span class="input-group-text"><i class="fas fa-child"></i></span>
                         </div>
                         <select class="form-control" name="sexos_id" id="sexos_id" value="{{old('sexos_id')}}">
-                            <option>Mujer</option>
-                            <option>Hombre</option>
+                            <option value= "mujer">Mujer</option>
+                            <option value= "hombre">Hombre</option>
                         </select>
                     </div>
                 </div>
@@ -182,11 +204,69 @@ DATOS USUARIO
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
                         </div>
-                        {{-- <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
-                            <option>No</option>
-                            <option>Si</option>
-                        </select> --}}
+                        <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
+                            <option value ="si">Tiene animales</option>
+                            <option value= "no">No tiene animales</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
+                        <select class="form-control" name="spam" id="spam" value="">
+                            <option value= "si">Permite recibir informacion de nuestra asociacion</option>
+                            <option value= "no">NO permite recibir informacion de nuestra asociacion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                        </div>
+                        <select class="form-control" name="tipo_colaboracion" id="tipo_colaboracion" value="{{old('tipo_colaboracion')}}">
+                            <option value ="coordinada">Donacion coordinada</option>
+                            <option value= "directa">Donacion directa</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
+                        <select class="form-control" name="es_colaborador" id="es_colaborador" value="">
+                            <option value= "si">Es colaborador</option>
+                            <option value= "no">NO es colaborador</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                        </div>
+                        <select class="form-control" name="tipo_donante" id="tipo_donante" value="">
+                            <option value ="particular">Particular</option>
+                            <option value= "empresa">Empresa</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -204,5 +284,28 @@ DATOS USUARIO
         </form>
     </div>
 </div>
+
+
+
+<div class="container-fluid">
+    <div class="card mb-3 mt-4 " style="text-align: center">
+        <h4>Donante anónimo</h4>
+        <div class="card-body">
+            <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+                <p></p>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="anonimo">
+                    <label class="form-check-label" for="anonimo">Acceder como donante Anónimo</label>
+                  </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Acceder" class="btn aceptar">
+                </div>
+        </form>
+    </div>
+</div>
+
 
 @endsection

@@ -3,8 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Subtipo;
-class TipoResource extends JsonResource
+class SubtipoResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,7 +13,6 @@ class TipoResource extends JsonResource
      */
     public function toArray($request)
     {
-         return parent::toArray($request);
-
+        return parent::toArray($request);
     }
 }
