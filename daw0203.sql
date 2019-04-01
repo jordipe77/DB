@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 28-03-2019 a las 13:12:54
+-- Tiempo de generación: 01-04-2019 a las 11:19:25
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -95,10 +95,8 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   `es_habitual` tinyint(4) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `cif` varchar(9) DEFAULT NULL,
-  `donantescol` varchar(45) DEFAULT NULL,
   `sexos_id` int(11) DEFAULT NULL,
-  `tiene_aninales` tinyint(4) DEFAULT NULL,
-  `donantescol1` varchar(45) DEFAULT NULL,
+  `tiene_animales` tinyint(4) DEFAULT NULL,
   `telefono` varchar(45) DEFAULT NULL,
   `correo` varchar(45) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
@@ -112,12 +110,14 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   PRIMARY KEY (`id`),
   KEY `fk_donantes_tipos_donantes1_idx` (`tipos_donantes_id`),
   KEY `fk_donantes_sexos1_idx` (`sexos_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `donantes`
 --
 
+INSERT INTO `donantes` (`id`, `tipos_donantes_id`, `es_habitual`, `nombre`, `cif`, `sexos_id`, `tiene_animales`, `telefono`, `correo`, `direccion`, `vinculo_entidad`, `spam`, `poblacion`, `pais`, `es_colaborador`, `tipo_colaboracion`, `fecha_alta`) VALUES
+(1, 1, 1, 'ningu', '45643456T', 2, NULL, '525554526', 'ningu@ningu.com', 'ninguna', 'NO se sabe', NULL, 'BCN', 'ESPAÑA', NULL, 'bffgfgfgf', '2019-03-29 11:18:16');
 
 -- --------------------------------------------------------
 
@@ -369,8 +369,8 @@ ALTER TABLE `animales_donativos`
 -- Filtros para la tabla `donantes`
 --
 ALTER TABLE `donantes`
-  ADD CONSTRAINT `fk_donantes_tipos_donantes1` FOREIGN KEY (`tipos_donantes_id`) REFERENCES `tipos_donantes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_donantes_sexos1` FOREIGN KEY (`sexos_id`) REFERENCES `sexos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_donantes_sexos1` FOREIGN KEY (`sexos_id`) REFERENCES `sexos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_donantes_tipos_donantes1` FOREIGN KEY (`tipos_donantes_id`) REFERENCES `tipos_donantes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `donantes_animales`
