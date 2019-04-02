@@ -52,6 +52,7 @@ class donanteController extends Controller
         $donante->poblacion = $request->input('poblacion');
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
         $donante->fecha_alta=date("Y-m-d");
+        $donante->es_habitual=false;
 
 
         //--------------------------------------
@@ -88,13 +89,13 @@ class donanteController extends Controller
 
         //--------------------------------------
 
-        if($request->input('es_habitual')=="si"){
+        // if($request->input('es_habitual')=="si"){
 
-            $donante->es_habitual= true;
-        }
-        else{
-            $donante->es_habitual=false;
-        }
+        //     $donante->es_habitual= true;
+        // }
+        // else{
+        //     $donante->es_habitual=false;
+        // }
 
         //--------------------------------------
 

@@ -13,22 +13,23 @@ ADMIN MODE
         <h2>OPCIONES DE ADMINISTRADOR</h2>
 
     <div class="card-group mt-5">
-            <a href="{{url('/registro')}}">
+            <a href="{{url('/buscarUsuario')}}">
         <div class="card mr-2 carta">
 
-           <button type="button" class="btn bot" id="boton1" name="boton1"><strong>ALTA USUARIO</strong></button>
+           <button type="button" class="btn bot" id="boton1" name="boton1"><strong>USUARIO</strong></button>
 
         </div>
     </a>
-    <a href="{{url('/editUsuario')}}">
+    <a href="{{url('/buscarDonante')}}">
         <div class="card mr-2 carta">
-            <button type="button" class="btn bot" id="boton2" name="boton2"><strong>MODIFICAR USUARIO</strong></button>
+            <button type="button" class="btn bot" id="boton2" name="boton2"><strong>DONANTE</strong></button>
         </div>
     </a>
-
+    <a href="{{url('/buscarDonacion')}}">
         <div class="card mr-2 carta">
-            <button type="button" class="btn bot" id="boton4" name="boton4"><strong>BAJA USUARIO</strong></button>
+            <button type="button" class="btn bot" id="boton4" name="boton4"><strong>DONACIÓN</strong></button>
          </div>
+    </a>
     </div>
     </form>
 </div>

@@ -130,7 +130,7 @@ DATOS USUARIO
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                         </div>
-                        <input type="text" name="cif" id="cif" class="form-control" placeholder="CIF" value="{{old('dni')}}">
+                        <input type="text" name="cif" id="cif" class="form-control" placeholder="CIF" value="{{old('cif')}}">
                     </div>
                 </div>
                 <div class="col">
@@ -157,7 +157,7 @@ DATOS USUARIO
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-city"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{old('direccion')}}" autofocus placeholder="direccion">
+                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{old('direccion')}}" autofocus placeholder="Direccion">
                     </div>
                 </div>
             </div>
@@ -173,7 +173,7 @@ DATOS USUARIO
                     </div>
                 </div>
 
-                <div class="col">
+                {{-- <div class="col">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-info"></i></span>
@@ -183,7 +183,21 @@ DATOS USUARIO
                             <option value= "no">No habitual</option>
                         </select>
                     </div>
-                </div>
+                </div> --}}
+                <div class="col">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                            </div>
+                            <select class="form-control" name="tipo_donante" id="tipo_donante" value="">
+                                <option value ="particular">Particular</option>
+                                <option value= "empresa">Empresa</option>
+                            </select>
+                        </div>
+                    </div>
+
+
             </div>
 
 
@@ -229,58 +243,28 @@ DATOS USUARIO
                     </div>
                 </div>
                 <div class="col">
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
-
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-info"></i></span>
+                            </div>
+                            <select class="form-control" name="es_colaborador" id="es_colaborador" value="">
+                                <option value= "si">Es colaborador</option>
+                                <option value= "no">NO es colaborador</option>
+                            </select>
                         </div>
-                        <select class="form-control" name="tipo_colaboracion" id="tipo_colaboracion" value="{{old('tipo_colaboracion')}}">
-                            <option value ="coordinada">Donacion coordinada</option>
-                            <option value= "directa">Donacion directa</option>
-                        </select>
                     </div>
-                </div>
             </div>
 
-
-
-
-            <div class="row">
-                <div class="col">
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-info"></i></span>
-                        </div>
-                        <select class="form-control" name="es_colaborador" id="es_colaborador" value="">
-                            <option value= "si">Es colaborador</option>
-                            <option value= "no">NO es colaborador</option>
-                        </select>
-                    </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
                 </div>
-                <div class="col">
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
-
-                        </div>
-                        <select class="form-control" name="tipo_donante" id="tipo_donante" value="">
-                            <option value ="particular">Particular</option>
-                            <option value= "empresa">Empresa</option>
-                        </select>
-                    </div>
-                </div>
+                <input type="text" class="form-control" name="vinculo_entidad" id="vinculo_entidad" value="{{old('vinculo_entidad')}}" autofocus placeholder="Vínculo con nuetra entidad">
             </div>
 
-                <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
-                    </div>
-                    <input type="text" class="form-control" name="vinculo_entidad" id="vinculo_entidad" value="{{old('vinculo_entidad')}}" autofocus placeholder="Vínculo con nuetra entidad">
-                </div>
-
-                <div class="form-group mt-3">
-                    <input type="submit" value="Registrar" class="btn aceptar">
-                </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Registrar" class="btn aceptar">
+            </div>
         </form>
     </div>
 </div>

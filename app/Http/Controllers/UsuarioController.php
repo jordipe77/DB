@@ -30,7 +30,7 @@ class UsuarioController extends Controller
             $usuarios = Usuario::orderby('nombre_usuario')->paginate(10);
         }
 
-        
+
         $datos['usuarios'] = $usuarios;
         $datos['search'] = $search;
 
@@ -38,7 +38,7 @@ class UsuarioController extends Controller
 
 
 
-        
+
     }
 
     /**
@@ -48,7 +48,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -59,6 +59,8 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+        // $usuario = new Usuario();
+
 
     }
 
@@ -98,16 +100,41 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        
+
+        // $usuario->nombre = $request->input('nombre');
+        // $usuario->nombre_usuario = $request->input('nombre_usuario');
+        // $usuario->correo = $request->input('correo');
+        // $usuario->nombre = $request->input('password');
+
+        // $usuario->save();
+
+        // return redirect()->action('UsuarioController@index');
+
+
+
         $usuario->nombre = $request->input('nombre');
+        $usuario->password = Hash::make($request->input('password'));
         $usuario->nombre_usuario = $request->input('nombre_usuario');
         $usuario->correo = $request->input('correo');
-        $usuario->nombre = $request->input('password');
-        
-        $usuario->save();
+        $usuario->roles_id = 1;
 
-        return redirect()->action('UsuarioController@index');
+
+        if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
+
+            $usuario->save();
+
+            return redirect()->action('UsuarioController@index');
+
+
+        }
+        else{
+
+
+            return redirect('/registro')->withInput();
+        }
+
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -115,8 +142,10 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Usuario $usuario)
     {
-        //
+        $usuario->delete();
+
+        return redirect()->action('UsuarioController@index');
     }
 }

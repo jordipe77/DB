@@ -3,6 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
+
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -17,8 +18,10 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Base de datos: `daw0203`
 --
+
+
 CREATE DATABASE IF NOT EXISTS daw0203;
-use daw0203;
+USE daw0203;
 
 CREATE TABLE IF NOT EXISTS `animales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -141,7 +144,6 @@ CREATE TABLE IF NOT EXISTS `donantes_animales` (
 
 CREATE TABLE IF NOT EXISTS `donativos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `donatiuscol` varchar(45) DEFAULT NULL,
   `subtipos_id` int(11) NOT NULL,
   `desc_animal` varchar(45) DEFAULT NULL,
   `centros_receptor_id` int(11) NOT NULL,
@@ -156,7 +158,6 @@ CREATE TABLE IF NOT EXISTS `donativos` (
   `fecha_donativo` datetime DEFAULT NULL,
   `hay_factura` tinyint(4) DEFAULT NULL,
   `ruta_factura` varchar(255) DEFAULT NULL,
-  `donativoscol` varchar(45) DEFAULT NULL,
   `es_coordinada` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`,`centros_desti_id`),
   KEY `fk_donatius_subtipos1_idx` (`subtipos_id`),
@@ -380,9 +381,9 @@ ALTER TABLE `donantes_animales`
 ALTER TABLE `donativos`
   ADD CONSTRAINT `fk_donatius_subtipos1` FOREIGN KEY (`subtipos_id`) REFERENCES `subtipos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_donativos_centros1` FOREIGN KEY (`centros_receptor_id`) REFERENCES `centros` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_donativos_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_donativos_centros2` FOREIGN KEY (`centros_desti_id`) REFERENCES `centros` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_donativos_donantes1` FOREIGN KEY (`donantes_id`) REFERENCES `donantes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_donativos_donantes1` FOREIGN KEY (`donantes_id`) REFERENCES `donantes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_donativos_usuarios1` FOREIGN KEY (`usuarios_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `subtipos`

@@ -3,7 +3,7 @@
 @section('titulo','Buscar Usuario')
 
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">   
+<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
     @include('partial.errores')
 
 
@@ -24,7 +24,7 @@
 
             <form action="{{action('UsuarioController@index')}}" method="get" enctype="form-horizontal">
                 <div class="form-group row">
-    
+
                     <label for="" class="col-1">Nombre</label>
                     <div class="col-10">
                     <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
@@ -40,7 +40,7 @@
                 <tr>
                     <th>Usuario</th>
                     <th>Correo</th>
-                    <th>Rol</th> 
+                    <th>Rol</th>
                 </tr>
             </thead>
             <tbody>
