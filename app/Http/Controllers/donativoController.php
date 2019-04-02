@@ -14,11 +14,27 @@ class donativoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['tipo_list'] = Tipo::all();
+        if($request->has('search'))
+        {
+            $search = $request->input('search');
+            $donativos = Donativo:: where('fecha_donativo', 'like', '%'.$search.'%')
+                            ->orderby('nombre')
+                            ->paginate(10);
+        }
+        else
+        {
+            $search= '';
+            $donativos = Donativo::orderby('nombre')->paginate(10);
+        }
 
-        return view('hacerDonacion',$data);
+
+        $datos['donativos'] = $donativos;
+        $datos['search'] = $search;
+
+        return view('buscarDonacion', $datos);
+        
     }
 
 
