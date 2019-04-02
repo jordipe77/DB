@@ -57,7 +57,6 @@ class donanteController extends Controller
      */
     public function store(Request $request)
     {
-
         $donante = new Donante();
 
         $donante->nombre = $request->input('nombre');
@@ -136,7 +135,6 @@ class donanteController extends Controller
             $donante->tipos_donantes_id=3;
         }
 
-        //--------------------------------------
 
         $donante->save();
 

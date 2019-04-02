@@ -26,10 +26,10 @@
         <div style="max-height:100%;margin-top:25%">
         <h2>Menú</h2>
     <ul>
-
+        <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
         <li><a href="{{url('/dashboard')}}">Inicio</a></li>
         <li><a href="{{ url('/hacerDonacion')}}">Introducir Donación</a></li>
-        <li><a href="{{ url('/introducirDonante')}}">Introducir Donante</a></li>
+        <li><a href="{{ url('/introducirDonante')}}">Donantes</a></li>
         <li><a href="">Estadísticas</a></li>
 
         @if(Auth::check() && Auth::user()->roles_id == 2)
@@ -37,11 +37,15 @@
         @endif
     </ul>
         </div>
+        <div class="logo">
+        <img src="{{asset('imgs/spam_donantes.png')}}">
+        </div>
     </div>
 <body>
 <nav class="navbar navbar-expand-lg">
         <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         <a class="navbar-brand text-hide" >
+        <img src="{{asset('imgs/logo_mini.png')}}" alt="">
         </a>
 
                <ul class="navbar-nav ml-auto">
@@ -58,15 +62,15 @@
                    </div>
                </li>
                @else
-               <li class="nav-item ">
+               <div class="nav-item login">
                    <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
-               </li>
+               </div>
                @endif
 
            </ul>
       </nav>
 
-<div class="container">@yield('principal')
+<div class="container main">@yield('principal')
 
 </div>
 </body>

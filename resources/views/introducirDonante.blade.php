@@ -6,10 +6,6 @@ DATOS USUARIO
 
 @section('principal')
 
-
-
-
-{{--
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -36,11 +32,9 @@ DATOS USUARIO
 
   {{-- <script src="{{asset('js/introUsuario.js')}}"></script> --}}
 
-
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
             <h2>Datos del Usuario</h2>
-</div>
 
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
@@ -67,7 +61,7 @@ DATOS USUARIO
         <h4>Donante Registrado</h4>
         <div class="card-body">
             <form action="" method="post" enctype="multipart/form-data">
-            @csrf
+
                 <p>Completa uno de los siguentes campos para acceder a los datos del donante.</p>
 
                 <div class="input-group form-group">
@@ -105,7 +99,9 @@ DATOS USUARIO
     <div class="card mb-3 mt-4 " style="text-align: center">
         <h4>Nuevo donante</h4>
         <div class="card-body">
+
         <form action="{{action('donanteController@store')}}" method="post" enctype="multipart/form-data">
+
             @csrf
                 <p></p>
 
@@ -272,5 +268,28 @@ DATOS USUARIO
         </form>
     </div>
 </div>
+
+
+
+<div class="container-fluid">
+    <div class="card mb-3 mt-4 " style="text-align: center">
+        <h4>Donante anónimo</h4>
+        <div class="card-body">
+            <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+                <p></p>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="anonimo">
+                    <label class="form-check-label" for="anonimo">Acceder como donante Anónimo</label>
+                  </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Acceder" class="btn aceptar">
+                </div>
+        </form>
+    </div>
+</div>
+
 
 @endsection
