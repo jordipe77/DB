@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
--- Tiempo de generación: 02-04-2019 a las 12:33:49
+
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -19,11 +19,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Base de datos: `daw0203`
 --
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `animales`
---
 
 CREATE DATABASE IF NOT EXISTS daw0203;
 USE daw0203;
