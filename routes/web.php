@@ -54,3 +54,11 @@ Route::get('/buscarUsuario', function () {
 
 Route::resource('/buscarUsuario','UsuarioController' );
 
+Route::get('/buscarDonante', function () {
+    return view('buscarDonante');
+});
+
+
+Route::resource('/buscarDonante','donanteController' );
+
+

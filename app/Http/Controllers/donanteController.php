@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Donante;
 use App\Models\TipoDonantes;
 use App\Models\Sexo;
@@ -17,10 +16,27 @@ class donanteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
+        if($request->has('search'))
+        {
+            $search = $request->input('search');
+            $donantes = Donante:: where('nombre', 'like', '%'.$search.'%')
+                            ->orderby('nombre')
+                            ->paginate(10);
+        }
+        else
+        {
+            $search= '';
+            $donantes = Donante::orderby('nombre')->paginate(10);
+        }
 
+
+        $datos['donantes'] = $donantes;
+        $datos['search'] = $search;
+
+        return view('buscarDonante', $datos);
     }
 
     /**
