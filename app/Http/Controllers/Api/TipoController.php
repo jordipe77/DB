@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Http\Resources\TipoResource;
+use Illuminate\Database\QueryException;
+use App\Clases\Utilitat;
 
 class TipoController extends Controller
 {
@@ -30,7 +32,20 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipo = new Tipo();
+        $tipo->nombre = $request->input('nombre');
+
+        try {
+        $tipo->save();
+        $respuesta = (new TipoResource($tipo))->response()->setStatusCode(201);
+        }
+        catch(QueryException $e)
+        {
+            $respuesta = Utilitat::errorMessage($e);
+            return response()->json(['error'=>$mensaje],400);
+        }
+
+       return $respuesta ;
     }
 
     /**
@@ -66,6 +81,25 @@ class TipoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tipo = Tipo::find($id);
+        if($tipo==null)
+        {
+            $respuesta = response()->json(['error'=>'Registro no encontrado'],404);
+        }
+        else {
+            try {
+                $tipo->delete();
+                $respuesta = (new TipoResource($tipo))
+                ->response()
+                ->setStatusCode(200);
+                }
+                catch(QueryException $e)
+                {
+                   $mensaje = Utilitat::errorMessage($e);      
+                   $respuesta= response()
+                   ->json(['error'=>$mensaje],400);
+                }
+        }
+        return $respuesta;
     }
 }
