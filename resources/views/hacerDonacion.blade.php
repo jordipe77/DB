@@ -43,7 +43,7 @@ DONACION
                     <label for="tipo">SUBTIPO</label>
                     <select class="form-control" name="subtipo" id="subtipo" required>
 
-                            <option   >Pienso perro Gama Alta</option>
+                            <option >Pienso perro Gama Alta</option>
                             <option >Pienso perro Gamma Media</option>
                             <option >Pienso perro Gama Baja</option>
                             <option >Pienso perros Especial</option>

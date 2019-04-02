@@ -3,7 +3,6 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: hostingmysql328
-
 -- Versión del servidor: 5.5.52
 -- Versión de PHP: 5.2.6-1+lenny16
 
@@ -20,11 +19,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 CREATE DATABASE IF NOT EXISTS daw0203;
 use daw0203;
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `animales`
---
 
 CREATE TABLE IF NOT EXISTS `animales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
