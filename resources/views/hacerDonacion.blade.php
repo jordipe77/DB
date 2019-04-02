@@ -38,62 +38,10 @@ DONACION
                     </select>
             </div>
 
-
             <div class="form-group row" id="menuSubTipos">
                     <label for="tipo">SUBTIPO</label>
                     <select class="form-control" name="subtipo" id="subtipo" required>
-
-                            <option >Pienso perro Gama Alta</option>
-                            <option >Pienso perro Gamma Media</option>
-                            <option >Pienso perro Gama Baja</option>
-                            <option >Pienso perros Especial</option>
-                            <option>Pienso gato</option>
-                            <option>Pienso otros animales</option>
-                            <option>Golosinas</option>
-                            <option>Leche materna</option>
-                            <option>Latas</option>
-
-                            <option>Medicamentos</option>
-                            <option>Instrumental</option>
-                            <option>Aparatología</option>
-                            <option>Fungibles   </option>
-
-                            <option>Camas(ropa/plastico)</option>
-                            <option>Juguetes</option>
-                            <option>Rascadores para gatos</option>
-                            <option>Collares</option>
-                            <option>Transportines</option>
-                            <option>Morriones</option>
-                            <option>Correas</option>
-                            <option>Arneses</option>
-                            <option>Abrigos</option>
-                            <option>Mantas</option>
-                            <option>Casitas</option>
-                            <option>Comedores-Bols</option>
-                            <option>Placas Identificativa</option>
-
-                            <option>Electrodomesticos</option>
-                            <option>Material informático</option>
-                            <option>Limpieza</option>
-                            <option>Material oficina</option>
-                            <option>Móviles</option>
-                            <option>Mobiliario</option>
-
-                            <option>Aparatos electrónicos / electrodomésticos</option>
-                            <option>Ropa de casa</option>
-                            <option>Muebles</option>
-                            <option>Ropa de vestir</option>
-                            <option>Complementos para animales</option>
-                            <option>Bolsos / Maletas</option>
-                            <option>Complementos del hogar</option>
-                            <option>Antiguedades</option>
-
-                            <option>Padrinos</option>
-                            <option>Socios</option>
-                            <option>Crowd-founding</option>
-                            <option>Cash</option>
-                            <option>Teeming</option>
-
+                            {{-- se llenan con api mediante Ajax en hacerdonacion.js--}}
                     </select>
             </div>
             <div class="form-group row">
@@ -196,7 +144,7 @@ DONACION
         </form>
     </div>
 </div>
-
+<script type="text/javascript" src="js/hacerDonaciones.js"> </script>
 
 
 @endsection
