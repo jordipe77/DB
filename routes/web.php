@@ -13,6 +13,8 @@ Route::get('/dashboard',function ()
  Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
 
+ Route::get('/editUsuario','Auth\RegisterController@update' );
+
 //LOGIN
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
 Route::post('/registro', 'Auth\RegisterController@registro');

@@ -5,7 +5,7 @@ DATOS USUARIO
 @endsection
 
 @section('principal')
-
+{{--
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -18,7 +18,7 @@ DATOS USUARIO
         <div class="modal-footer">
             <a href="{{url('/donacionUsuario')}}">
                 <button type="button" class="btn btn-success" data-dismiss="modal" id="si">SI</button>
-            </a>
+            </a> --}}
             {{-- <form action="{{action('UsuarioController@index')}}" method="post" enctype="multipart/form-data">
                  <a href="{{url('/dashboard')}}">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" id="no">NO</button>
@@ -275,7 +275,7 @@ DATOS USUARIO
     <div class="card mb-3 mt-4 " style="text-align: center">
         <h4>Donante anónimo</h4>
         <div class="card-body">
-            <form action="{{action('donacionController@store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
                 <p></p>
 

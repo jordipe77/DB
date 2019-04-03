@@ -28,7 +28,7 @@
     <ul>
         <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
         <li><a href="{{url('/dashboard')}}">Inicio</a></li>
-        <li><a href="{{ url('/hacerDonacion')}}">Introducir Donación</a></li>
+        <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/introducirDonante')}}">Donantes</a></li>
         <li><a href="">Estadísticas</a></li>
 
@@ -52,7 +52,7 @@
 
                @if(Auth::check())
                <li class="nav-item ">
-                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:white" aria-expanded="false">
+                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:black" aria-expanded="false">
                    {{Auth::user()->nombre_usuario}}
                 </a>
                </li>

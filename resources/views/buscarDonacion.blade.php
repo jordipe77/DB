@@ -55,7 +55,7 @@
                 @foreach ($donativos as $donacion)
 
                 <tr>
-                    <td>{{$donacion->subtipo->tipo->nombre}}</td>
+                    {{-- <td>{{$donacion->subtipo->tipo->nombre}}</td> --}}
                     <td>{{$donacion->subtipos->nombre}}</td>
                     <td>{{$donacion->centros->nombre}}</td>
                     <td>{{$donacion->centros->nombre}}</td>
