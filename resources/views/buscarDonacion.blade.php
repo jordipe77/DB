@@ -12,7 +12,7 @@
 
 <div class="card mt-2">
     <div class="card-body">
-    <a href="{{ url('/introDonativo')}}" class="btn btn-primary">Nueva Donación</a>
+    <a href="{{url('/introDonacion') }}" class="btn btn-primary">Nueva Donación</a>
     </div>
 </div>
 
@@ -51,7 +51,9 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach ($donativos as $donacion)
+
                 <tr>
                     <td>{{$donacion->subtipo->tipo->nombre}}</td>
                     <td>{{$donacion->subtipos->nombre}}</td>
