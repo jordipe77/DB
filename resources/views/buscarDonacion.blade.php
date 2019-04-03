@@ -51,7 +51,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($donaciones as $donacion)
+
+                @foreach ($donativos as $donacion)
+
                 <tr>
                     <td>{{$donacion->subtipo->tipo->nombre}}</td>
                     <td>{{$donacion->subtipos->nombre}}</td>
@@ -81,7 +83,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $donantes->appends(['search'=>$search])->links() }}
+        {{ $donativos->appends(['search'=>$search])->links() }}
     </div>
 </div>
 
