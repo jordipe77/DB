@@ -19,18 +19,18 @@ class donativoController extends Controller
         if($request->has('search'))
         {
             $search = $request->input('search');
-            $donativos = Donativo:: where('fecha_donativo', 'like', '%'.$search.'%')
-                            ->orderby('nombre')
+            $donaciones = Donativo:: where('fecha_donativo', 'like', '%'.$search.'%')
+                            ->orderby('id')
                             ->paginate(10);
         }
         else
         {
             $search= '';
-            $donativos = Donativo::orderby('nombre')->paginate(10);
+            $donaciones = Donativo::orderby('id')->paginate(10);
         }
 
 
-        $datos['donativos'] = $donativos;
+        $datos['donaciones'] = $donaciones;
         $datos['search'] = $search;
         return view('buscarDonacion', $datos);
 
