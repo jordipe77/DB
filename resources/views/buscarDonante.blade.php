@@ -45,7 +45,6 @@
                     <th>Dirección</th>
                     <th>País</th>
                     <th>Población</th>
-                    <th>País</th>
                     <th>SPAM</th>
                     <th>Fecha Alta</th>
                 </tr>
@@ -56,11 +55,11 @@
                     <td>{{$donante->nombre}}</td>
                     <td>{{$donante->cif}}</td>
                     <td>{{$donante->telefono}}</td>
-                    <td>{{$donante->sexo->sexo}}</td>
+
+                    <td>{{ $donante->sexo != null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
                     <td>{{$donante->direccion}}</td>
                     <td>{{$donante->pais}}</td>
                     <td>{{$donante->poblacion}}</td>
-                    <td>{{$donante->pais}}</td>
                     <td>{{$donante->spam}}</td>
                     <td>{{$donante->fecha_alta}}</td>
                     <td class="col-button">
