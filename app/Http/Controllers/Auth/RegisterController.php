@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Clases\Utilitat;
 
+
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 
 use App\Usuario;
+use App\Models\Rol;
 
 class RegisterController extends Controller
 {
@@ -117,28 +119,30 @@ class RegisterController extends Controller
 
     public function update(Request $request, Usuario $usuario){
 
-        $usuario->nombre = $request->input('nombre');
-        $usuario->password = Hash::make($request->input('password'));
-        $usuario->nombre_usuario = $request->input('nombre_usuario');
-        $usuario->correo = $request->input('correo');
-        $usuario->roles_id = 1;
+        // $usuario->nombre = $request->input('nombre');
+        // $usuario->password = Hash::make($request->input('password'));
+        // $usuario->nombre_usuario = $request->input('nombre_usuario');
+        // $usuario->correo = $request->input('correo');
+        // $usuario->roles_id = 1;
 
 
-        if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
+        // if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
 
-            $usuario->save();
+        //     $usuario->save();
 
-            // Auth::login($usuario);
+        //     // Auth::login($usuario);
 
-            return redirect('/editUsuario');
-        }
-        else{
+        //     return redirect('/editUsuario');
+        // }
+        // else{
 
 
-            return redirect('/registro')->withInput();
-        }
+        //     return redirect('/registro')->withInput();
+        // }
 
     }
+
+
 
     }
 
