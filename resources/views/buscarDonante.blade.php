@@ -56,7 +56,7 @@
                     <td>{{$donante->cif}}</td>
                     <td>{{$donante->telefono}}</td>
 
-                    <td>{{ $donante->sexo != null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
+                    <td>{{$donante->sexo != null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
                     <td>{{$donante->direccion}}</td>
                     <td>{{$donante->pais}}</td>
                     <td>{{$donante->poblacion}}</td>
