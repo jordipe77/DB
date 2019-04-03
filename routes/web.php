@@ -24,6 +24,7 @@ Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
 
+Route::resource('/introDonativo', 'introDonativoController');
 
 Route::resource('/hacerDonacion', 'donativoController');
     // Route::resource('/donacionUsuario','UsuarioController' ); // descomentar cuando funcione el intro Donante

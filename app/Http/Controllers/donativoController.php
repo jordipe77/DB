@@ -32,7 +32,6 @@ class donativoController extends Controller
 
         $datos['donaciones'] = $donaciones;
         $datos['search'] = $search;
-
         return view('buscarDonacion', $datos);
 
     }
