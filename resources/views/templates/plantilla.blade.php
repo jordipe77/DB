@@ -23,7 +23,7 @@
 
 </head>
 <div class="sidebar">
-        <div style="max-height:100%;margin-top:25%">
+        <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
     <ul>
         <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
@@ -42,7 +42,7 @@
         </div>
     </div>
 <body>
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg minavbar">
         <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         <a class="navbar-brand text-hide" >
         <img src="{{asset('imgs/logo_mini.png')}}" alt="">
