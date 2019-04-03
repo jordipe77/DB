@@ -52,7 +52,7 @@
 
                @if(Auth::check())
                <li class="nav-item ">
-                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:white" aria-expanded="false">
+                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:black" aria-expanded="false">
                    {{Auth::user()->nombre_usuario}}
                 </a>
                </li>
