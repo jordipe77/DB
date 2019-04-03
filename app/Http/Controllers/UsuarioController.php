@@ -112,27 +112,35 @@ class UsuarioController extends Controller
 
 
 
+        // $usuario->nombre = $request->input('nombre');
+        // $usuario->password = Hash::make($request->input('password'));
+        // $usuario->nombre_usuario = $request->input('nombre_usuario');
+        // $usuario->correo = $request->input('correo');
+        // $usuario->roles_id = 1;
+
+
+        // if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
+
+        //     $usuario->save();
+
+        //     return redirect()->action('UsuarioController@index');
+
+
+        // }
+        // else{
+
+
+        //     return redirect('/registro')->withInput();
+        // }
+
         $usuario->nombre = $request->input('nombre');
         $usuario->password = Hash::make($request->input('password'));
         $usuario->nombre_usuario = $request->input('nombre_usuario');
         $usuario->correo = $request->input('correo');
         $usuario->roles_id = 1;
+        $usuario->save();
 
-
-        if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
-
-            $usuario->save();
-
-            return redirect()->action('UsuarioController@index');
-
-
-        }
-        else{
-
-
-            return redirect('/registro')->withInput();
-        }
-
+        return redirect('UsuarioController@index');
     }
 
 
@@ -142,10 +150,11 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(Request $request,Usuario $usuario)
     {
         $usuario->delete();
 
         return redirect()->action('UsuarioController@index');
+
     }
 }
