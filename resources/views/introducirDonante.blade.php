@@ -3,7 +3,7 @@
 @section('titulo')
 DATOS USUARIO
 @endsection
-
+<link rel="stylesheet" href="{{asset('css/donantes.css')}}">
 @section('principal')
 {{--
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
@@ -34,65 +34,72 @@ DATOS USUARIO
 
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
+        <div class="card-header">
             <h2>Datos del Usuario</h2>
-
-<div class="container-fluid">
-        <div class="card mb-3 mt-4 " style="text-align: center">
-            <h4>Donante anónimo</h4>
-            <div class="card-body">
-                <form action="" method="post" enctype="multipart/form-data">
-                @csrf
-                    <p></p>
-
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="anonimo">
-                        <label class="form-check-label" for="anonimo">Acceder como donante Anónimo</label>
-                      </div>
-
-                    <div class="form-group mt-3">
-                        <input type="submit" value="Acceder" class="btn aceptar">
-                    </div>
-            </form>
         </div>
-    </div>
 
 <div class="container-fluid">
-    <div class="card mb-3 mt-4 " style="text-align: center">
-        <h4>Donante Registrado</h4>
-        <div class="card-body">
-            <form action="" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card mb-3 mt-4 " style="text-align: center">
+                        <h4>Donante Registrado</h4>
+                        <div class="card-body">
+                        <form action="" method="post" enctype="multipart/form-data">
 
-                <p>Completa uno de los siguentes campos para acceder a los datos del donante.</p>
+                            <p>Completa uno de los siguentes campos para acceder a los datos del donante.</p>
 
-                <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-at"></i></span>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                </div>
+                                <input type="text" class="form-control" name="correo" id="correo" value="{{old('correo')}}" autofocus placeholder="Email">
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                                </div>
+                                <input type="text" name="cif" id="cif" class="form-control" placeholder="DNI" value="{{old('dni')}}">
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                </div>
+                                <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" value="{{old('telefono')}}">
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <input type="submit" value="Acceder" class="btn aceptar">
+                            </div>
+                        </form>
                     </div>
-                    <input type="text" class="form-control" name="correo" id="correo" value="{{old('correo')}}" autofocus placeholder="Email">
                 </div>
+            </div>
+            <div class="col-sm-6">
+            <div class="card mb-3 mt-4" id="anonimo.card" style="text-align: center">
+                    <h4>Donante anónimo</h4>
+                    <div class="card-body">
+                        <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                            <p></p>
 
-                <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-address-card"></i></span>
-                    </div>
-                    <input type="text" name="cif" id="cif" class="form-control" placeholder="DNI" value="{{old('dni')}}">
-                </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="anonimo">
+                                <label class="form-check-label" for="anonimo">Acceder como donante Anónimo</label>
+                            </div>
 
-                <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                    </div>
-                    <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" value="{{old('telefono')}}">
+                            <div class="form-group mt-3">
+                                <input type="submit" value="Acceder" class="btn aceptar">
+                            </div>
+                    </form>
                 </div>
+            </div>
 
-                <div class="form-group mt-3">
-                    <input type="submit" value="Acceder" class="btn aceptar">
-                </div>
-        </form>
-    </div>
+           
+        </div>
+        </div>
 </div>
-
-
 
 
 <div class="container-fluid">
@@ -268,28 +275,5 @@ DATOS USUARIO
         </form>
     </div>
 </div>
-
-
-
-<div class="container-fluid">
-    <div class="card mb-3 mt-4 " style="text-align: center">
-        <h4>Donante anónimo</h4>
-        <div class="card-body">
-            <form action="{{action('donativoController@store')}}" method="post" enctype="multipart/form-data">
-            @csrf
-                <p></p>
-
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="anonimo">
-                    <label class="form-check-label" for="anonimo">Acceder como donante Anónimo</label>
-                  </div>
-
-                <div class="form-group mt-3">
-                    <input type="submit" value="Acceder" class="btn aceptar">
-                </div>
-        </form>
-    </div>
-</div>
-
 
 @endsection
