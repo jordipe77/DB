@@ -11,7 +11,7 @@ $('#submit').click(function(){
         data: {} ,
         dataType: "html",
         success: function(data){
-          var $select = $('#subtipo'); 
+          var $select = $('#subtipo');
           console.log(data);
           var miarray = JSON.parse(data);
           $("#subtipo option").remove();
@@ -20,8 +20,26 @@ $('#submit').click(function(){
           });
        }
       });
-         
+
       });
 
 
   });
+$(document).ready(function()
+{
+    $('input[type=radio][name=anonimo]').change(function(){
+        var valor = this.value;
+        if(valor==1)
+        {
+            $('#donante').hide();
+        }
+        else {
+            $('#donante').show();
+        }
+
+      });
+
+
+});
+
+

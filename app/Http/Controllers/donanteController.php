@@ -144,7 +144,6 @@ class donanteController extends Controller
 
 
     }
-
     /**
      * Display the specified resource.
      *
@@ -192,4 +191,6 @@ class donanteController extends Controller
         $donante->delete();
         return redirect()->action('donanteController@index');
     }
+
+
 }

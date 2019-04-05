@@ -29,7 +29,7 @@
         <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
         <li><a href="{{url('/dashboard')}}">Inicio</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
-        <li><a href="{{ url('/introducirDonante')}}">Donantes</a></li>
+        <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
         <li><a href="">Estadísticas</a></li>
 
         @if(Auth::check() && Auth::user()->roles_id == 2)

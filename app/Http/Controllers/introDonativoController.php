@@ -10,6 +10,7 @@ use App\Models\Donativo;
 use App\Models\Centro;
 use App\Models\TipoDonantes;
 use App\Models\Usuario;
+use Session;
 
 class introDonativoController extends Controller
 {
@@ -89,7 +90,7 @@ class introDonativoController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -114,7 +115,11 @@ class introDonativoController extends Controller
     {
         //
     }
-
+    public function enviar()
+    {
+        $mibool = true;
+        return redirect('/nuevoDonante');
+    }
     /**
      * Remove the specified resource from storage.
      *
