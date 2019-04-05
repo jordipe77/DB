@@ -22,9 +22,11 @@ Route::post('/login', 'Auth\Logincontroller@login');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 
-Route::group(['middleware' => ['auth']], function () {
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/enviarDonante', 'introDonativoController@enviar');
 Route::resource('/introDonativo', 'introDonativoController');
+
 
 Route::resource('/hacerDonacion', 'donativoController');
     // Route::resource('/donacionUsuario','UsuarioController' ); // descomentar cuando funcione el intro Donante
@@ -64,4 +66,7 @@ Route::get('/buscarDonante', function () {
 
 Route::resource('/buscarDonante','donanteController' );
 
+Route::get('/nuevoDonante', function(){
+    return view('nuevoDonante');
+});
 
