@@ -185,8 +185,11 @@ class donanteController extends Controller
      * @param  \App\Models\donante  $donante
      * @return \Illuminate\Http\Response
      */
-    public function destroy(donante $donante)
+    public function destroy($id)
     {
-        //
+        $donante = Donante::find($id);
+
+        $donante->delete();
+        return redirect()->action('donanteController@index');
     }
 }
