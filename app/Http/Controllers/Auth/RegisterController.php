@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 
-use App\Usuario;
+use App\Models\Usuario;
 use App\Models\Rol;
 
 class RegisterController extends Controller

@@ -12,7 +12,7 @@
 
 <div class="card mt-2">
     <div class="card-body">
-    <a href="{{url('/introducirDonante') }}" class="btn btn-primary">Nuevo Donante</a>
+    <a href="{{url('/nuevoDonante') }}" class="btn btn-primary">Nuevo Donante</a>
     </div>
 </div>
 
@@ -55,7 +55,6 @@
                     <td>{{$donante->nombre}}</td>
                     <td>{{$donante->cif}}</td>
                     <td>{{$donante->telefono}}</td>
-
                     <td>{{$donante->sexo != null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
                     <td>{{$donante->direccion}}</td>
                     <td>{{$donante->pais}}</td>

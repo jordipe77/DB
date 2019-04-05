@@ -16,8 +16,8 @@
 
           <div class="form-row">
               <div class="form-group col-md-12">
-                  <label for="inputEmail4">Nombre</label>
-              <input type="text" class="form-control" name="nombre" id="nombre" value="{{$usuario->nombre}}" placeholder="" required>
+                  <label for="">Nombre</label>
+              <input type="text" class="form-control" name="nombre" id="nombre" value="{{$usuario->nombre}}" aria-describedby="helpId">
                 </div>
           </div>
                 <div class="form-row">

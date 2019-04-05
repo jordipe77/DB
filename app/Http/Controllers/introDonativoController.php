@@ -10,6 +10,8 @@ use App\Models\Donativo;
 use App\Models\Centro;
 use App\Models\TipoDonantes;
 use App\Models\Usuario;
+use Session;
+use View;
 
 class introDonativoController extends Controller
 {
@@ -89,7 +91,7 @@ class introDonativoController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -114,7 +116,12 @@ class introDonativoController extends Controller
     {
         //
     }
-
+    public function enviar()
+    {
+        $mibool = true;
+        $data['mibool'] = $mibool;
+        return View::make('nuevoDonante')->with('mibool', $mibool);
+    }
     /**
      * Remove the specified resource from storage.
      *

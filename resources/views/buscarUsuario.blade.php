@@ -57,7 +57,6 @@
 
                     <td class="col-button">
                     <form action="{{action('UsuarioController@destroy', [$usuario->id])}}" method="post">
-
                         @method('delete')
                         @csrf
                         <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>
