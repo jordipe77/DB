@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
-use App\Usuario;
+use App\Models\Usuario;
 
 class LoginController extends Controller
 {

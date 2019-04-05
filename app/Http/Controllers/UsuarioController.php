@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use App\Models\Rol;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -81,11 +82,11 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit($id)
     {
-        $rols = Rol::all();
+        // $usuario = Usuario::all();
+        $usuario = Usuario::find($id);
 
-        $datos['rols'] = $rols;
         $datos['usuario'] = $usuario;
 
         return view('auth.editUsuario', $datos);
@@ -98,49 +99,38 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, $id)
     {
-
-        // $usuario->nombre = $request->input('nombre');
-        // $usuario->nombre_usuario = $request->input('nombre_usuario');
-        // $usuario->correo = $request->input('correo');
-        // $usuario->nombre = $request->input('password');
-
-        // $usuario->save();
-
-        // return redirect()->action('UsuarioController@index');
-
-
-
-        // $usuario->nombre = $request->input('nombre');
-        // $usuario->password = Hash::make($request->input('password'));
-        // $usuario->nombre_usuario = $request->input('nombre_usuario');
-        // $usuario->correo = $request->input('correo');
-        // $usuario->roles_id = 1;
-
-
-        // if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
-
-        //     $usuario->save();
-
-        //     return redirect()->action('UsuarioController@index');
-
-
-        // }
-        // else{
-
-
-        //     return redirect('/registro')->withInput();
-        // }
+        $usuario = Usuario::find($id);
 
         $usuario->nombre = $request->input('nombre');
         $usuario->password = Hash::make($request->input('password'));
         $usuario->nombre_usuario = $request->input('nombre_usuario');
         $usuario->correo = $request->input('correo');
         $usuario->roles_id = 1;
-        $usuario->save();
 
-        return redirect('UsuarioController@index');
+
+        if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
+
+            $usuario->save();
+
+            return redirect()->action('UsuarioController@index');
+
+        }
+        else{
+
+
+            return redirect('editUsuario')->withInput();
+        }
+
+        // $usuario->nombre = $request->input('nombre');
+        // $usuario->password = Hash::make($request->input('password'));
+        // $usuario->nombre_usuario = $request->input('nombre_usuario');
+        // $usuario->correo = $request->input('correo');
+        // $usuario->roles_id = 1;
+        // $usuario->save();
+
+
     }
 
 
@@ -150,8 +140,11 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,Usuario $usuario)
+    //public function destroy(Usuario $usuario)
+    public function destroy($id)
     {
+        $usuario = Usuario::find($id);
+
         $usuario->delete();
 
         return redirect()->action('UsuarioController@index');

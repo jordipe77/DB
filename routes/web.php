@@ -13,7 +13,9 @@ Route::get('/dashboard',function ()
  Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
 
- Route::get('/editUsuario','Auth\RegisterController@update' );
+ Route::get('/editUsuario','UsuarioController@update' );
+
+ Route::get('/editDonante','DonanteController@update' );
 
 //LOGIN
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
@@ -69,6 +71,8 @@ Route::get('/buscarDonante', function () {
 
 
 Route::resource('/buscarDonante','donanteController' );
+
+
 
 Route::get('/nuevoDonante', function(){
     return view('nuevoDonante');

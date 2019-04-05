@@ -52,27 +52,27 @@
             </thead>
             <tbody>
 
-                @foreach ($donativos as $donacion)
+                @foreach ($donativos as $donativo)
 
                 <tr>
-                    {{-- <td>{{$donacion->subtipo->tipo->nombre}}</td> --}}
-                    <td>{{$donacion->subtipos->nombre}}</td>
-                    <td>{{$donacion->centros->nombre}}</td>
-                    <td>{{$donacion->centros->nombre}}</td>
-                    <td>{{$donacion->usuario->nombre_usuario}}</td>
-                    <td>{{$donacion->donantes->nombre}}</td>
-                    <td>{{$donacion->coste}}</td>
-                    <td>{{$donacion->unidades}}</td>
-                    <td>{{$donacion->peso}}</td>
-                    <td>{{$donacion->fecha_donativo}}</td>
+                    <td>{{$donacion->subtipo->tipo->nombre}}</td>
+                    <td>{{$donativo->subtipos->nombre}}</td>
+                    <td>{{$donativo->centros->nombre}}</td>
+                    <td>{{$donativo->centros->nombre}}</td>
+                    <td>{{$donativo->usuario->nombre_usuario != ? $donativo->usuario->nombre_usuario : "No introducido"}}</td>
+                    <td>{{$donativo->donantes->nombre != ? $donativo->donantes->nombre: "No introducido"}}</td>
+                    <td>{{$donativo->coste != ? $donativo->coste : "Coste no especificado"}}</td>
+                    <td>{{$donativo->unidades != ? $donativo->unidades : "No especificado"}}</td>
+                    <td>{{$donativo->peso != null ? $donativo->peso : "Sin peso introducido"}}</td>
+                    <td>{{$donativo->fecha_donativo}}</td>
                     <td class="col-button">
-                    <form action="{{action('donativoController@edit', [$donacion->id])}}" method="get">
+                    <form action="{{action('donativoController@edit', [$donativo->id])}}" method="get">
                         <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
                     </form>
                     </td>
 
                     <td class="col-button">
-                    <form action="{{action('donativoController@destroy', [$donacion->id])}}" method="post">
+                    <form action="{{action('donativoController@destroy', [$donativo->id])}}" method="post">
                         @method('delete')
                         @csrf
                         <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>

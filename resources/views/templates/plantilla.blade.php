@@ -43,7 +43,7 @@
     </div>
 <body>
 <nav class="navbar navbar-expand-lg">
-        <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
+        <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         <a class="navbar-brand text-hide" >
         <img src="{{asset('imgs/logo_mini.png')}}" alt="">
         </a>
