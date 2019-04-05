@@ -18,6 +18,7 @@ DATOS USUARIO
    $boolNuevaDonacion = Session::get('nuevaDonacion');
     @endphp
 
+
     @if(isset($mibool))
         <div>Vengo de nueva donación..</div>
     @endif
