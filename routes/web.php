@@ -27,6 +27,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/enviarDonante', 'introDonativoController@enviar');
 Route::resource('/introDonativo', 'introDonativoController');
 
+Route::get('/nuevoDonante/{mibool}',function ()
+{
+  return view ('/nuevoDonante');
+});
 
 Route::resource('/hacerDonacion', 'donativoController');
     // Route::resource('/donacionUsuario','UsuarioController' ); // descomentar cuando funcione el intro Donante

@@ -18,11 +18,8 @@ DATOS USUARIO
    $boolNuevaDonacion = Session::get('nuevaDonacion');
     @endphp
 
-    @if(isset($_GET['mibool']))
-    {
+    @if(isset($mibool))
         <div>Vengo de nueva donación..</div>
-    }
-
     @endif
     <div class="card mb-3 mt-4 " style="text-align: center">
 
