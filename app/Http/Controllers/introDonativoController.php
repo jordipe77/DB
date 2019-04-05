@@ -11,6 +11,7 @@ use App\Models\Centro;
 use App\Models\TipoDonantes;
 use App\Models\Usuario;
 use Session;
+use View;
 
 class introDonativoController extends Controller
 {
@@ -118,7 +119,8 @@ class introDonativoController extends Controller
     public function enviar()
     {
         $mibool = true;
-        return redirect('/nuevoDonante');
+        $data['mibool'] = $mibool;
+        return View::make('nuevoDonante')->with('mibool', $mibool);
     }
     /**
      * Remove the specified resource from storage.
