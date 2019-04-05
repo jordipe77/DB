@@ -15,20 +15,49 @@ DONACION
     <div class="card-body">
             <form action="{{action('introDonativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
+
+
+            <div class="form-group row" id="anonimodiv">
+                    <div class="col-2">
+                            <label for="donante" class="">Donante Anonimo</label>
+                        </div>
+
+                            <div class="col-10 ">
+                            <label><input type="radio" name="anonimo" value="1">Si</label>
+
+                            <label><input type="radio" name="anonimo" value="2">No</label>
+                          </div>
+
+            </div>
+
+
+
+                <div class="form-group row" id="donante">
+                    <label for="donante" class="col-sm-2 col-form-label">Donante</label>
+                        <div class="col-sm-4">
+
+                        <input type="text" name="donante" class="form-control form-group" placeholder="" value="">
+
+                        </div>
+                        <div class="col-sm-auto">
+                        <form action="" method="get">
+                            <button type="button" name="editar" class="btn btn-info" data-toggle="modal" data-target="#modalBuscar">Buscar</button>
+                        </form>
+                    </div>
+                    <div class="col-sm-auto">
+                    <form action="{{action('introDonativoController@enviar')}}" method="get">
+                            <button type="submit" name="editar" class="btn btn-success">Nuevo</button>
+                        </form>
+                    </div>
+
+            </div>
+
+
+
             <div class="form-group row">
 
-                <label for="tipo">DONANTE</label>
-                <select class="form-control" name="tipos_donantes" id="tipos_donantes" required>
-                    @foreach($tipos_donantes as $tipo_donante )
-                <option value= "{{$tipo_donante->id}}">{{$tipo_donante->tipo}}</option>
-                    @endforeach
-
-                </select>
-        </div>
-
-            <div class="form-group row">
-
-                    <label for="tipo">TIPO</label>
+                <label for="tipo" class="col-sm-2 col-form-label">Tipo</label>
+                    <div  class="col-sm-10">
                     <select class="form-control" name="tipo" id="tipo" required>
                         @foreach($tipo_list as $tipo)
                         {{-- @if(strlen($tipo->nombre)>0) --}}
@@ -37,13 +66,16 @@ DONACION
                         @endforeach
 
                     </select>
+                </div>
             </div>
 
             <div class="form-group row" id="menuSubTipos">
-                    <label for="tipo">SUBTIPO</label>
+                    <label for="tipo" class="col-sm-2 col-form-label">Subtipo</label>
+                    <div  class="col-sm-10">
                     <select class="form-control" name="subtipo" id="subtipo" required>
                             {{-- se llenan con api mediante Ajax en hacerdonacion.js--}}
                     </select>
+                </div>
             </div>
             <div class="form-group row">
                     <label for="cantidad" class="col-sm-2 col-form-label">Unidades</label>
@@ -123,6 +155,52 @@ DONACION
         </form>
     </div>
 </div>
+ <!-- Modal -->
+ <div class="modal fade" id="modalBuscar" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                    {{-- <form action="{{action('introDonativoController@show', [$donante->id])}}" method="get"> --}}
+                        <input type="text" name="busquedadonante">
+                        <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
+                        </form>
+                    <table clas="table table-striped table-hover mt-5">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>CIF</th>
+                                    <th>Telefono</th>
+                                    <th>Población</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{-- @foreach ($donantes as $donante)
+                                <tr>
+                                    <td>{{$donante->nombre}}</td>
+                                    <td>{{$donante->cif}}</td>
+                                    <td>{{$donante->telefono}}</td>
+                                    <td>{{$donante->poblacion}}</td>
+                                    <td class="col-button">
+                                    </td>
+                                </tr>
+                                @endforeach --}}
+                            </tbody>
+                        </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
 <script type="text/javascript" src="js/hacerDonaciones.js"> </script>
 
 
