@@ -15,6 +15,8 @@ Route::get('/dashboard',function ()
 
  Route::get('/editUsuario','UsuarioController@update' );
 
+ Route::get('/editDonante','DonanteController@update' );
+
 //LOGIN
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
 Route::post('/registro', 'Auth\RegisterController@registro');
@@ -65,6 +67,8 @@ Route::get('/buscarDonante', function () {
 
 
 Route::resource('/buscarDonante','donanteController' );
+
+
 
 Route::get('/nuevoDonante', function(){
     return view('nuevoDonante');
