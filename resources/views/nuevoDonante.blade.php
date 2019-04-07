@@ -117,8 +117,8 @@ DATOS USUARIO
 
                             </div>
                             <select class="form-control" name="tipo_donante" id="tipo_donante" value="">
-                                <option value ="particular">Particular</option>
-                                <option value= "empresa">Empresa</option>
+                                <option value ="1">Particular</option>
+                                <option value= "2">Empresa</option>
                             </select>
                         </div>
                     </div>
@@ -135,8 +135,8 @@ DATOS USUARIO
                             <span class="input-group-text"><i class="fas fa-child"></i></span>
                         </div>
                         <select class="form-control" name="sexos_id" id="sexos_id" value="{{old('sexos_id')}}">
-                            <option value= "mujer">Mujer</option>
-                            <option value= "hombre">Hombre</option>
+                            <option value= "1">Mujer</option>
+                            <option value= "2">Hombre</option>
                         </select>
                     </div>
                 </div>
@@ -147,8 +147,8 @@ DATOS USUARIO
 
                         </div>
                         <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
-                            <option value ="si">Tiene animales</option>
-                            <option value= "no">No tiene animales</option>
+                            <option value ="1">Tiene animales</option>
+                            <option value= "0">No tiene animales</option>
                         </select>
                     </div>
                 </div>
@@ -163,8 +163,8 @@ DATOS USUARIO
                             <span class="input-group-text"><i class="fas fa-info"></i></span>
                         </div>
                         <select class="form-control" name="spam" id="spam" value="">
-                            <option value= "si">Permite recibir informacion de nuestra asociacion</option>
-                            <option value= "no">NO permite recibir informacion de nuestra asociacion</option>
+                            <option value= "1">Permite recibir informacion de nuestra asociacion</option>
+                            <option value= "0">NO permite recibir informacion de nuestra asociacion</option>
                         </select>
                     </div>
                 </div>
@@ -174,8 +174,8 @@ DATOS USUARIO
                                 <span class="input-group-text"><i class="fas fa-info"></i></span>
                             </div>
                             <select class="form-control" name="es_colaborador" id="es_colaborador" value="">
-                                <option value= "si">Es colaborador</option>
-                                <option value= "no">NO es colaborador</option>
+                                <option value= "1">Es colaborador</option>
+                                <option value= "0">NO es colaborador</option>
                             </select>
                         </div>
                     </div>
