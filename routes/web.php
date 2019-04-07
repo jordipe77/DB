@@ -72,6 +72,13 @@ Route::get('/buscarDonante', function () {
 
 Route::resource('/buscarDonante','donanteController' );
 
+Route::get('/buscarDonacion', function () {
+    return view('buscarDonacion');
+});
+
+
+Route::resource('/buscarDonacion','donativoController' );
+
 
 
 Route::get('/nuevoDonante', function(){
