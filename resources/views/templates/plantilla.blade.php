@@ -31,6 +31,9 @@
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
         <li><a href="">Estadísticas</a></li>
+        <li><a href="{{ url('/buscarUsuario')}}">Ver tabla usuarios</a></li>
+        <li><a href="{{ url('/buscarDonante')}}">Ver tabla donantes</a></li>
+        <li><a href="{{ url('/buscarDonacion')}}">Ver tabla donaciones</a></li>
 
         @if(Auth::check() && Auth::user()->roles_id == 2)
         <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>

@@ -35,7 +35,7 @@
             </form>
 
 
-        <table clas="table table-striped table-hover mt-5">
+        <table class="table table-striped table-hover mt-5">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -61,6 +61,9 @@
                     <td>{{$donante->poblacion}}</td>
                     <td>{{$donante->spam}}</td>
                     <td>{{$donante->fecha_alta}}</td>
+
+
+                    @if(Auth::check() && Auth::user()->roles_id == 2)
                     <td class="col-button">
                     <form action="{{action('donanteController@edit', [$donante->id])}}" method="get">
                         <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
@@ -74,6 +77,7 @@
                         <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>
                     </form>
                     </td>
+                    @endif
                 </tr>
 
                 @endforeach
