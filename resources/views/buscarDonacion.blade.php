@@ -35,7 +35,7 @@
             </form>
 
 
-        <table clas="table table-striped table-hover mt-5">
+        <table class="table table-striped table-hover mt-5">
             <thead>
                 <tr>
                     <th>Tipo</th>
@@ -55,16 +55,18 @@
                 @foreach ($donativos as $donativo)
 
                 <tr>
-                    <td>{{$donacion->subtipo->tipo->nombre}}</td>
+                    <td>{{$donativo->subtipo->tipo->nombre}}</td>
                     <td>{{$donativo->subtipos->nombre}}</td>
                     <td>{{$donativo->centros->nombre}}</td>
                     <td>{{$donativo->centros->nombre}}</td>
-                    <td>{{$donativo->usuario->nombre_usuario != ? $donativo->usuario->nombre_usuario : "No introducido"}}</td>
-                    <td>{{$donativo->donantes->nombre != ? $donativo->donantes->nombre: "No introducido"}}</td>
-                    <td>{{$donativo->coste != ? $donativo->coste : "Coste no especificado"}}</td>
-                    <td>{{$donativo->unidades != ? $donativo->unidades : "No especificado"}}</td>
+                    <td>{{$donativo->usuario->nombre_usuario != null ? $donativo->usuario->nombre_usuario : "No introducido"}}</td>
+                    <td>{{$donativo->donantes->nombre != null ? $donativo->donantes->nombre: "No introducido"}}</td>
+                    <td>{{$donativo->coste != null ? $donativo->coste : "Coste no especificado"}}</td>
+                    <td>{{$donativo->unidades != null ? $donativo->unidades : "No especificado"}}</td>
                     <td>{{$donativo->peso != null ? $donativo->peso : "Sin peso introducido"}}</td>
                     <td>{{$donativo->fecha_donativo}}</td>
+
+                    @if(Auth::check() && Auth::user()->roles_id == 2)
                     <td class="col-button">
                     <form action="{{action('donativoController@edit', [$donativo->id])}}" method="get">
                         <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
@@ -78,6 +80,7 @@
                         <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>
                     </form>
                     </td>
+                    @endif
                 </tr>
 
                 @endforeach
