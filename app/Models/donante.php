@@ -10,7 +10,6 @@ class Donante extends Model
     protected $primarykey='id';
     public $incrementing = true;
     protected $keyType = 'int';
-
     public $timestamps = false;
 
     public function sexo()

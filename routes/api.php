@@ -17,3 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource('tipo', 'Api\TipoController');
+Route::apiResource('donante','Api\DonanteApiController');
