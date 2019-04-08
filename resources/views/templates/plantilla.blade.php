@@ -26,7 +26,7 @@
         <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
     <ul>
-        <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
+        <li style="background-color:#966e4f !important;"><a href="{{url('/dashboard')}}">Acciones Frequentes</a></li>
         <li><a href="{{url('/dashboard')}}">Inicio</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>

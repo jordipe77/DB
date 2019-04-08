@@ -35,6 +35,22 @@
         }
 
       });
+
+      //ESCONDER OPCION AÑADIR FACTURA CUANDO RADIOBUTTON ES "NO"
+
+      $('input[type=radio][name=hay_factura]').change(function(){
+          var valorFactura = this.value;
+          if(valorFactura == 2)
+          {
+              $('#AddFactura').hide();
+          }
+          else
+          {
+            $('#AddFactura').show();
+          }
+      });
+
+
       //AJAX BUSQUEDA DEL DONANTE EN MODAL Y INTRODUCCIÓN A LA TABLA
       $('#btnBusDonante').click(function ()
       {
@@ -70,15 +86,15 @@
       $(document).on('click','#seleccion',function(){
 
         console.log('d');
-        var id =  $(this).data('id');     
-        var nombre = $(this).data('nombre');    
+        var id =  $(this).data('id');
+        var nombre = $(this).data('nombre');
 
         $('input[name=donante]').val(nombre);
-        $('input[name=id-donante]').val(id);
+        $('input[name=donantes_id]').val(id);
         $('#modalBuscar').modal('hide');
-      
+
       });
-      
+
   });
 
 
