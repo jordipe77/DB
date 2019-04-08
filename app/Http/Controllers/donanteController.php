@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\Donante;
 use App\Models\TipoDonantes;
 use App\Models\Sexo;
-
+use App\Models\Tipo;
+use App\Models\Donativo;
+use App\Models\Centro;
+use App\Models\Usuario; 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use View;
+use Session;
 
 
 class donanteController extends Controller
@@ -105,13 +110,13 @@ class donanteController extends Controller
 
         //--------------------------------------
 
-        // if($request->input('es_habitual')=="si"){
+        if($request->input('es_habitual')=="si"){
 
-        //     $donante->es_habitual= true;
-        // }
-        // else{
-        //     $donante->es_habitual=false;
-        // }
+            $donante->es_habitual= true;
+     }
+         else{
+             $donante->es_habitual=false;
+         }
 
         //--------------------------------------
 
@@ -137,12 +142,15 @@ class donanteController extends Controller
 
 
         $donante->save();
-
+        if($request->input('modalExists'))
+        {       
+           $id_donante = $donante->id;
+           $nombre_donante = $donante->nombre;
+           Session::flash('id_donante', $id_donante);
+           Session::flash('nombre_donante', $nombre_donante);
+           return redirect('/introDonativo');
+        }
         return redirect('/dashboard');
-
-
-
-
     }
     /**
      * Display the specified resource.
