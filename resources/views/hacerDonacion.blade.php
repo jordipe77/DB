@@ -15,11 +15,9 @@ DONACION
                     </div>
                     <div class="modal-body">
                         <form action="{{action('donanteController@store')}}" method="post" enctype="multipart/form-data">
-
                             @csrf
-                                <p></p>
-
-                            <div class="row">
+                            <input type="hidden" name="modalExists" value="1">
+                           <div class="row">
                                 <div class="col">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
@@ -241,9 +239,12 @@ DONACION
                 <div class="form-group row" id="donante">
                     <label for="donante" class="col-sm-2 col-form-label">Donante</label>
                         <div class="col-sm-4">
-
+                        @if(Session::has('nombre_donante'))
+                        <input type="text" name="donante" class="form-control form-group" value="{{Session::get('nombre_donante')}}" readonly>
+                        @else 
                         <input type="text" name="donante" class="form-control form-group" readonly placeholder="Ningun donante seleccionado">
-                        <input type="hidden" name="donantes_id" class="form-control form-group">
+                        @endif
+                        <input type="hidden" name="donantes_id" @if(Session::has('id_donante')) value="{{Session::get('id_donante')}}" @endif class="form-control form-group">
                         </div>
                         <div class="col-sm-auto">
                             <button type="button" name="buscar" class="btn btn-info" data-toggle="modal" data-target="#modalBuscar">Buscar</button>

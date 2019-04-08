@@ -98,3 +98,7 @@ body {
 .minavbar{
     max-height: 80px;
 }
+#spamImage{
+    height: 250px;
+    width: 100%
+}

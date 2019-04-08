@@ -3,8 +3,9 @@
 //     $('#modal1').modal();
 //   });
 
-
   $(document).ready(function() {
+    $('#modalBuscar').appendTo("body");
+    $('#modalNuevo').appendTo("body");
     //GET TIPOS Y SUBTIPOS AJAX
     $('#tipo').on('change', function() {
       $.ajax({
@@ -64,7 +65,6 @@
         dataType: "html",
         success: function(data){
           $('#tbody-donantes').children().remove();
-          console.log(data);
          var $mitabla = $('#tabla-donantes');
          var datos = "";
               var resultadobusqueda = JSON.parse(data);
@@ -84,8 +84,6 @@
         $('#tbody-donantes').children().remove();
       });
       $(document).on('click','#seleccion',function(){
-
-        console.log('d');
         var id =  $(this).data('id');
         var nombre = $(this).data('nombre');
 
