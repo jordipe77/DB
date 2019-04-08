@@ -1,0 +1,28 @@
+.main{
+    background-color: #ccff99;
+}
+.card{
+    color:rgb(153,204,51);
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+#anonimo.card{
+    height: 100%;
+}
+.card-header{
+    background-color: rgba(0, 0, 0, 1);
+}
+.input-group-prepend span{
+    background-color: #ffc299;
+    color: black;
+    border:0 !important;
+    }
+
+.aceptar{
+    color: black;
+    background-color: rgb(153,204,51);
+}
+        
+.aceptar:hover{
+    color: black;
+    background-color: rgba(153, 204, 51, 0.685);;
+}
