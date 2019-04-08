@@ -7,12 +7,17 @@ body {
     position: absolute;
     height: 100%;
     color:rgb(153,204,51);
-    background:rgb(245, 245, 245);
 }
 body {
     height: 100%;
 }
 .sidebar h2{
+    text-align: center;
+    margin:0;
+    padding: 10px;
+    background:rgb(245, 245, 245);
+}
+.sidebar ul{
     text-align: center;
     margin:0;
     padding: 10px;
@@ -90,3 +95,6 @@ body {
       height: 100%;
       background-color: rgb(153,204,51);
   }
+.minavbar{
+    max-height: 80px;
+}

@@ -13,7 +13,9 @@ Route::get('/dashboard',function ()
  Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
 
- Route::get('/editUsuario','Auth\RegisterController@update' );
+ Route::get('/editUsuario','UsuarioController@update' );
+
+ Route::get('/editDonante','donanteController@update' );
 
 //LOGIN
 Route::get('/login', 'Auth\LoginController@showlogin')->name('login');
@@ -22,9 +24,15 @@ Route::post('/login', 'Auth\Logincontroller@login');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 
-Route::group(['middleware' => ['auth']], function () {
 
+Route::group(['middleware' => ['auth']], function () {
+Route::get('/enviarDonante', 'introDonativoController@enviar');
 Route::resource('/introDonativo', 'introDonativoController');
+
+ Route::get('/nuevoDonante/{mibool}',function ()
+ {
+   return view ('/nuevoDonante');
+});
 
 Route::resource('/hacerDonacion', 'donativoController');
     // Route::resource('/donacionUsuario','UsuarioController' ); // descomentar cuando funcione el intro Donante
@@ -64,4 +72,16 @@ Route::get('/buscarDonante', function () {
 
 Route::resource('/buscarDonante','donanteController' );
 
+Route::get('/buscarDonacion', function () {
+    return view('buscarDonacion');
+});
+
+
+Route::resource('/buscarDonacion','donativoController' );
+
+
+
+Route::get('/nuevoDonante', function(){
+    return view('nuevoDonante');
+});
 

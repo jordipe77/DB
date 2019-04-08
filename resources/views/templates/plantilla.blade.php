@@ -23,14 +23,17 @@
 
 </head>
 <div class="sidebar">
-        <div style="max-height:100%;margin-top:25%">
+        <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
     <ul>
         <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
         <li><a href="{{url('/dashboard')}}">Inicio</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
-        <li><a href="{{ url('/introducirDonante')}}">Donantes</a></li>
+        <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
         <li><a href="">Estadísticas</a></li>
+        <li><a href="{{ url('/buscarUsuario')}}">Ver tabla usuarios</a></li>
+        <li><a href="{{ url('/buscarDonante')}}">Ver tabla donantes</a></li>
+        <li><a href="{{ url('/buscarDonacion')}}">Ver tabla donaciones</a></li>
 
         @if(Auth::check() && Auth::user()->roles_id == 2)
         <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
@@ -42,8 +45,9 @@
         </div>
     </div>
 <body>
+
 <nav class="navbar navbar-expand-lg">
-        <img src="imgs/Hamburger_icon.png" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
+        <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         <a class="navbar-brand text-hide" >
         <img src="{{asset('imgs/logo_mini.png')}}" alt="">
         </a>

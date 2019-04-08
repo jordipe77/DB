@@ -4,6 +4,8 @@
 
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/buscar.css')}}">
+
     @include('partial.errores')
 
 
@@ -12,7 +14,7 @@
 
 <div class="card mt-2">
     <div class="card-body">
-    <a href="{{url('/registro') }}" class="btn btn-primary">Nuevo Usuario</a>
+        <a href="{{url('/registro') }}" class="btn btn-primary">Nuevo Usuario</a>
     </div>
 </div>
 
@@ -35,7 +37,7 @@
             </form>
 
 
-        <table clas="table table-striped table-hover mt-5">
+        <table class="table table-striped table-hover mt-5">
             <thead>
                 <tr>
                     <th>Usuario</th>
@@ -49,6 +51,8 @@
                     <td>{{$usuario->nombre_usuario}}</td>
                     <td>{{$usuario->correo}}</td>
                     <td>{{$usuario->rol->rol}}</td>
+
+                    @if(Auth::check() && Auth::user()->roles_id == 2)
                     <td class="col-button">
                     <form action="{{action('UsuarioController@edit', [$usuario->id])}}" method="get">
                         <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
@@ -57,12 +61,12 @@
 
                     <td class="col-button">
                     <form action="{{action('UsuarioController@destroy', [$usuario->id])}}" method="post">
-
                         @method('delete')
                         @csrf
                         <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>
                     </form>
                     </td>
+                    @endif
                 </tr>
 
                 @endforeach

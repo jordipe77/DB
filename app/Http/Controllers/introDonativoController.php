@@ -10,6 +10,9 @@ use App\Models\Donativo;
 use App\Models\Centro;
 use App\Models\TipoDonantes;
 use App\Models\Usuario;
+use App\Models\Donante;
+use Session;
+use View;
 
 class introDonativoController extends Controller
 {
@@ -71,7 +74,7 @@ class introDonativoController extends Controller
             $donativo->hay_factura=false;
         }
 
-        $donativo->donantes_id = 21;
+        $donativo->donantes_id = $request->input("id-donante");
 
 
         $donativo->usuarios_id=Auth::user()->id;
@@ -89,7 +92,7 @@ class introDonativoController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -102,7 +105,6 @@ class introDonativoController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -114,7 +116,6 @@ class introDonativoController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -125,4 +126,11 @@ class introDonativoController extends Controller
     {
         //
     }
+    public function enviar()
+    {
+        $mibool = true;
+        $data['mibool'] = $mibool;
+        return View::make('nuevoDonante')->with('mibool', $mibool);
+    }
+
 }
