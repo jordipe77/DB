@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
+
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tipo;
 use App\Models\Donativo;
@@ -75,15 +81,17 @@ class introDonativoController extends Controller
         if($request->input("hay_factura")=="1"){
 
             $donativo->hay_factura=true;
-            $ficheroFactura = $request->input("ruta_factura");
 
-            if($ficheroFactura){
+            $file = $request->file("rutaFactura");
 
-                $factura_path = $ficheroFactura->getClientOriginalName();
-                Storage::disk('local')->putFileAs('facturas/', $ficheroFactura, $factura_path);
 
-                $donativo->ruta_factura = "facturas/". $factura_path;
-            }
+
+                $file_path =  $file->getClientOriginalName();
+                Storage::disk('local')->putFileAs('facturas/', $file, $file_path);
+
+                $donativo->ruta_factura = "facturas/". $file_path;
+
+
 
         }
         else

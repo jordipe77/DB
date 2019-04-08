@@ -51,7 +51,7 @@ DONACION
                             <div class="col-10 ">
                             <span><input type="radio" name="anonimo" value="1">Si</span>
 
-                            <span class="ml-2"><input type="radio" name="anonimo" value="2">No</span>
+                            <span class="ml-2"><input type="radio" name="anonimo" checked="check" value="2">No</span>
                           </div>
             </div>
                 <div class="form-group row" id="donante">
@@ -163,7 +163,7 @@ DONACION
                             <label for=""></label>
                         </div>
                         <div class="col-4 ">
-                        <input type="file"  name="ruta_factura" id ="factura" placeholder="Añadir factura" class="form-control" value="">
+                        <input type="file"  name="rutaFactura" id ="factura" placeholder="Añadir factura" class="form-control" value="">
                         </div>
                  </div>
 
