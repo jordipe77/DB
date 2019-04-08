@@ -4,7 +4,7 @@
 ADMIN MODE
 @endsection
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/ADMIN.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
 
 @section('principal')
 

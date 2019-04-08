@@ -15,7 +15,7 @@ DONACION
                     </div>
                     <div class="modal-body">
                       <h5 class="text-center"><input type="text" id="busquedadonante" name="buscDonante">
-                        <button type="button" id="btnBusDonante" name="editar" class="btn btn-info">Buscar</button>      
+                        <button type="button" id="btnBusDonante" name="editar" class="btn btn-info">Buscar</button>
                     </h5>
                       <table class="table table-striped friendsoptionstable" id="tabla-donantes">
                         <thead id="tblHead">
@@ -31,7 +31,7 @@ DONACION
                         </tbody>
                       </table>
                     </div>
-                            
+
                   </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
               </div><!-- /.modal -->
@@ -41,7 +41,7 @@ DONACION
             NUEVA DONACIÓN
         </div>
     <div class="card-body">
-            <form action="{{action('introDonativoController@store')}}" method="POST">
+            <form action="{{action('introDonativoController@store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group row" id="anonimodiv">
                     <div class="col-2">
@@ -59,15 +59,13 @@ DONACION
                         <div class="col-sm-4">
 
                         <input type="text" name="donante" class="form-control form-group" readonly placeholder="Ningun donante seleccionado">
-                        <input type="hidden" name="id-donante" class="form-control form-group">
+                        <input type="hidden" name="donantes_id" class="form-control form-group">
                         </div>
                         <div class="col-sm-auto">
                             <button type="button" name="buscar" class="btn btn-info" data-toggle="modal" data-target="#modalBuscar">Buscar</button>
                     </div>
                     <div class="col-sm-auto">
-                    <form action="{{action('introDonativoController@enviar')}}" method="get">
-                        <button type="submit" name="editar" class="btn btn-success">Nuevo</button>
-                        </form>
+
                     </div>
 
             </div>
@@ -146,18 +144,34 @@ DONACION
                         </div>
             </div>
 
-            <div class="form-group row">
-                    <label for="descripcion" class="col-sm-2 col-form-label">Factura</label>
-                    <div class="col-sm-4">
-                        <select class="form-control" name="hay_factura" id="hay_factura" value="{{old('hay_factura')}}" >
-                            <option value="1">Si</option>
-                            <option value="2">No</option>
-                        </select>
+            <div class="form-group row" id="facturadiv">
+                <div class="col-2">
+                        <label for="donante" class="">Añadir factura</label>
                     </div>
-            </div>
+
+                        <div class="col-10 ">
+                        <span><input type="radio" name="hay_factura" value="1" checked="checked">Si</span>
+
+                        <span class="ml-2"><input type="radio" name="hay_factura" value="2">No</span>
+                    </div>
+
+             </div>
+
+             <div class="form-group row" id="AddFactura">
+
+                        <div class="col-2 ">
+                            <label for=""></label>
+                        </div>
+                        <div class="col-4 ">
+                        <input type="file"  name="ruta_factura" id ="factura" placeholder="Añadir factura" class="form-control" value="">
+                        </div>
+                 </div>
+
 
             <div class="form-group row">
+                    <div class="col-2">
                     <label for="comment">Descripción</label>
+                    </div>
                     <div class="col-sm-10 offset-2">
                         <textarea class="form-control" rows="3" id="desc_animal" name="desc_animal"></textarea>
                   </div>
@@ -165,10 +179,10 @@ DONACION
             <div class="form-group row">
                 <div class="col-sm-10 offset-2">
                         <button type="submit" id="confirmar" class="btn btn-primary btn-sm">CONFIRMAR</button>
-                        <button type="button" class="btn btn-secondary btn-sm">CANCELAR</button>
+                    </form>
+                <a href="{{url('/dashboard')}}"><button type="button" class="btn btn-secondary btn-sm">CANCELAR</button></a>
                 </div>
             </div>
-        </form>
     </div>
 </div>
 <script type="text/javascript" src="js/hacerDonaciones.js"> </script>
