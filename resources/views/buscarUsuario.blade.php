@@ -11,12 +11,13 @@
 
 @section('principal')
 
-
+@if(Auth::check() && Auth::user()->roles_id == 2)
 <div class="card mt-2">
     <div class="card-body">
         <a href="{{url('/registro') }}" class="btn btn-primary">Nuevo Usuario</a>
     </div>
 </div>
+@endif
 
 <div class="card mt-2">
     <div class="card-header">

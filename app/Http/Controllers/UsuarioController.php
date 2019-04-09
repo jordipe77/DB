@@ -23,12 +23,12 @@ class UsuarioController extends Controller
             $search = $request->input('search');
             $usuarios = Usuario:: where('nombre_usuario', 'like', '%'.$search.'%')
                             ->orderby('nombre_usuario')
-                            ->paginate(10);
+                            ->paginate(5);
         }
         else
         {
             $search= '';
-            $usuarios = Usuario::orderby('nombre_usuario')->paginate(10);
+            $usuarios = Usuario::orderby('nombre_usuario')->paginate(5);
         }
 
 
