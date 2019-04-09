@@ -1,10 +1,10 @@
 @extends('templates.plantilla')
 @section('titulo','Registro')
 @section('principal')
-<div class="container">
 <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/register.css')}}">
         @include('partial.errores')
+<div class="d-flex justify-content-center h-100">
     <div class="card">
         <div class="card-header">
             <h2 class="text-center text mt-4">REGISTRO USUARIOS</h2>
@@ -44,6 +44,6 @@
     </div>
     </div>
 </div>
-    </div>
+</div>
 @endsection
 

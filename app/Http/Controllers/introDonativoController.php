@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
+
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tipo;
 use App\Models\Donativo;
@@ -13,6 +19,7 @@ use App\Models\Usuario;
 use App\Models\Donante;
 use Session;
 use View;
+use App\Models\Subtipo;
 
 class introDonativoController extends Controller
 {
@@ -65,19 +72,36 @@ class introDonativoController extends Controller
         $donativo->peso=$request->input("peso");
         $donativo->coste=$request->input("coste");
         $donativo->fecha_donativo = date("Y-m-d");
+        $donativo->donantes_id = $request->input("donantes_id");
+        // $donativo->donantes_id = 1;
+        $donativo->usuarios_id=Auth::user()->id;
+
+
+        //--------------FACTURA--------------------------
 
         if($request->input("hay_factura")=="1"){
 
             $donativo->hay_factura=true;
+
+            $file = $request->file("rutaFactura");
+
+
+
+                $file_path =  $file->getClientOriginalName();
+                Storage::disk('local')->putFileAs('facturas/', $file, $file_path);
+
+                $donativo->ruta_factura = "facturas/". $file_path;
         }
-        else{
+        else
+        {
             $donativo->hay_factura=false;
         }
+        //----------------------------------------
 
-        $donativo->donantes_id = $request->input("id-donante");
 
 
-        $donativo->usuarios_id=Auth::user()->id;
+
+
 
         $donativo->save();
 

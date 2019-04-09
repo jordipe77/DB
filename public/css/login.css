@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
-
 body{
 background-image: url('../imagenes/fondo_login.jpg');
+font-family: Quicksand,monospace,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 background-size: cover;
 background-repeat: no-repeat;
 }
