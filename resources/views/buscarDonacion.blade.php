@@ -22,32 +22,22 @@
     </div>
     <div class="card-body">
 
-            <form action="{{action('donativoController@index')}}" method="get" enctype="form-horizontal">
-                <div class="form-group row">
-
-                    <label for="" class="col-1">Nombre</label>
-                    <div class="col-10">
-                    <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
-
-                    </div>
-                        <button type="submit" class="btn btn-secondary btn-sm col-1">BUSCAR</button>
-                </div>
-            </form>
 
 
         <table class="table table-striped table-hover mt-5">
             <thead>
                 <tr>
-                    <th>Tipo</th>
-                    <th>SubTipo</th>
-                    <th>Centro receptor</th>
-                    <th>Centro destino</th>
-                    <th>Usuario</th>
-                    <th>Donante</th>
-                    <th>Coste</th>
-                    <th>Unidades</th>
-                    <th>Peso</th>
-                    <th>Fecha</th>
+                <td>ID</td>
+                <td>ID SUBTIPO</td>
+                <td>ID Centro receptor</td>
+                <td>ID Centro destí</td>
+                <td>Usuario ID</td>
+                <td>Donante ID</td>
+                <td>Coste</td>
+                <td>Unidades</td>
+                <td>Peso</td>
+                <td>Fecha Donativo</td>
+                <td>Ruta Factura</td>
                 </tr>
             </thead>
             <tbody>
@@ -55,38 +45,22 @@
                 @foreach ($donativos as $donativo)
 
                 <tr>
-                    <td>{{$donativo->subtipo->tipo->nombre}}</td>
-                    <td>{{$donativo->subtipos->nombre}}</td>
-                    <td>{{$donativo->centros->nombre}}</td>
-                    <td>{{$donativo->centros->nombre}}</td>
-                    <td>{{$donativo->usuario->nombre_usuario != null ? $donativo->usuario->nombre_usuario : "No introducido"}}</td>
-                    <td>{{$donativo->donantes->nombre != null ? $donativo->donantes->nombre: "No introducido"}}</td>
-                    <td>{{$donativo->coste != null ? $donativo->coste : "Coste no especificado"}}</td>
-                    <td>{{$donativo->unidades != null ? $donativo->unidades : "No especificado"}}</td>
-                    <td>{{$donativo->peso != null ? $donativo->peso : "Sin peso introducido"}}</td>
-                    <td>{{$donativo->fecha_donativo}}</td>
-
-                    @if(Auth::check() && Auth::user()->roles_id == 2)
-                    <td class="col-button">
-                    <form action="{{action('donativoController@edit', [$donativo->id])}}" method="get">
-                        <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
-                    </form>
-                    </td>
-
-                    <td class="col-button">
-                    <form action="{{action('donativoController@destroy', [$donativo->id])}}" method="post">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>
-                    </form>
-                    </td>
-                    @endif
+                    <td>{{$donativo->id}}</td>
+                    <td>{{$donativo->subtipos_id}}</td>
+                    <td>{{$donativo->centros_receptor_id}} </td>
+                    <td>{{$donativo->centros_desti_id}} </td>
+                    <td>{{$donativo->usuarios_id}} </td>
+                    <td>{{$donativo->donantes_id}} </td>
+                    <td>{{$donativo->coste}} </td>
+                    <td>{{$donativo->unidades}} </td>
+                    <td>{{$donativo->peso}} </td>
+                    <td>{{$donativo->fecha_donativo}} </td>
+                    <td>{{$donativo->ruta_factura}} </td>
                 </tr>
 
                 @endforeach
             </tbody>
         </table>
-        {{ $donativos->appends(['search'=>$search])->links() }}
     </div>
 </div>
 

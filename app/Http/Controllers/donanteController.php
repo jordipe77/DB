@@ -72,7 +72,7 @@ class donanteController extends Controller
         $donante->pais = $request->input('pais');
         $donante->poblacion = $request->input('poblacion');
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
-        $donante->fecha_alta=date("Y-m-d");
+        $donante->fecha_alta=date("Y-m-d  H:i:s");
         $donante->es_habitual=false;
 
 

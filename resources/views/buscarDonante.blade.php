@@ -56,11 +56,15 @@
                     <td>{{$donante->nombre}}</td>
                     <td>{{$donante->cif}}</td>
                     <td>{{$donante->telefono}}</td>
-                    <td>{{$donante->sexo = null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
+                    <td>{{$donante->sexo != null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
                     <td>{{$donante->direccion}}</td>
                     <td>{{$donante->pais}}</td>
                     <td>{{$donante->poblacion}}</td>
-                    <td>{{$donante->spam}}</td>
+                    @if($donante->spam==1)
+                    <td>Sí</td>
+                    @else
+                    <td>No</td>
+                    @endif
                     <td>{{$donante->fecha_alta}}</td>
 
 

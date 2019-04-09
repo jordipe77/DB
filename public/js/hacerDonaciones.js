@@ -4,25 +4,12 @@
 //   });
 
   $(document).ready(function() {
+    tiposysubtipos();
     $('#modalBuscar').appendTo("body");
     $('#modalNuevo').appendTo("body");
     //GET TIPOS Y SUBTIPOS AJAX
     $('#tipo').on('change', function() {
-      $.ajax({
-        url: "http://localhost:8080/DB/public/api/tipo/" + this.value,
-        type: "GET",
-        data: {} ,
-        dataType: "html",
-        success: function(data){
-          var $select = $('#subtipo');
-          var miarray = JSON.parse(data);
-               $("#subtipo option").remove();
-                miarray.data.subtipos.forEach(function(subtipo) {
-                $select.append('<option value=' + subtipo.id + '>' + subtipo.nombre + '</option>');
-                });
-             }
-           });
-
+        tiposysubtipos();
       });
       //ESCONDER OPCION DE BUSCAR Y NUEVO DONANTE AL SER DONANTE ANONIMO (NO SE NECESITA)
       $('input[type=radio][name=anonimo]').change(function(){
@@ -94,5 +81,22 @@
       });
 
   });
+function tiposysubtipos()
+{
+        $.ajax({
+          url: "http://localhost:8080/DB/public/api/tipo/" + $('#tipo').val(),
+          type: "GET",
+          data: {} ,
+          dataType: "html",
+          success: function(data){
+            var $select = $('#subtipo');
+            var miarray = JSON.parse(data);
+                 $("#subtipo option").remove();
+                  miarray.data.subtipos.forEach(function(subtipo) {
+                  $select.append('<option value=' + subtipo.id + '>' + subtipo.nombre + '</option>');
+                  });
+               }
+             });
+}
 
 
