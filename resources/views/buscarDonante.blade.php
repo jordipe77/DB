@@ -9,12 +9,13 @@
 
 @section('principal')
 
-
+@if(Auth::check() && Auth::user()->roles_id == 2)
 <div class="card mt-2">
     <div class="card-body">
     <a href="{{url('/nuevoDonante') }}" class="btn btn-primary">Nuevo Donante</a>
     </div>
 </div>
+@endif
 
 <div class="card mt-2">
     <div class="card-header">
@@ -55,7 +56,7 @@
                     <td>{{$donante->nombre}}</td>
                     <td>{{$donante->cif}}</td>
                     <td>{{$donante->telefono}}</td>
-                    <td>{{$donante->sexo != null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
+                    <td>{{$donante->sexo = null ? $donante->sexo->sexo : "Sin sexo Asig."}}</td>
                     <td>{{$donante->direccion}}</td>
                     <td>{{$donante->pais}}</td>
                     <td>{{$donante->poblacion}}</td>
