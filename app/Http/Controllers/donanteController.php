@@ -280,6 +280,15 @@ class donanteController extends Controller
      */
     public function destroy($id)
     {
+        $donaciones = Donativo::where('donantes_id',$id);
+        if($donaciones)
+        {
+            foreach($donaciones as $donacion)
+             {
+                $donacion->id_donante = 26;
+                $donacion->save();
+             }
+        }
         $donante = Donante::find($id);
 
         $donante->delete();

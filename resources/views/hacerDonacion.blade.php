@@ -179,7 +179,7 @@ DONACION
                             </div>
 
                             <div class="form-group mt-3 offset-5">
-                                <input type="submit" value="Registrar" class="btn aceptar">
+                                <button type="submit" id="btnBusDonante" name="editar" class="btn btn-info">Registrar</button>
                             </div>
                         </form>
                     </div>
