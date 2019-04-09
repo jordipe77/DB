@@ -19,6 +19,7 @@ use App\Models\Usuario;
 use App\Models\Donante;
 use Session;
 use View;
+use App\Models\Subtipo;
 
 class introDonativoController extends Controller
 {

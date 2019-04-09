@@ -41,7 +41,7 @@
     </ul>
         </div>
         <div class="logo">
-        <img src="{{asset('imgs/spam_donantes.png')}}">
+        <img id="spamImage" src="{{asset('imgs/spam_donantes.png')}}">
         </div>
     </div>
 <body>
