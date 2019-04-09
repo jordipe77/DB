@@ -72,7 +72,7 @@ class introDonativoController extends Controller
         $donativo->coste=$request->input("coste");
         $donativo->fecha_donativo = date("Y-m-d");
         $donativo->donantes_id = $request->input("donantes_id");
-        // $donativo->donantes_id = 1;
+
         $donativo->usuarios_id=Auth::user()->id;
 
 
@@ -84,26 +84,16 @@ class introDonativoController extends Controller
 
             $file = $request->file("rutaFactura");
 
-
-
                 $file_path =  $file->getClientOriginalName();
                 Storage::disk('local')->putFileAs('facturas/', $file, $file_path);
 
                 $donativo->ruta_factura = "facturas/". $file_path;
-
-
-
         }
         else
         {
             $donativo->hay_factura=false;
         }
         //----------------------------------------
-
-
-
-
-
 
         $donativo->save();
 
