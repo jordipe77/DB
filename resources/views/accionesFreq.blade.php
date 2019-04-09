@@ -32,9 +32,9 @@ Acciones Frequentes
                 </div>
                 <a href="{{url('/buscarDonacion')}}">
                 <div class="col-md-4">
-                    <div class="card border-danger mx-sm-1 p-3">
-                        <div class="card border-danger shadow text-danger p-3 my-card" ><span class="fa fa-box-open" aria-hidden="true"></span></div>
-                        <div class="text-danger text-center mt-3"><h4>Donaciones</h4></div>
+                    <div class="card border-dark mx-sm-1 p-3">
+                        <div class="card border-dark shadow text-dark p-3 my-card" ><span class="fa fa-box-open" aria-hidden="true"></span></div>
+                        <div class="text-dark text-center mt-3"><h4>Donaciones</h4></div>
 
                     </div>
                 </a>

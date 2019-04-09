@@ -7,7 +7,7 @@ use App\Models\Sexo;
 use App\Models\Tipo;
 use App\Models\Donativo;
 use App\Models\Centro;
-use App\Models\Usuario; 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use View;
@@ -29,12 +29,12 @@ class donanteController extends Controller
             $search = $request->input('search');
             $donantes = Donante:: where('nombre', 'like', '%'.$search.'%')
                             ->orderby('nombre')
-                            ->paginate(10);
+                            ->paginate(5);
         }
         else
         {
             $search= '';
-            $donantes = Donante::orderby('nombre')->paginate(10);
+            $donantes = Donante::orderby('nombre')->paginate(5);
         }
 
 
@@ -77,10 +77,10 @@ class donanteController extends Controller
 
 
         //--------------------------------------
-        if($request->input('sexos_id') == "mujer"){
+        if($request->input('sexos_id') == "1"){
              $donante->sexos_id =1;
         }
-        if($request->input('sexos_id') == "hombre"){
+        if($request->input('sexos_id') == "2"){
             $donante->sexos_id =2;
         }
         //--------------------------------------
@@ -143,7 +143,7 @@ class donanteController extends Controller
 
         $donante->save();
         if($request->input('modalExists'))
-        {       
+        {
            $id_donante = $donante->id;
            $nombre_donante = $donante->nombre;
            Session::flash('id_donante', $id_donante);
