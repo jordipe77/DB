@@ -6,6 +6,9 @@ DATOS USUARIO
 <link rel="stylesheet" href="{{asset('css/donantes.css')}}">
 @section('principal')
 
+@include('partial.errores')
+
+
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
         <div class="card-header">

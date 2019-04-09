@@ -5,6 +5,8 @@ DATOS USUARIO
 @endsection
 <link rel="stylesheet" href="{{asset('css/donantes.css')}}">
 @section('principal')
+
+    @include('partial.errores')
 {{--
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">

@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
+/* *{
+    overflow: hidden;
+
+} */
+
 .main{
-    background-image: url('../imagenes/fondo_registro.jpg');
-    background-size: cover;
+    background-image: url('../imagenes/fondo_registro2.jpg');
+    background-size: 100%;
     background-repeat: no-repeat;
     font-family: url('../types/CaviarDreams/CaviarDreams.ttf');
     z-index: 1;
@@ -14,6 +19,7 @@
     margin-bottom: auto;
     width: 600px;
     background-color: rgba(0, 0, 0, 0.6) !important;
+    margin-left: 25%;
     }
 
 .card-header{

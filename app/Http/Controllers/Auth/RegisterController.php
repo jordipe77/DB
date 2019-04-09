@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Clases\Utilitat;
+use Illuminate\Database\QueryException;
+
 
 
 use Illuminate\Support\Facades\Validator;
@@ -95,7 +97,6 @@ class RegisterController extends Controller
         $usuario->nombre_usuario = $request->input('nombre_usuario');
         $usuario->correo = $request->input('correo');
         $usuario->roles_id = 1;
-
 
         if (Hash::check($request->input('password_confirmation'), $usuario->password)){ //compruebo que el password_confirm es igual que el password
 

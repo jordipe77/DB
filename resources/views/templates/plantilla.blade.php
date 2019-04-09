@@ -23,27 +23,28 @@
 
 </head>
 <div class="sidebar">
-        <div style="max-height:100%;margin-top:25%">
+    <div style="max-height:100%;margin-top:20%"> 
         <h2>Menú</h2>
-    <ul>
-        <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
-        <li><a href="{{url('/dashboard')}}">Inicio</a></li>
-        <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
-        <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
-        <li><a href="">Estadísticas</a></li>
-        <li><a href="{{ url('/buscarUsuario')}}">Ver tabla usuarios</a></li>
-        <li><a href="{{ url('/buscarDonante')}}">Ver tabla donantes</a></li>
-        <li><a href="{{ url('/buscarDonacion')}}">Ver tabla donaciones</a></li>
+        <ul>
+            <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
+            <li><a href="{{url('/dashboard')}}">Inicio</a></li>
+            <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
+            <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
+            <li><a href="">Estadísticas</a></li>
+            <li><a href="{{ url('/buscarUsuario')}}">Ver tabla usuarios</a></li>
+            <li><a href="{{ url('/buscarDonante')}}">Ver tabla donantes</a></li>
+            <li><a href="{{ url('/buscarDonacion')}}">Ver tabla donaciones</a></li>
 
-        @if(Auth::check() && Auth::user()->roles_id == 2)
-        <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
-        @endif
-    </ul>
-        </div>
+            @if(Auth::check() && Auth::user()->roles_id == 2)
+            <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
+            @endif
+        </ul>
+    </div>  
         <div class="logo">
-        <img src="{{asset('imgs/spam_donantes.png')}}">
+            <img src="{{asset('imgs/spam_donantes.png')}}">
         </div>
-    </div>
+</div>
+
 <body>
 <nav class="navbar navbar-expand-lg">
         <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
@@ -61,13 +62,13 @@
                </li>
                <li>
                    <div class="nav-item">
-                   <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+                        <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
                    </div>
                </li>
                @else
-               <div class="nav-item login">
-                   <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
-               </div>
+                    <div class="nav-item login">
+                        <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
+                    </div>
                @endif
 
            </ul>
@@ -75,6 +76,5 @@
 
 <div class="container main">@yield('principal')
 
-</div>
 </body>
 </html>

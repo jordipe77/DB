@@ -8,6 +8,9 @@ use App\Models\Sexo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Database\QueryException;
+use App\Clases\Utilitat;
+
 
 class donanteController extends Controller
 {
@@ -135,12 +138,19 @@ class donanteController extends Controller
             $donante->tipos_donantes_id=3;
         }
 
+        try
+        {
+            $donante->save();
+        }
 
-        $donante->save();
+        catch(QueryException $e)
+        {
+            $error=Utilitat::errorMessage($e);
+            $request->session()->flash('error',$error);
+            return redirect('/nuevoDonante')->withInput();
+        }
 
-        return redirect('/dashboard');
-
-
+        return redirect('/dashboard')->withInput();
 
 
     }

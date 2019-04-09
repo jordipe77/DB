@@ -11,8 +11,8 @@
         </div>
         <div class="card-body">
     <div class="row">
-      <div class="col-2 w-100"> </div>
-      <div class="col-8 w-100">
+      <div class="col-2 w-200"> </div>
+      <div class="col-8 w-200">
             <form action="{{action('Auth\RegisterController@registro')}}" method="post">
               @csrf
           <div class="form-row">
