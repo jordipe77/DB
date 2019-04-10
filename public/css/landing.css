@@ -11,13 +11,13 @@
 #link img:hover{
     opacity: 0.5;
 }
-h2, h3, h4{
+.mish2{
     text-align: center;
     font-weight: 1.5;
     color:whitesmoke;
 }
 .carousel-item img{
-    height: 90%;
+    height: 150%;
     padding-left: 10%;
     padding-right:10%;
 }

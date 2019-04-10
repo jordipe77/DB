@@ -32,7 +32,8 @@
         <h2>Menú</h2>
     <ul >
         <li style="background-color:#966e4f !important;"><a href="{{url('/accionesFreq')}}">Acciones Frequentes</a></li>
-        <li><a href="{{url('/dashboard')}}">Inicio</a></li>
+        <li><a href="{{url('/')}}">Página Pública</a></li>
+        <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
         <li><a href="">Estadísticas</a></li>
