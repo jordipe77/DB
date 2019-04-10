@@ -19,7 +19,7 @@ Dashboard
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donaciones Anuales</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">40,000€</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{$donacionesTotales}}</div>
                 </div>
                 <div class="col-auto">
                   <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@ Dashboard
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Mensual</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">10.000</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{$suma}}</div>
                 </div>
                 <div class="col-auto">
                   <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -55,7 +55,7 @@ Dashboard
                   <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Centros</div>
                   <div class="row no-gutters align-items-center">
                     <div class="col-auto">
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$centros}}</div>
                     </div>
                     <div class="col-auto">
                       <div class="progress progress-sm mr-2">
@@ -65,7 +65,7 @@ Dashboard
                   </div>
                 </div>
                 <div class="col-auto">
-                  <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                  <i class="fas fa-building -list fa-2x text-gray-300"></i>
                 </div>
               </div>
             </div>
@@ -78,11 +78,11 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Donantes Anuales</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Usuarios Registrados</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$usuarios}}</div>
                 </div>
                 <div class="col-auto">
-                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                  <i class="fas fa-user fa-2x text-gray-300"></i>
                 </div>
               </div>
             </div>
@@ -96,8 +96,8 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donaciones Anuales</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">40,000€</div>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donativos Mensuales</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
                 </div>
                 <div class="col-auto">
                   <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -113,7 +113,7 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Mensual</div>
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Total</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">10.000</div>
                 </div>
                 <div class="col-auto">
@@ -130,10 +130,10 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Centros</div>
+                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Administradores</div>
                   <div class="row no-gutters align-items-center">
                     <div class="col-auto">
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
                     </div>
                     <div class="col-auto">
                       <div class="progress progress-sm mr-2">
@@ -156,11 +156,11 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Donantes Anuales</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Tipos de Animales</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{$animales}}</div>
                 </div>
                 <div class="col-auto">
-                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                  <i class="fas fa-paw fa-2x text-gray-300"></i>
                 </div>
               </div>
             </div>

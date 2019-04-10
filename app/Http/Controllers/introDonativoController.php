@@ -71,8 +71,15 @@ class introDonativoController extends Controller
         $donativo->centros_desti_id = $request->input("centro_desti");
         $donativo->peso=$request->input("peso");
         $donativo->coste=$request->input("coste");
-        $donativo->fecha_donativo = date("Y-m-d  H:i:s"); 
-        $donativo->donantes_id = $request->input("donantes_id");
+        $donativo->fecha_donativo = date("Y-m-d  H:i:s");
+
+        if($request->input('donantes_id')=='0')
+        {
+        $donativo->donantes_id =null;
+        }
+        else {
+            $donativo->donantes_id = $request->input("donantes_id");
+        }
 
         $donativo->usuarios_id=Auth::user()->id;
 

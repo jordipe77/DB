@@ -23,6 +23,7 @@
 
 
 </head>
+@if(Auth::check())
 <div class="sidebar">
         <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
@@ -43,10 +44,13 @@
         <img id="spamImage" src="{{asset('imgs/spam_donantes.png')}}">
         </div>
     </div>
+    @endif
 <body>
 
 <nav class="navbar navbar-expand-lg minavbar">
+        @if(Auth::check())
         <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
+        @endif
         <a class="navbar-brand text-hide" >
         <img src="{{asset('imgs/logo_mini.png')}}" alt="">
         </a>
@@ -61,12 +65,12 @@
                </li>
                <li>
                    <div class="nav-item">
-                   <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+                   <a class="nav-link alogout" href="{{ route('logout') }}">LOGOUT</a>
                    </div>
                </li>
                @else
-               <div class="nav-item login">
-                   <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
+               <div class="nav-item">
+                   <a class="nav-link alogin" href="{{ url('/login') }}">LOGIN</a>
                </div>
                @endif
 
