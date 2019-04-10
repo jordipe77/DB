@@ -1,7 +1,7 @@
 @extends('templates.plantilla')
 
 @section('titulo')
-DONACION
+DONACIÓN
 @endsection
 <link rel="stylesheet" type="text/css" href="{{asset('css/hacerDonaciones.css')}}">
 @section('principal')
@@ -241,7 +241,7 @@ DONACION
                         <div class="col-sm-4">
                         @if(Session::has('nombre_donante'))
                         <input type="text" name="donante" class="form-control form-group" value="{{Session::get('nombre_donante')}}" readonly>
-                        @else 
+                        @else
                         <input type="text" name="donante" class="form-control form-group" readonly placeholder="Ningun donante seleccionado">
                         @endif
                         <input type="hidden" name="donantes_id" @if(Session::has('id_donante')) value="{{Session::get('id_donante')}}" @endif class="form-control form-group">
