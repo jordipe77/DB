@@ -7,40 +7,45 @@ ADMIN MODE
 <link rel="stylesheet" type="text/css" href="{{asset('css/ADMIN.css')}}">
 
 @section('principal')
+    <h2 style="color:#007bff;">OPCIONES DE ADMINISTRADOR</h2>
+<table>
+    <tbody>
 
-<div class="container" id="tot">
-    <form action="" method="post">
-            <h2>OPCIONES DE ADMINISTRADOR</h2>
-        <div class="row">
-            <div class="col-3">
-            </div>
-            <div class="col-6">
+        <tr>
+            <td>
+            <a href="{{url('/buscarUsuario')}}">
+                <div class="card mr-2 carta" id="cards_botones">
 
-                    <div class="card-group">
-                            <a href="{{url('/buscarUsuario')}}">
-                        <div class="card carta">
-                           <button type="button" class="btn bot" id="boton1" name="boton1"><strong>USUARIO</strong></button>
+                    <button type="button" class="btn bot boton" name="boton1"><p>USUARIO</p></button>
 
-                        </div>
-                    </a>
-                    <a href="{{url('/buscarDonante')}}">
-                        <div class="card carta">
-                            <button type="button" class="btn bot" id="boton2" name="boton2"><strong>DONANTE</strong></button>
-                        </div>
-                    </a>
-                    <a href="{{url('/buscarDonacion')}}">
-                        <div class="card carta">
-                            <button type="button" class="btn bot" id="boton4" name="boton4"><strong>DONACIÓN</strong></button>
-                         </div>
-                    </a>
                 </div>
-                <div class="col-3">
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <a href="{{url('/buscarDonante')}}">
+                    <div class="card mr-2 carta" id="cards_botones">
+                        <button type="button" class="btn bot boton" name="boton2"><p>DONANTE</p></button>
                     </div>
-        </div>
-    </div>
-    </form>
-</div>
-
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <a href="{{url('/buscarDonacion')}}">
+                    <div class="card mr-2 carta" id="cards_botones">
+                        <button type="button" class="btn bot boton" name="boton4"><p>DONACIÓN</p></button>
+                    </div>
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="height:75px;"></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 @endsection
-

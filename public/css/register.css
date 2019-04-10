@@ -6,11 +6,17 @@
 } */
 
 .main{
+<<<<<<< HEAD
     background-image: url('../imagenes/fondo_registro2.jpg');
     background-size: 100%;
+=======
+
+    background-size: cover;
+>>>>>>> master
     background-repeat: no-repeat;
     font-family: url('../types/CaviarDreams/CaviarDreams.ttf');
     z-index: 1;
+
 }
 
 .card{
@@ -19,7 +25,11 @@
     margin-bottom: auto;
     width: 600px;
     background-color: rgba(0, 0, 0, 0.6) !important;
+<<<<<<< HEAD
     margin-left: 25%;
+=======
+    float:center;
+>>>>>>> master
     }
 
 .card-header{

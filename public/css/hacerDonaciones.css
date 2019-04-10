@@ -1,5 +1,4 @@
 #modalBuscar {
-    height: 50%; 
     overflow: hidden;
  }
   .friendsoptionstable {
@@ -7,9 +6,13 @@
   }
   .modal-dialog{
     position: relative;
-    display: table;
-    overflow-y: auto;    
-    overflow-x: auto;
+    display: table;  
     width: auto;
     min-width: 300px;  
+    overflow-y: auto;
+  }
+  .modal-body{
+    height: 400px;
+    width: 100%;
+    overflow-y: auto;
   }

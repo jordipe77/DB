@@ -5,7 +5,7 @@
 } */
 
 body {
-    font-family: url("https://fonts.googleapis.com/css?family=Quicksand");
+    font-family:Libre Baskerville,Poppings,Quicksand,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     background: rgb(153,204,51);
   }
 .sidebar{
@@ -95,3 +95,13 @@ body {
       height: 100%;
       background-color: rgb(153,204,51);
   }
+<<<<<<< HEAD
+=======
+.minavbar{
+    max-height: 80px;
+}
+#spamImage{
+    height: 250px;
+    width: 100%
+}
+>>>>>>> master

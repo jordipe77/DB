@@ -10,6 +10,11 @@ Route::get('/dashboard',function ()
 	return view ('dashboard');
 });
 
+Route::get('/accionesFreq',function ()
+{
+	return view ('accionesFreq');
+});
+
  Route::resource('/introducirDonante','donanteController' ); // comentar cuando funcione intro donante
 
 
@@ -42,21 +47,19 @@ Route::get('/admin',function ()
 });
 
 
+Route::get('/nuevoDonante', function(){
+    return view('nuevoDonante');
+});
+
 });
 
 Auth::routes();
 
 
-// Route::get('/home', 'HomeController@index')->name('home');
-
 // Route::get('/dashboard','HomeController@index');
 //REGISTRO
 Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
 Route::post('/registro', 'Auth\RegisterController@registro');
-
-Route::get('/introducirDonante', function () {
-    return view('introducirDonante');
-});
 
 Route::get('/buscarUsuario', function () {
     return view('buscarUsuario');
@@ -72,16 +75,12 @@ Route::get('/buscarDonante', function () {
 
 Route::resource('/buscarDonante','donanteController' );
 
-Route::get('/buscarDonacion', function () {
-    return view('buscarDonacion');
-});
+
 
 
 Route::resource('/buscarDonacion','donativoController' );
 
 
 
-Route::get('/nuevoDonante', function(){
-    return view('nuevoDonante');
-});
+
 
