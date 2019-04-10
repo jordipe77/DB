@@ -12,7 +12,7 @@
 
 <div class="card mt-2">
     <div class="card-body">
-    <a href="{{url('/introDonacion') }}" class="btn btn-primary">Nueva Donación</a>
+    <a href="{{url('/introDonativo') }}" class="btn btn-primary">Nueva Donación</a>
     </div>
 </div>
 
