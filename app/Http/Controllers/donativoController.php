@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\donativo;
-<<<<<<< HEAD
 use App\Models\Tipo;
-=======
->>>>>>> master
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +14,6 @@ class donativoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function index(Request $request)
     {
         if($request->has('search'))
@@ -36,22 +32,12 @@ class donativoController extends Controller
 
         $datos['donativos'] = $donativos;
         $datos['search'] = $search;
-=======
-    public function index()
-    {
-            $donativos = Donativo::all();
-            $datos['donativos'] = $donativos;
-
->>>>>>> master
         return view('buscarDonacion', $datos);
 
     }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
     /**
      * Show the form for creating a new resource.
      *
@@ -70,7 +56,6 @@ class donativoController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         $donativo = new Donativo();
 
         $donativo->subtipos_id = 1;
@@ -145,9 +130,6 @@ $donativo->donantes_id = 21;
         $donativo->save();
 
         return redirect('/dashboard');
-=======
-        //
->>>>>>> master
     }
 
     /**
@@ -194,9 +176,6 @@ $donativo->donantes_id = 21;
     {
         //
     }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
 }

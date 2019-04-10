@@ -21,12 +21,10 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/todo.css')}}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-
 </head>
 <div class="sidebar">
     <div style="max-height:100%;margin-top:20%"> 
         <h2>Menú</h2>
-<<<<<<< HEAD
         <ul>
             <li style="background-color:#966e4f !important;"><a href="">Acciones Frequentes</a></li>
             <li><a href="{{url('/dashboard')}}">Inicio</a></li>
@@ -36,15 +34,6 @@
             <li><a href="{{ url('/buscarUsuario')}}">Ver tabla usuarios</a></li>
             <li><a href="{{ url('/buscarDonante')}}">Ver tabla donantes</a></li>
             <li><a href="{{ url('/buscarDonacion')}}">Ver tabla donaciones</a></li>
-=======
-    <ul>
-        <li style="background-color:#966e4f !important;"><a href="{{url('/accionesFreq')}}">Acciones Frequentes</a></li>
-        <li><a href="{{url('/dashboard')}}">Inicio</a></li>
-        <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
-        <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
-        <li><a href="">Estadísticas</a></li>
-
->>>>>>> master
 
             @if(Auth::check() && Auth::user()->roles_id == 2)
             <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>

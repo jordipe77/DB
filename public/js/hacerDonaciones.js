@@ -4,7 +4,6 @@ $('#submit').click(function(){
 
 
   $(document).ready(function() {
-<<<<<<< HEAD
     $('#tipo').on('change', function() {
       var request = $.ajax({
         url: "http://localhost:8080/DB/public/api/tipo/" + this.value,
@@ -22,14 +21,6 @@ $('#submit').click(function(){
        }
       });
 
-=======
-    tiposysubtipos();
-    $('#modalBuscar').appendTo("body");
-    $('#modalNuevo').appendTo("body");
-    //GET TIPOS Y SUBTIPOS AJAX
-    $('#tipo').on('change', function() {
-        tiposysubtipos();
->>>>>>> master
       });
 
 
@@ -49,29 +40,6 @@ $(document).ready(function()
       });
 
 
-<<<<<<< HEAD
 });
-=======
-      });
-
-  });
-function tiposysubtipos()
-{
-        $.ajax({
-          url: "http://localhost:8080/DB/public/api/tipo/" + $('#tipo').val(),
-          type: "GET",
-          data: {} ,
-          dataType: "html",
-          success: function(data){
-            var $select = $('#subtipo');
-            var miarray = JSON.parse(data);
-                 $("#subtipo option").remove();
-                  miarray.data.subtipos.forEach(function(subtipo) {
-                  $select.append('<option value=' + subtipo.id + '>' + subtipo.nombre + '</option>');
-                  });
-               }
-             });
-}
->>>>>>> master
 
 

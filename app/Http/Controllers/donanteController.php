@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\Donante;
 use App\Models\TipoDonantes;
 use App\Models\Sexo;
-<<<<<<< HEAD
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,17 +11,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\QueryException;
 use App\Clases\Utilitat;
 
-=======
-use App\Models\Tipo;
-use App\Models\Donativo;
-use App\Models\Centro;
-use App\Models\Usuario;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use View;
-use Session;
-use Illuminate\Database\QueryException;
->>>>>>> master
 
 class donanteController extends Controller
 {
@@ -39,12 +27,12 @@ class donanteController extends Controller
             $search = $request->input('search');
             $donantes = Donante:: where('nombre', 'like', '%'.$search.'%')
                             ->orderby('nombre')
-                            ->paginate(5);
+                            ->paginate(10);
         }
         else
         {
             $search= '';
-            $donantes = Donante::orderby('nombre')->paginate(5);
+            $donantes = Donante::orderby('nombre')->paginate(10);
         }
 
 
@@ -82,15 +70,15 @@ class donanteController extends Controller
         $donante->pais = $request->input('pais');
         $donante->poblacion = $request->input('poblacion');
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
-        $donante->fecha_alta=date("Y-m-d  H:i:s");
+        $donante->fecha_alta=date("Y-m-d");
         $donante->es_habitual=false;
 
 
         //--------------------------------------
-        if($request->input('sexos_id') == "1"){
+        if($request->input('sexos_id') == "mujer"){
              $donante->sexos_id =1;
         }
-        if($request->input('sexos_id') == "2"){
+        if($request->input('sexos_id') == "hombre"){
             $donante->sexos_id =2;
         }
         //--------------------------------------
@@ -155,22 +143,11 @@ class donanteController extends Controller
             $donante->save();
         }
 
-<<<<<<< HEAD
         catch(QueryException $e)
         {
             $error=Utilitat::errorMessage($e);
             $request->session()->flash('error',$error);
             return redirect('/nuevoDonante')->withInput();
-=======
-        $donante->save();
-        if($request->input('modalExists'))
-        {
-           $id_donante = $donante->id;
-           $nombre_donante = $donante->nombre;
-           Session::flash('id_donante', $id_donante);
-           Session::flash('nombre_donante', $nombre_donante);
-           return redirect('/introDonativo');
->>>>>>> master
         }
 
         return redirect('/dashboard')->withInput();
@@ -223,6 +200,7 @@ class donanteController extends Controller
         $donante->pais = $request->input('pais');
         $donante->poblacion = $request->input('poblacion');
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
+        $donante->fecha_alta=date("Y-m-d");
         $donante->es_habitual=false;
 
 
@@ -305,7 +283,7 @@ class donanteController extends Controller
     public function destroy($id)
     {
         $donante = Donante::find($id);
-        $donante->donativo()->delete();
+
         $donante->delete();
         return redirect()->action('donanteController@index');
     }
