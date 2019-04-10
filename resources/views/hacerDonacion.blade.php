@@ -332,9 +332,9 @@ DONACIÓN
                     </div>
 
                         <div class="col-10 ">
-                        <span><input type="radio" name="hay_factura" value="1" checked="checked">Si</span>
+                        <span><input type="radio" name="hay_factura" value="1">Si</span>
 
-                        <span class="ml-2"><input type="radio" name="hay_factura" value="2">No</span>
+                        <span class="ml-2"><input type="radio" name="hay_factura" value="2"  checked="checked">No</span>
                     </div>
 
              </div>
@@ -367,6 +367,7 @@ DONACIÓN
             </div>
     </div>
 </div>
+
 <script type="text/javascript" src="js/hacerDonaciones.js"> </script>
 
 

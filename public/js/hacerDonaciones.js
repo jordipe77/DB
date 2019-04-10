@@ -46,7 +46,7 @@
        if(!mibusqueda=='')
            {
        $.ajax({
-        url: "http://localhost:8080/DB/public/api/donante/" + mibusqueda,
+        url: "api/donante/" + mibusqueda,
         type: "GET",
         data: {} ,
         dataType: "html",
@@ -84,7 +84,7 @@
 function tiposysubtipos()
 {
         $.ajax({
-          url: "http://localhost:8080/DB/public/api/tipo/" + $('#tipo').val(),
+          url: "api/tipo/" + $('#tipo').val(),
           type: "GET",
           data: {} ,
           dataType: "html",
