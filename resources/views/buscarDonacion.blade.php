@@ -9,12 +9,22 @@
 
 @section('principal')
 
-
+{{--
 <div class="card mt-2">
     <div class="card-body">
-    <a href="{{url('/introDonacion') }}" class="btn btn-primary">Nueva Donación</a>
+    <a href="{{url('/introDonativo') }}" class="btn btn-primary">Nueva Donación</a>
+    </div>
+</div> --}}
+
+@if(Auth::check() && Auth::user()->roles_id == 2)
+<div class="card mt-2">
+    <div class="card-body">
+    <a href="{{url('/introDonativo') }}" class="btn btn-primary">Nuevo Donacion</a>
     </div>
 </div>
+@endif
+
+
 
 <div class="card mt-2">
     <div class="card-header">
@@ -22,7 +32,17 @@
     </div>
     <div class="card-body">
 
+            <form action="{{action('introDonativoController@buscarDonacion')}}" method="get" enctype="form-horizontal">
+                    <div class="form-group row">
 
+                        <label for="" class="col-1">Tipo</label>
+                        <div class="col-10">
+                        <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
+
+                        </div>
+                            <button type="submit" class="btn btn-secondary btn-sm col-1">BUSCAR</button>
+                    </div>
+                </form>
 
         <table class="table table-striped table-hover mt-5">
             <thead>
@@ -38,6 +58,8 @@
                 <td>Peso</td>
                 <td>Fecha Donativo</td>
                 <td>Ruta Factura</td>
+                <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +78,22 @@
                     <td>{{$donativo->peso}} </td>
                     <td>{{$donativo->fecha_donativo}} </td>
                     <td>{{$donativo->ruta_factura}} </td>
+
+                    @if(Auth::check() && Auth::user()->roles_id == 2)
+                    <td class="col-button">
+                    <form action="{{action('introDonativoController@edit', [$donativo->id])}}" method="get">
+                        <button type="submit" name="editar" class="btn btn-info">EDITAR</button>
+                    </form>
+                    </td>
+
+                    <td class="col-button">
+                    <form action="{{action('introDonativoController@destroy', [$donativo->id])}}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" name="borrar" class="btn btn-danger">BORRAR</button>
+                    </form>
+                    </td>
+                    @endif
                 </tr>
 
                 @endforeach
