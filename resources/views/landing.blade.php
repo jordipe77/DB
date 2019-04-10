@@ -7,9 +7,9 @@ Bienvenido!
 <link rel="stylesheet" type="text/css" href="{{asset('css/landing.css')}}">
 
 @section('principal')
-<div class="wrapper mt-2" style="height:200px">
-<h2 id="title"> BIENVENIDO A LA PLATAFORMA DE GESTIÓN DE LA SPAM </h2>
+<h2 style="title" class="mish2"> BIENVENIDO A LA PLATAFORMA DE GESTIÓN DE LA SPAM </h2>
 
+<div class="wrapper" style="height:200px">
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -25,8 +25,8 @@ Bienvenido!
 
 </div>
 
-<div class="row">
-<div class="col-sm-3">
+<div class="row mt-4">
+<div class="col-2">
     <div class="d-flex justify-content-center" id="link">
         <a href="https://www.protectoramataro.org/es" target="blank">
             <img src="{{asset('imgs/spam_link.png')}}">
@@ -34,7 +34,7 @@ Bienvenido!
     </div>
 
 </div>
-  <div class="col-sm-6">
+  <div class="col-7">
     <div class="card-header">
         <h3>Como funciona la plataforma?</h3>
     </div>
@@ -47,7 +47,7 @@ Bienvenido!
             Calle Sant Cugat 102-104, Mataró 08302 (Barcelona). Tel. 937566066-647972293
       </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-3">
     <div class="card-header">
           <h4>Adopta un GPP</h4>
     </div>
