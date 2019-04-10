@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use View;
 use Session;
-
+use Illuminate\Database\QueryException;
 
 class donanteController extends Controller
 {
@@ -72,7 +72,7 @@ class donanteController extends Controller
         $donante->pais = $request->input('pais');
         $donante->poblacion = $request->input('poblacion');
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
-        $donante->fecha_alta=date("Y-m-d");
+        $donante->fecha_alta=date("Y-m-d  H:i:s");
         $donante->es_habitual=false;
 
 
@@ -198,7 +198,6 @@ class donanteController extends Controller
         $donante->pais = $request->input('pais');
         $donante->poblacion = $request->input('poblacion');
         $donante->vinculo_entidad= $request->input('vinculo_entidad');
-        $donante->fecha_alta=date("Y-m-d");
         $donante->es_habitual=false;
 
 
@@ -281,7 +280,7 @@ class donanteController extends Controller
     public function destroy($id)
     {
         $donante = Donante::find($id);
-
+        $donante->donativo()->delete();
         $donante->delete();
         return redirect()->action('donanteController@index');
     }
