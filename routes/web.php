@@ -78,7 +78,7 @@ Route::resource('/buscarDonante','donanteController' );
 
 
 
-Route::resource('/buscarDonacion','donativoController' );
+Route::get('/buscarDonacion','introDonativoController@buscarDonacion' );
 
 
 

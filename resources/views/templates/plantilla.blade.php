@@ -14,6 +14,9 @@
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/todo.js')}}"></script>
 
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('imgs/donantes_transparente.png')}}" />
+
+
 
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
