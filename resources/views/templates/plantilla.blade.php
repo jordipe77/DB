@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
 
@@ -26,7 +26,7 @@
 <div class="sidebar">
         <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
-    <ul>
+    <ul >
         <li style="background-color:#966e4f !important;"><a href="{{url('/accionesFreq')}}">Acciones Frequentes</a></li>
         <li><a href="{{url('/dashboard')}}">Inicio</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
@@ -45,7 +45,7 @@
     </div>
 <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg minavbar">
         <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         <a class="navbar-brand text-hide" >
         <img src="{{asset('imgs/logo_mini.png')}}" alt="">

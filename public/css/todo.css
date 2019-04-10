@@ -97,8 +97,10 @@ body {
   }
 .minavbar{
     max-height: 80px;
+   width:100%;
 }
 #spamImage{
     height: 250px;
     width: 100%
 }
+
