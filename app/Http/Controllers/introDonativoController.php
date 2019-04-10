@@ -42,6 +42,35 @@ class introDonativoController extends Controller
        return view ('hacerDonacion',$data);
     }
 
+    public function buscarDonacion(Request $request)
+    {
+
+        // $usuario = new Usuario();
+
+        if($request->has('search'))
+        {
+            $search = $request->input('search');
+            $donativos = Donativo:: where('id', 'like', '%'.$search.'%')
+                            ->orderby('id')
+                            ->paginate(5);
+        }
+        else
+        {
+            $search= '';
+            $donativos = Donativo::orderby('id')->paginate(5);
+        }
+
+
+        $datos['donativos'] = $donativos;
+        $datos['search'] = $search;
+
+        return view('buscarDonacion', $datos);
+
+
+
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -148,7 +177,12 @@ class introDonativoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $donativo = Donativo::find($id);
+
+        $donativo->delete();
+
+        return redirect ('/buscarDonacion');
+
     }
     public function enviar()
     {
