@@ -2,7 +2,7 @@
 // $('#submit').click(function(){
 //     $('#modal1').modal();
 //   });
-
+esconderFactura();
   $(document).ready(function() {
     tiposysubtipos();
     $('#modalBuscar').appendTo("body");
@@ -25,22 +25,17 @@
         }
 
       });
-
-      //ESCONDER OPCION AÑADIR FACTURA CUANDO RADIOBUTTON ES "NO"
-
       $('input[type=radio][name=hay_factura]').change(function(){
-          var valorFactura = this.value;
-          if(valorFactura == 2)
-          {
-              $('#AddFactura').hide();
-          }
-          else
-          {
-            $('#AddFactura').show();
-          }
-      });
-
-
+        var valorFactura = this.value;
+        if(valorFactura == 2)
+        {
+            $('#AddFactura').hide();
+        }
+        else
+        {
+          $('#AddFactura').show();
+        }
+    });
       //AJAX BUSQUEDA DEL DONANTE EN MODAL Y INTRODUCCIÓN A LA TABLA
       $('#btnBusDonante').click(function ()
       {
@@ -100,5 +95,8 @@ function tiposysubtipos()
                }
              });
 }
-
+function esconderFactura()
+{
+            $('#AddFactura').hide();
+}
 

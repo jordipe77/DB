@@ -47,12 +47,12 @@
         <table class="table table-striped table-hover mt-5">
             <thead>
                 <tr>
-                <td>ID</td>
-                <td>ID SUBTIPO</td>
-                <td>ID Centro receptor</td>
-                <td>ID Centro destí</td>
-                <td>Usuario ID</td>
-                <td>Donante ID</td>
+                {{-- <td>Tipo</td> --}}
+                <td>Subtipo</td>
+                <td>Centro receptor</td>
+                <td>Centro destí</td>
+                <td>Usuario</td>
+                <td>Donante</td>
                 <td>Coste</td>
                 <td>Unidades</td>
                 <td>Peso</td>
@@ -67,12 +67,12 @@
                 @foreach ($donativos as $donativo)
 
                 <tr>
-                    <td>{{$donativo->id}}</td>
-                    <td>{{$donativo->subtipos_id}}</td>
+                    {{-- <td>{{$donativo->id}}</td> --}}
+                    <td>{{$donativo->subtipos->nombre}}</td>
                     <td>{{$donativo->centros_receptor_id}} </td>
                     <td>{{$donativo->centros_desti_id}} </td>
-                    <td>{{$donativo->usuarios_id}} </td>
-                    <td>{{$donativo->donantes_id}} </td>
+                    <td>{{$donativo->usuario->nombre_usuario}} </td>
+                    <td>{{$donativo->donantes!= null ? $donativo->donantes->nombre : "Anonimo"}} </td>
                     <td>{{$donativo->coste}} </td>
                     <td>{{$donativo->unidades}} </td>
                     <td>{{$donativo->peso}} </td>
@@ -99,6 +99,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $donativos->appends(['search'=>$search])->links() }}
     </div>
 </div>
 
