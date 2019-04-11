@@ -72,7 +72,7 @@
                     <td>{{$donativo->centros_receptor_id}} </td>
                     <td>{{$donativo->centros_desti_id}} </td>
                     <td>{{$donativo->usuario->nombre_usuario}} </td>
-                    <td>{{$donativo->donantes->nombre != null ? $donativo->donantes->nombre : "Anonimo"}} </td>
+                    <td>{{$donativo->donantes!= null ? $donativo->donantes->nombre : "Anonimo"}} </td>
                     <td>{{$donativo->coste}} </td>
                     <td>{{$donativo->unidades}} </td>
                     <td>{{$donativo->peso}} </td>
@@ -99,6 +99,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $donativos->appends(['search'=>$search])->links() }}
     </div>
 </div>
 
