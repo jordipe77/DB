@@ -49,8 +49,9 @@ class introDonativoController extends Controller
 
         if($request->has('search'))
         {
-            $search = $request->input('search');
-            $donativos = Donativo:: where('id', 'like', '%'.$search.'%')
+            $search = $request->input('search');  //busqueda
+            $donanteEncontrado = Donante::where('nombre',$search)->get();
+            $donativos = Donativo:: where('usuarios_id', 'like', '%'.$search.'%')
                             ->orderby('id')
                             ->paginate(5);
         }
