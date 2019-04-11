@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
 
@@ -24,14 +24,16 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/todo.css')}}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-
+<link rel="icon" href="{{'imgs/donantes_transparente.png'}}">
 </head>
+@if(Auth::check())
 <div class="sidebar">
         <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
-    <ul>
+    <ul >
         <li style="background-color:#966e4f !important;"><a href="{{url('/accionesFreq')}}">Acciones Frequentes</a></li>
-        <li><a href="{{url('/dashboard')}}">Inicio</a></li>
+        <li><a href="{{url('/')}}">Página Pública</a></li>
+        <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
         <li><a href="">Estadísticas</a></li>
@@ -46,10 +48,13 @@
         <img id="spamImage" src="{{asset('imgs/spam_donantes.png')}}">
         </div>
     </div>
+    @endif
 <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg minavbar">
+        @if(Auth::check())
         <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
+        @endif
         <a class="navbar-brand text-hide" >
         <img src="{{asset('imgs/logo_mini.png')}}" alt="">
         </a>
@@ -64,12 +69,12 @@
                </li>
                <li>
                    <div class="nav-item">
-                   <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+                   <a class="nav-link alogout" href="{{ route('logout') }}">LOGOUT</a>
                    </div>
                </li>
                @else
-               <div class="nav-item login">
-                   <a class="nav-link" href="{{ url('/login') }}">LOGIN</a>
+               <div class="nav-item">
+                   <a class="nav-link alogin" href="{{ url('/login') }}">LOGIN</a>
                </div>
                @endif
 

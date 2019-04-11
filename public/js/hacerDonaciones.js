@@ -17,6 +17,8 @@
         if(valor==1)
         {
             $('#donante').hide();
+            $('input[name=donante]').val("Anonimo");
+            $('input[name=donantes_id]').val("0");
         }
         else {
             $('#donante').show();

@@ -1,14 +1,10 @@
 <?php
 
 Route::get('/', function () {
-     return view('dashboard');
+     return view('landing');
  });
 
 
-Route::get('/dashboard',function ()
-{
-	return view ('dashboard');
-});
 
 Route::get('/accionesFreq',function ()
 {
@@ -31,9 +27,10 @@ Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 
 Route::group(['middleware' => ['auth']], function () {
+
 Route::get('/enviarDonante', 'introDonativoController@enviar');
 Route::resource('/introDonativo', 'introDonativoController');
-
+Route::get('/dashboard','dashboardController@index');
  Route::get('/nuevoDonante/{mibool}',function ()
  {
    return view ('/nuevoDonante');
@@ -56,7 +53,6 @@ Route::get('/nuevoDonante', function(){
 Auth::routes();
 
 
-// Route::get('/dashboard','HomeController@index');
 //REGISTRO
 Route::get('/registro', 'Auth\RegisterController@showregistro')->name('registro');
 Route::post('/registro', 'Auth\RegisterController@registro');

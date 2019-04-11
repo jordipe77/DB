@@ -13,7 +13,7 @@
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-
+<link rel="icon" href="{{'imgs/donantes_transparente.png'}}">
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
@@ -22,9 +22,9 @@
 </head>
 <body>
 
- 
+
 <div class="container">@yield('principal')
-       
+
 </div>
 </body>
 </html>

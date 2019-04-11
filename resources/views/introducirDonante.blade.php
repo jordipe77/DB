@@ -5,39 +5,11 @@ DATOS USUARIO
 @endsection
 <link rel="stylesheet" href="{{asset('css/donantes.css')}}">
 @section('principal')
-{{--
-<div class="modal" tabindex="-1" role="dialog" id="modal1">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"> ¡ATENCIÓN!</h5>
-            </div>
-        <div class="modal-body">
-          <p>Quieres introducir ahora los datos del usuario?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="{{url('/donacionUsuario')}}">
-                <button type="button" class="btn btn-success" data-dismiss="modal" id="si">SI</button>
-            </a> --}}
-            {{-- <form action="{{action('UsuarioController@index')}}" method="post" enctype="multipart/form-data">
-                 <a href="{{url('/dashboard')}}">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="no">NO</button>
-                </a>
-            </form> --}}
-
-             {{-- </div>
-      </div>
-    </div> --}}
-  {{-- </div> --}}
-
-  {{-- <script src="{{asset('js/introUsuario.js')}}"></script> --}}
-
 <div class="container-fluid">
         <div class="card mb-3 mt-4 " style="text-align: center">
         <div class="card-header">
             <h2>Datos del Usuario</h2>
         </div>
-
 <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
@@ -96,7 +68,7 @@ DATOS USUARIO
                 </div>
             </div>
 
-           
+
         </div>
         </div>
 </div>
