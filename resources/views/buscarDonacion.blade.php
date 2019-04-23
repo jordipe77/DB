@@ -37,7 +37,7 @@
 
                         <label for="" class="col-1">Tipo</label>
                         <div class="col-10">
-                        <input type="text" class="form-control" name="miSearch" id="search" arial-describedby="helpId"  value="{{$search}}">
+                        <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
 
                         </div>
                             <button type="submit" class="btn btn-secondary btn-sm col-1">BUSCAR</button>
@@ -99,7 +99,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{$donativos->appends(['search'=>$search])->links()}}
+        {{ $donativos->appends(['search'=>$search])->links() }}
     </div>
 </div>
 

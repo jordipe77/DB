@@ -18,7 +18,7 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donaciones Totales</div>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donaciones Anuales</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">{{$donacionesTotales}}</div>
                 </div>
                 <div class="col-auto">
@@ -35,8 +35,8 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Total</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{$suma}}€</div>
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Mensual</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{$suma}}</div>
                 </div>
                 <div class="col-auto">
                   <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -97,7 +97,7 @@ Dashboard
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donativos Mensuales</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$donativosMensuales}}</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
                 </div>
                 <div class="col-auto">
                   <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -113,7 +113,7 @@ Dashboard
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Mensual</div>
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recaudacion Total</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">10.000</div>
                 </div>
                 <div class="col-auto">

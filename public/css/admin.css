@@ -1,7 +1,56 @@
-.my-card
+.bot{
+    height: 200px;
+    color:#60401f;
+    background-color:#e6cdb2;
+}
+body{
+    max-width:100%;
+}
+.bot:hover{
+
+    color: #60401f;
+    box-shadow: inset 0 0 0 4px #c78136;
+}
+.main > h2{
+    color:white;
+    margin-left:320px;
+    font-weight: bold;
+
+}
+.boton{
+    font-size: xx-large;
+}
+p{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
+
+
+#cards_botones{
+    margin-top: 25px;
+    width:700px;
+    margin-left:205px;
+}
+
+div a:link
 {
-    position:absolute;
-    left:45%;
-    top:-20px;
-    border-radius:50%;
+text-decoration:none;
+}
+
+#tot{
+    margin-top: 60px;
+    float: none;
+    margin-bottom: 10px;
+    font-family: Quicksand,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+
+#tot{
+    margin-top: 60px;
+    float: none;
+    margin-bottom: 10px;
+    font-family: Quicksand,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
