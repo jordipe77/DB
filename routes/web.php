@@ -1,9 +1,7 @@
 <?php
 
-Route::get('/', function () {
-     return view('landing');
- });
 
+ Route::get('/','landingController@index');
 
 
 Route::get('/accionesFreq',function ()
@@ -74,7 +72,7 @@ Route::get('/buscarDonante', function () {
 Route::resource('/buscarDonante','donanteController' );
 
 Route::get('/buscarDonacion','introDonativoController@buscarDonacion' );
-
+Route::get('/estadisticas','estadisticasController@index');
 
 
 

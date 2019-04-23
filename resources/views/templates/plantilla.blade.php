@@ -35,7 +35,7 @@
         <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
         <li><a href="{{ url('/nuevoDonante')}}">Introducir Donante</a></li>
-        <li><a href="">Estadísticas</a></li>
+        <li><a href="{{url('/estadisticas')}}">Estadísticas</a></li>
 
 
         {{-- @if(Auth::check() && Auth::user()->roles_id == 2)

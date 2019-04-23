@@ -171,5 +171,6 @@ Dashboard
 </div>
           <script src="{{ asset('js/dashboard.js') }}"></script>
           <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
+          
 @endsection
 
