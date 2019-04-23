@@ -47,7 +47,9 @@ Route::get('/admin',function ()
 Route::get('/nuevoDonante', function(){
     return view('nuevoDonante');
 });
-
+Route::get('/export-donantes', 'ExcelController@donanteExport');
+Route::get('/export-donativo', 'ExcelController@donativosExport');
+Route::get('/export-usuarios', 'ExcelController@usuariosExport');
 });
 
 Auth::routes();
@@ -70,9 +72,6 @@ Route::get('/buscarDonante', function () {
 
 
 Route::resource('/buscarDonante','donanteController' );
-
-
-
 
 Route::get('/buscarDonacion','introDonativoController@buscarDonacion' );
 

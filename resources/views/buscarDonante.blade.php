@@ -5,17 +5,18 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
     @include('partial.errores')
-
-
 @section('principal')
 
 @if(Auth::check() && Auth::user()->roles_id == 2)
 <div class="card mt-2">
     <div class="card-body">
     <a href="{{url('/nuevoDonante') }}" class="btn btn-primary">Nuevo Donante</a>
+    <a href="{{url('/export-donantes') }}" class="btn btn-info">Descargar Excel</a>
+    
     </div>
 </div>
 @endif
+
 
 <div class="card mt-2">
     <div class="card-header">
@@ -29,14 +30,13 @@
                     <label for="" class="col-1">Nombre</label>
                     <div class="col-10">
                     <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
-
                     </div>
                         <button type="submit" class="btn btn-secondary btn-sm col-1">BUSCAR</button>
                 </div>
             </form>
 
 
-        <table class="table table-striped table-hover mt-5">
+        <table id="tablaDonante" class="table table-striped table-hover mt-5">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -48,6 +48,10 @@
                     <th>Población</th>
                     <th>SPAM</th>
                     <th>Fecha Alta</th>
+                    @if(Auth::check() && Auth::user()->roles_id == 2)
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -91,7 +95,7 @@
         {{ $donantes->appends(['search'=>$search])->links() }}
     </div>
 </div>
-
+<script type="text/javascript" src="js/buscar.js"> </script>
 
 
 @endsection

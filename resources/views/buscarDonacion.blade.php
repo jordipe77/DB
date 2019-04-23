@@ -20,6 +20,7 @@
 <div class="card mt-2">
     <div class="card-body">
     <a href="{{url('/introDonativo') }}" class="btn btn-primary">Nuevo Donacion</a>
+    <a href="{{url('/export-donativo') }}" class="btn btn-info">Descargar Excel</a>
     </div>
 </div>
 @endif
@@ -37,7 +38,7 @@
 
                         <label for="" class="col-1">Tipo</label>
                         <div class="col-10">
-                        <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
+                        <input type="text" class="form-control" name="miSearch" id="search" arial-describedby="helpId"  value="{{$search}}">
 
                         </div>
                             <button type="submit" class="btn btn-secondary btn-sm col-1">BUSCAR</button>
@@ -99,7 +100,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $donativos->appends(['search'=>$search])->links() }}
+        {{$donativos->appends(['search'=>$search])->links()}}
     </div>
 </div>
 
