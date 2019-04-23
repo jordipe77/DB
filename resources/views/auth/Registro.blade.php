@@ -37,7 +37,7 @@
             </div>
 
       <div class="w-100">
-      <button type="submit" class="btn btn-block btn-primary btn-success">Registrarse</button>
+      <button type="submit" class="btn btn-block btn-primary btn-success">Registrar</button>
       </div>
      </form>
       </div>

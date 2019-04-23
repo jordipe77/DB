@@ -10,6 +10,7 @@ body {
 }
 body {
     height: 100%;
+    margin: 0;
 }
 .sidebar h2{
     text-align: center;
@@ -26,6 +27,8 @@ body {
 .sidebar li {
     outline:1px solid #2a2a2a;
     transition: border 0.3s;
+    height: 60px;
+    text-align: center;
 }
 .sidebar ul {
     list-style: none;
@@ -96,7 +99,7 @@ body {
   }
 .minavbar{
     max-height: 80px;
-   width:100%;
+    width:100%;
 }
 #spamImage{
     height: 250px;
