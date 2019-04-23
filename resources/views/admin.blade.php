@@ -8,44 +8,18 @@ ADMIN MODE
 
 @section('principal')
     <h2 style="color:#007bff;">OPCIONES DE ADMINISTRADOR</h2>
-<table>
-    <tbody>
 
-        <tr>
-            <td>
+        <div class="row w-100">
             <a href="{{url('/buscarUsuario')}}">
-                <div class="card mr-2 carta" id="cards_botones">
+               <div class="col-md-4">
 
-                    <button type="button" class="btn bot boton" name="boton1"><p>USUARIO</p></button>
+                   <div class="card border-info mx-sm-1 p-3">
+                       <div class="card border-info shadow text-info p-3 my-card" ><span class="fa fa-user" aria-hidden="true"></span></div>
+                       <div class="text-info text-center mt-3"><h4>Usuarios</h4></div>
 
-                </div>
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <a href="{{url('/buscarDonante')}}">
-                    <div class="card mr-2 carta" id="cards_botones">
-                        <button type="button" class="btn bot boton" name="boton2"><p>DONANTE</p></button>
-                    </div>
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <a href="{{url('/buscarDonacion')}}">
-                    <div class="card mr-2 carta" id="cards_botones">
-                        <button type="button" class="btn bot boton" name="boton4"><p>DONACIÓN</p></button>
-                    </div>
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div style="height:75px;"></div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                   </div>
+               </a>
+               </div>
+
 
 @endsection
