@@ -18,25 +18,28 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $suma = Donativo::sum('coste');
-
+        $date = Date('Y-m-d');
+        $recaudacionTotal = Donativo::sum('coste');
+        $recaudacionMensual = Donativo::where('fecha_donativo', 'like', '%'.$date.'%')->sum('coste');
         $donacionesTotales = Donativo::all()->count();
 
         $centros = Centro::all()->count();
 
         $usuarios = Usuario::all()->count();
 
+        $administradores = Usuario::where('roles_id',2)->count();
+
         $animales = Animal::all()->count();
 
-        $date = Date('Y-m-d');
         $donativosMensuales = Donativo:: where('fecha_donativo', 'like', '%'.$date.'%')->get()->count();
-        $donativosMensuales = Donativo:: where('fecha_donativo', 'like', '%'.$date.'%')->get()->count();
-        $datos['suma'] = $suma;
+        $datos['recaudacionTotal'] = $recaudacionTotal;
         $datos['donacionesTotales'] = $donacionesTotales;
         $datos['centros'] = $centros;
         $datos ['usuarios'] = $usuarios;
         $datos ['animales'] = $animales;
         $datos ['donativosMensuales'] = $donativosMensuales;
+        $datos ['recaudacionMensual'] = $recaudacionMensual;
+        $datos ['administradores'] = $administradores;
         return view('dashboard', $datos);
     }
 

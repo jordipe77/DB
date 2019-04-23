@@ -15,6 +15,7 @@
 <div class="card mt-2">
     <div class="card-body">
         <a href="{{url('/registro') }}" class="btn btn-primary">Nuevo Usuario</a>
+        <a href="{{url('/export-usuarios') }}" class="btn btn-info">Descargar Excel</a>
     </div>
 </div>
 @endif
@@ -44,6 +45,10 @@
                     <th>Usuario</th>
                     <th>Correo</th>
                     <th>Rol</th>
+                    @if(Auth::check() && Auth::user()->roles_id == 2)
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>

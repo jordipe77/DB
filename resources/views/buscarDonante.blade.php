@@ -11,6 +11,8 @@
 <div class="card mt-2">
     <div class="card-body">
     <a href="{{url('/nuevoDonante') }}" class="btn btn-primary">Nuevo Donante</a>
+    <a href="{{url('/export-donantes') }}" class="btn btn-info">Descargar Excel</a>
+    
     </div>
 </div>
 @endif
@@ -28,7 +30,6 @@
                     <label for="" class="col-1">Nombre</label>
                     <div class="col-10">
                     <input type="text" class="form-control" name="search" id="search" arial-describedby="helpId" placeholder="" value='{{ $search }}'>
-
                     </div>
                         <button type="submit" class="btn btn-secondary btn-sm col-1">BUSCAR</button>
                 </div>

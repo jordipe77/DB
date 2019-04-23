@@ -20,6 +20,7 @@
 <div class="card mt-2">
     <div class="card-body">
     <a href="{{url('/introDonativo') }}" class="btn btn-primary">Nuevo Donacion</a>
+    <a href="{{url('/export-donativo') }}" class="btn btn-info">Descargar Excel</a>
     </div>
 </div>
 @endif
