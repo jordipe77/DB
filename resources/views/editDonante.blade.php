@@ -31,6 +31,7 @@ DATOS USUARIO
         <form action="{{action('donanteController@update', [$donante->id])}}" method="post">
             @method('put')
             @csrf
+                <p></p>
 
             <div class="row">
                 <div class="col">

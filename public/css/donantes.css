@@ -3,7 +3,7 @@
 }
 .card{
     color:rgb(153,204,51);
- 
+    background-color: rgba(0, 0, 0, 0.6) !important;
 }
 #anonimo.card{
     height: 100%;
