@@ -13,8 +13,8 @@
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/todo.js')}}"></script>
- 
-<link rel="shortcut icon" type="image/x-icon" href="{{asset('imgs/logoPNG.png')}}" />
+
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('imgs/donantes_transparente.png')}}" />
 
 
 
@@ -24,13 +24,14 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/todo.css')}}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+<link rel="icon" href="{{'imgs/donantes_transparente.png'}}">
 </head>
 @if(Auth::check())
 <div class="sidebar">
-        <div style="max-height:100%;margin-top:31%">
+        <div style="max-height:100%;margin-top:22%">
         <h2>Menú</h2>
-    <ul style="font-size: 1.2em;">
-        <li class="bg-secondary"><a href="{{url('/accionesFreq')}}">Acciones Frequentes</a></li>
+    <ul >
+        <li style="background-color:#966e4f !important;"><a href="{{url('/accionesFreq')}}">Acciones Frequentes</a></li>
         <li><a href="{{url('/')}}">Página Pública</a></li>
         <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
         <li><a href="{{ url('/introDonativo')}}">Introducir Donación</a></li>
@@ -38,9 +39,9 @@
         <li><a href="">Estadísticas</a></li>
 
 
-        {{-- @if(Auth::check() && Auth::user()->roles_id == 2)
+        @if(Auth::check() && Auth::user()->roles_id == 2)
         <li><a href="{{ url('/admin')}}">Panel de Administrador</a></li>
-        @endif --}}
+        @endif
     </ul>
         </div>
         <div class="logo">
@@ -55,25 +56,25 @@
         <img src="{{asset('imgs/Hamburger_icon.png')}}" alt="hamb" class="menu-bar" style="max-height:40px;margin-bottom:5px">
         @endif
         <a class="navbar-brand text-hide" >
-        <img src="{{asset('imgs/logodef.svg')}}" style="height:70px" alt="logoSpam">
+        <img src="{{asset('imgs/logo_mini.png')}}" alt="">
         </a>
 
                <ul class="navbar-nav ml-auto">
 
                @if(Auth::check())
                <li class="nav-item ">
-                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:#007bff!important" aria-expanded="false">
-                 Bienvenido de nuevo:  {{Auth::user()->nombre_usuario}}
+                   <a class="nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:black" aria-expanded="false">
+                   {{Auth::user()->nombre_usuario}}
                 </a>
                </li>
                <li>
                    <div class="nav-item">
-                   <a class="nav-link alogout ml-3" style="font-size: 1.2em;" href="{{ route('logout') }}">Cerrar Sesión</a>
+                   <a class="nav-link alogout" href="{{ route('logout') }}">LOGOUT</a>
                    </div>
                </li>
                @else
                <div class="nav-item">
-                   <a class="nav-link alogin" style="font-size: 1.2em;" href="{{ url('/login') }}">Iniciar Sesión</a>
+                   <a class="nav-link alogin" href="{{ url('/login') }}">LOGIN</a>
                </div>
                @endif
 

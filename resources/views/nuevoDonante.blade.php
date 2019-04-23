@@ -17,9 +17,14 @@ DATOS USUARIO
     @php
    $boolNuevaDonacion = Session::get('nuevaDonacion');
     @endphp
-    <div class="card mb-3 mt-4 " style="text-align: center;background:white;">
 
-        <div class="card-body" style="background:white;">
+
+    @if(isset($mibool))
+        <div>Vengo de nueva donación..</div>
+    @endif
+    <div class="card mb-3 mt-4 " style="text-align: center">
+
+        <div class="card-body">
 
         <form action="{{action('donanteController@store')}}" method="post" enctype="multipart/form-data">
 
@@ -29,11 +34,17 @@ DATOS USUARIO
             <div class="row">
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
                         <input type="text" class="form-control" name="nombre" id="nombre" value="{{old('nombre')}}" autofocus placeholder="Nombre">
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-at"></i></span>
+                        </div>
                         <input type="text" class="form-control" name="correo" id="correo" value="{{old('correo')}}" autofocus placeholder="Email">
                     </div>
                 </div>
@@ -42,11 +53,17 @@ DATOS USUARIO
             <div class="row">
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                        </div>
                         <input type="text" name="cif" id="cif" class="form-control" placeholder="CIF" value="{{old('cif')}}">
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        </div>
                         <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" value="{{old('telefono')}}">
                     </div>
                 </div>
@@ -55,11 +72,17 @@ DATOS USUARIO
             <div class="row">
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                        </div>
                         <input type="text" class="form-control" name="pais" id="pais" value="{{old('pais')}}" autofocus placeholder="País">
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-city"></i></span>
+                        </div>
                         <input type="text" class="form-control" name="direccion" id="direccion" value="{{old('direccion')}}" autofocus placeholder="Direccion">
                     </div>
                 </div>
@@ -69,6 +92,9 @@ DATOS USUARIO
             <div class="row">
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-city"></i></span>
+                        </div>
                         <input type="text" class="form-control" name="poblacion" id="poblacion" value="{{old('poblacion')}}" autofocus placeholder="Población">
                     </div>
                 </div>
@@ -86,6 +112,10 @@ DATOS USUARIO
                 </div> --}}
                 <div class="col">
                         <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                            </div>
                             <select class="form-control" name="tipo_donante" id="tipo_donante" value="">
                                 <option value ="1">Particular</option>
                                 <option value= "2">Empresa</option>
@@ -101,6 +131,9 @@ DATOS USUARIO
             <div class="row">
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-child"></i></span>
+                        </div>
                         <select class="form-control" name="sexos_id" id="sexos_id" value="{{old('sexos_id')}}">
                             <option value= "1">Mujer</option>
                             <option value= "2">Hombre</option>
@@ -109,6 +142,10 @@ DATOS USUARIO
                 </div>
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-paw"></i></span>
+
+                        </div>
                         <select class="form-control" name="tiene_animales" id="tiene_animales" value="{{old('tiene_animales')}}">
                             <option value ="1">Tiene animales</option>
                             <option value= "0">No tiene animales</option>
@@ -122,6 +159,9 @@ DATOS USUARIO
             <div class="row">
                 <div class="col">
                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-info"></i></span>
+                        </div>
                         <select class="form-control" name="spam" id="spam" value="">
                             <option value= "1">Permite recibir informacion de nuestra asociacion</option>
                             <option value= "0">NO permite recibir informacion de nuestra asociacion</option>
@@ -130,6 +170,9 @@ DATOS USUARIO
                 </div>
                 <div class="col">
                         <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-info"></i></span>
+                            </div>
                             <select class="form-control" name="es_colaborador" id="es_colaborador" value="">
                                 <option value= "1">Es colaborador</option>
                                 <option value= "0">NO es colaborador</option>
@@ -139,11 +182,14 @@ DATOS USUARIO
             </div>
 
             <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-friends"></i></span>
+                </div>
                 <input type="text" class="form-control" name="vinculo_entidad" id="vinculo_entidad" value="{{old('vinculo_entidad')}}" autofocus placeholder="Vínculo con nuetra entidad">
             </div>
 
             <div class="form-group mt-3">
-                <button class="btn btn-success" type="submit" id="confirmar">Registrar</button>
+                <input type="submit" value="Registrar" class="btn aceptar">
             </div>
         </form>
     </div>

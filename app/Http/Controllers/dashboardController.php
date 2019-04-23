@@ -27,16 +27,11 @@ class dashboardController extends Controller
         $usuarios = Usuario::all()->count();
 
         $animales = Animal::all()->count();
-
-        $date = Date('Y-m-d');
-        $donativosMensuales = Donativo:: where('fecha_donativo', 'like', '%'.$date.'%')->get()->count();
-        $donativosMensuales = Donativo:: where('fecha_donativo', 'like', '%'.$date.'%')->get()->count();
         $datos['suma'] = $suma;
         $datos['donacionesTotales'] = $donacionesTotales;
         $datos['centros'] = $centros;
         $datos ['usuarios'] = $usuarios;
         $datos ['animales'] = $animales;
-        $datos ['donativosMensuales'] = $donativosMensuales;
         return view('dashboard', $datos);
     }
 

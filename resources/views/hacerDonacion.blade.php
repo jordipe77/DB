@@ -219,8 +219,8 @@ DONACIÓN
               </div><!-- /.modal -->
 <div class="container-fluid">
     <div class="card mb-3 mt-4">
-        <div class="card-header mb-3">
-         <h2 style="text-align:center;color:99CC33;">   Nueva Donación </h2>
+        <div class="card-header text-white bg-primary mb-3">
+            NUEVA DONACIÓN
         </div>
     <div class="card-body">
             <form action="{{action('introDonativoController@store')}}" method="post" enctype="multipart/form-data">
@@ -360,9 +360,9 @@ DONACIÓN
                 </div>
             <div class="form-group row">
                 <div class="col-sm-10 offset-2">
-                        <button type="submit" id="confirmar" class="btn btn-success">CONFIRMAR</button>
+                        <button type="submit" id="confirmar" class="btn btn-primary btn-sm">CONFIRMAR</button>
                     </form>
-                <a href="{{url('/dashboard')}}"><button type="button" class="btn btn-secondary">CANCELAR</button></a>
+                <a href="{{url('/dashboard')}}"><button type="button" class="btn btn-secondary btn-sm">CANCELAR</button></a>
                 </div>
             </div>
     </div>
