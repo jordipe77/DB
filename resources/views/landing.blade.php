@@ -5,9 +5,12 @@ Bienvenido!
 @endsection
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/landing.css')}}">
+<link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
 
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 @section('principal')
-<h2 style="title" class="mish2"> Bienvenido/a a la plataforma de gestión de SPAM</h2>
+<h1 style="title" class="mish2"> Bienvenido/a a la plataforma de gestión de SPAM</h1>
 
 <div class="row">
         <div class="col-2"></div>
@@ -57,6 +60,30 @@ Bienvenido!
 <div class="col-1"></div>
 
 </div>
+<div class="row">
+  <div class="col-2">
+
+  </div>
+  <div class="col-8 mt-4">
+      <h1 class="text-center text-white mb-4">¿Cómo puedes ayudar?</h1>
+      <div class="video-enlaces text-center mb-4">
+      <a class="btn btn-primary" data-comienzo="15" data-final="30" id="intro" href="#" role="button">SOBRE SPAM</a>
+      <a class="btn btn-secondary" data-comienzo="60" data-final="125" id="adopcion" href="#" role="button">ADOPCIÓN</a>
+      <a class="btn btn-success" data-comienzo="200" data-final="220" id="donacion" href="#" role="button">DONACIONES</a>
+      <a class="btn btn-danger" data-comienzo="250" data-final="300" id="voluntario" href="#" role="button">VOLUNTARIOS</a>
+      <a class="btn btn-info" data-comienzo="310" data-final="350" id="todo" href="#" role="button">TODO EL VIDEO</a>
+      </div>
+      <div id="video" class="d-flex justify-content-center">         
+          <video controls  crossorigin="anonymous" id="miVideo"class="embed-responsive" width="1280" height="720"  type="video/mp4">
+              <source src="{{url('videos/spamVideo.mp4')}}">
+                  Your browser do not support HTML5 video.
+                </video>
+      </div>
+  </div>
+  <div class="col-2">
+
+  </div>
+</div>
 <div class="row" style="margin-bottom:2em;margin-top:3em;">                   
         <div class="col-12">
                 <div class="card"> 
@@ -70,6 +97,8 @@ Bienvenido!
  </div>
 
           <script src="{{ asset('js/dashboard.js') }}"></script>
+          <script src="{{asset('js/videoInteractivo.js')}}"> </script>
+          <script src='https://vjs.zencdn.net/7.5.4/video.js'></script>
           <link rel="stylesheet" type="text/css" href="{{asset('css/landing.css')}}">
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script type="text/javascript">
